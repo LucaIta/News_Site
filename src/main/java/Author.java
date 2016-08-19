@@ -36,17 +36,13 @@ public class Author {
   public String getEmail() {
     return this.email;
   }
-  //
-  // public String getName() {
-  //   return this.name;
-  // }
-  //
-  // public String getName() {
-  //   return this.name;
-  // }
-  //
-  // public String getName() {
-  //   return this.name;
-  // }
+  
+  public String getFacebook() {
+    return this.facebook;
+  }
+
+  public String getTwitter() {
+    return this.twitter;
+  }
 
 }

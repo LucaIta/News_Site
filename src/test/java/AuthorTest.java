@@ -15,7 +15,6 @@ public class AuthorTest {
     assertEquals(newAuthor.getRole(),"Reporter");
   }
 
-  // this.email = email;
   // this.facebook = facebook;
   // this.twitter = twitter;
 
@@ -39,21 +38,15 @@ public class AuthorTest {
     assertEquals(newAuthor.getEmail(),"luca@gmail.com");
   }
   //
-  // @Test
-  // public void getName_retrievesNameCorrectly_Luca() {
-  //   Author newAuthor = new Author("Luca","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink");
-  //   assertEquals(newAuthor.getName(),"Luca");
-  // }
-  //
-  // @Test
-  // public void getName_retrievesNameCorrectly_Luca() {
-  //   Author newAuthor = new Author("Luca","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink");
-  //   assertEquals(newAuthor.getName(),"Luca");
-  // }
-  //
-  // @Test
-  // public void getName_retrievesNameCorrectly_Luca() {
-  //   Author newAuthor = new Author("Luca","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink");
-  //   assertEquals(newAuthor.getName(),"Luca");
-  // }
+  @Test
+  public void getFacebook_retrievesFacebookContactCorrectly_facebookLink() {
+    Author newAuthor = new Author("Luca","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink");
+    assertEquals(newAuthor.getFacebook(),"facebookLink");
+  }
+
+  @Test
+  public void getTwitter_retrievesTwitterContactCorrectly_twitterLink() {
+    Author newAuthor = new Author("Luca","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink");
+    assertEquals(newAuthor.getTwitter(),"twitterLink");
+  }
 }
