@@ -1,5 +1,7 @@
 import org.junit.*;
 import static org.junit.Assert.*;
+import org.sql2o.*;
+
 
 public class AuthorTest {
 
@@ -110,12 +112,12 @@ public class AuthorTest {
     assertTrue(newAuthor1.equals(newAuthor2));
   }
 
-  // @Test
-  // public void save_davedAuthorInDatabaseCorrectly_true(){ // new
-  //   Author newAuthor = new Author("Luca","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink");
-  //   newAuthor.save();
-  //   assertTrue(Author.all().get(0).equals(newAuthor));
-  // }
+  @Test
+  public void save_savedAuthorInDatabaseCorrectly_true(){ // new
+    Author newAuthor = new Author("Luca","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink");
+    newAuthor.save();
+    assertTrue(Author.all().get(0).equals(newAuthor));
+  }
 
 
 }

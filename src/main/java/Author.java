@@ -9,6 +9,7 @@ public class Author {
   private String email;
   private String facebook;
   private String twitter;
+  private int id;
 
   public Author(String name,String role,String bio,String picture,String email,String facebook,String twitter) {
     this.name = name;
@@ -88,7 +89,7 @@ public class Author {
 
   public void save() {
     try (Connection con = DB.sql2o.open()) {
-      String sql = "INSERT into author (name,role,bio,picture,email,facebook,twitter) VALUES (':name',':role',':bio',':picture',':email',':facebook',':twitter');";
+      String sql = "INSERT into authors (name,role,bio,picture,email,facebook,twitter) VALUES (:name,:role,:bio,:picture,:email,:facebook,:twitter);";
       con.createQuery(sql)
         .addParameter("name",this.name)
         .addParameter("role",this.role)
@@ -106,7 +107,6 @@ public class Author {
       String sql = "SELECT * FROM authors;";
       return con.createQuery(sql).executeAndFetch(Author.class);
     }
-
   }
 
 }
