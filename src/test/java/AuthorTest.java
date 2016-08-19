@@ -116,10 +116,18 @@ public class AuthorTest {
   }
 
   @Test
-  public void save_savedAuthorInDatabaseCorrectly_true(){ // new
+  public void save_savedAuthorInDatabaseCorrectly_true(){
     Author newAuthor = new Author("Luca","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink");
     newAuthor.save();
     assertTrue(Author.all().get(0).equals(newAuthor));
+  }
+
+
+  @Test
+  public void find_retrieveAuthorFromDatabaseById_author() {
+    Author newAuthor = new Author("Luca","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink");
+    newAuthor.save();
+    assertTrue(Author.find(newAuthor.getId()).equals(newAuthor));
   }
 
 

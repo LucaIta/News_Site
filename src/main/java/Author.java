@@ -59,6 +59,10 @@ public class Author {
     return this.twitter;
   }
 
+  public int getId() {
+    return this.id;
+  }
+
   public void editName(String name) {
     this.name = name;
   }
@@ -90,7 +94,7 @@ public class Author {
   public void save() {
     try (Connection con = DB.sql2o.open()) {
       String sql = "INSERT into authors (name,role,bio,picture,email,facebook,twitter) VALUES (:name,:role,:bio,:picture,:email,:facebook,:twitter);";
-      con.createQuery(sql)
+      this.id = (int) con.createQuery(sql, true)
         .addParameter("name",this.name)
         .addParameter("role",this.role)
         .addParameter("bio",this.bio)
@@ -98,7 +102,7 @@ public class Author {
         .addParameter("email",this.email)
         .addParameter("facebook",this.facebook)
         .addParameter("twitter",this.twitter)
-        .executeUpdate();
+        .executeUpdate().getKey();
     }
   }
 
@@ -106,6 +110,13 @@ public class Author {
     try (Connection con = DB.sql2o.open()) {
       String sql = "SELECT * FROM authors;";
       return con.createQuery(sql).executeAndFetch(Author.class);
+    }
+  }
+
+  public static Author find(int id) {
+    try (Connection con = DB.sql2o.open()) {
+      String sql = "SELECT * FROM authors WHERE id = :id;";
+      return con.createQuery(sql).addParameter("id",id).executeAndFetchFirst(Author.class);
     }
   }
 
