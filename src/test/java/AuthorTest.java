@@ -103,5 +103,19 @@ public class AuthorTest {
     assertEquals(newAuthor.getTwitter(),"twitterLink2");
   }
 
+  @Test
+  public void equals_compareAuthorsCorrectly_true() {
+    Author newAuthor1 = new Author("Luca","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink");
+    Author newAuthor2 = new Author("Luca","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink");
+    assertTrue(newAuthor1.equals(newAuthor2));
+  }
+
+  // @Test
+  // public void save_davedAuthorInDatabaseCorrectly_true(){ // new
+  //   Author newAuthor = new Author("Luca","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink");
+  //   newAuthor.save();
+  //   assertTrue(Author.all().get(0).equals(newAuthor));
+  // }
+
 
 }

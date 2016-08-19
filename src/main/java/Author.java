@@ -1,3 +1,6 @@
+import java.util.List;
+import org.sql2o.*;
+
 public class Author {
   private String name;
   private String role;
@@ -15,6 +18,16 @@ public class Author {
     this.email = email;
     this.facebook = facebook;
     this.twitter = twitter;
+  }
+
+  @Override  // new
+  public boolean equals(Object author) {
+    if (!(author instanceof Author)) {
+      return false;
+    } else {
+      Author newAuthor = (Author) author;
+      return newAuthor.getName().equals(this.name);
+    }
   }
 
   public String getName() {
@@ -71,6 +84,29 @@ public class Author {
 
   public void editTwitter(String twitter) {
     this.twitter = twitter;
+  }
+
+  public void save() {
+    try (Connection con = DB.sql2o.open()) {
+      String sql = "INSERT into author (name,role,bio,picture,email,facebook,twitter) VALUES (':name',':role',':bio',':picture',':email',':facebook',':twitter');";
+      con.createQuery(sql)
+        .addParameter("name",this.name)
+        .addParameter("role",this.role)
+        .addParameter("bio",this.bio)
+        .addParameter("picture",this.picture)
+        .addParameter("email",this.email)
+        .addParameter("facebook",this.facebook)
+        .addParameter("twitter",this.twitter)
+        .executeUpdate();
+    }
+  }
+
+  public static List<Author> all() {
+    try (Connection con = DB.sql2o.open()) {
+      String sql = "SELECT * FROM authors;";
+      return con.createQuery(sql).executeAndFetch(Author.class);
+    }
+
   }
 
 }
