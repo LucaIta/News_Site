@@ -106,6 +106,13 @@ public class Author {
     }
   }
 
+  public void delete() {
+    try (Connection con = DB.sql2o.open()) {
+      String sql = "DELETE FROM authors WHERE id = :id;";
+      con.createQuery(sql).addParameter("id", this.id).executeUpdate();
+    }
+  }
+
   public static List<Author> all() {
     try (Connection con = DB.sql2o.open()) {
       String sql = "SELECT * FROM authors;";

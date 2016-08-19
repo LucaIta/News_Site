@@ -130,5 +130,15 @@ public class AuthorTest {
     assertTrue(Author.find(newAuthor.getId()).equals(newAuthor));
   }
 
+  @Test
+  public void delete_deletesAuthorCorrectly_1() {
+    Author newAuthor1 = new Author("Luca","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink");
+    Author newAuthor2 = new Author("Luca","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink");
+    newAuthor1.save();
+    newAuthor2.save();
+    newAuthor1.delete();
+    assertEquals(1,Author.all().size());
+  }
+
 
 }
