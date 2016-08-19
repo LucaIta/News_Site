@@ -21,7 +21,7 @@ public class Author {
     this.twitter = twitter;
   }
 
-  @Override  // new
+  @Override
   public boolean equals(Object author) {
     if (!(author instanceof Author)) {
       return false;

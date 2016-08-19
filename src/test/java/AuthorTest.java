@@ -5,6 +5,9 @@ import org.sql2o.*;
 
 public class AuthorTest {
 
+  @Rule
+  public DatabaseRule database = new DatabaseRule();
+
   @Test
   public void author_instantiatesCorrectly_true() {
     Author newAuthor = new Author("Luca M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink");
