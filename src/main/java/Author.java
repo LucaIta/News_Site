@@ -36,13 +36,41 @@ public class Author {
   public String getEmail() {
     return this.email;
   }
-  
+
   public String getFacebook() {
     return this.facebook;
   }
 
   public String getTwitter() {
     return this.twitter;
+  }
+
+  public void editName(String name) {
+    this.name = name;
+  }
+
+  public void editRole(String role) {
+    this.role = role;
+  }
+
+  public void editBio(String bio) {
+    this.bio = bio;
+  }
+
+  public void editPicture(String picture) {
+    this.picture = picture;
+  }
+
+  public void editEmail(String email) {
+    this.email = email;
+  }
+  //
+  public void editFacebook(String facebook) {
+    this.facebook = facebook;
+  }
+
+  public void editTwitter(String twitter) {
+    this.twitter = twitter;
   }
 
 }
