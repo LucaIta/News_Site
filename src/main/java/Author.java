@@ -11,9 +11,42 @@ public class Author {
     this.name = name;
     this.role = role;
     this.bio = bio;
-    this.picture= picture;
+    this.picture = picture;
     this.email = email;
     this.facebook = facebook;
     this.twitter = twitter;
   }
+
+  public String getName() {
+    return this.name;
+  }
+
+  public String getRole() {
+    return this.role;
+  }
+
+  public String getBio() {
+    return this.bio;
+  }
+  //
+  public String getPicture() {
+    return this.picture;
+  }
+
+  public String getEmail() {
+    return this.email;
+  }
+  //
+  // public String getName() {
+  //   return this.name;
+  // }
+  //
+  // public String getName() {
+  //   return this.name;
+  // }
+  //
+  // public String getName() {
+  //   return this.name;
+  // }
+
 }

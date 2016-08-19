@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="AuthorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-08-19T14:41:50" hostname="oems-MBP.station" time="0.002">
+<testsuite name="AuthorTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2016-08-19T14:55:33" hostname="oems-MBP.station" time="0.009">
   <properties/>
-  <testcase name="author_instantiatesCorrectly_true" classname="AuthorTest" time="0.002"/>
+  <testcase name="getBio_retrievesBioCorrectly_born_in_may" classname="AuthorTest" time="0.004"/>
+  <testcase name="author_instantiatesCorrectly_true" classname="AuthorTest" time="0.0"/>
+  <testcase name="getRole_retrievesRoleCorrectly_reporter" classname="AuthorTest" time="0.001"/>
+  <testcase name="getPicture_retrievesPictureCorrectly_url" classname="AuthorTest" time="0.001"/>
+  <testcase name="getEmail_retrievesEmailCorrectly_email" classname="AuthorTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
