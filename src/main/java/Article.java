@@ -58,6 +58,10 @@ public class Article {
     return this.authorByLine;
   }
 
+  public Date getCreationDate() {
+    return this.creationDate;
+  }
+
   // DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
   // Date date = new Date();
   // System.out.println(dateFormat.format(date));

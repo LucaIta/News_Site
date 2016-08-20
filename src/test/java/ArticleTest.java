@@ -1,6 +1,8 @@
 import org.junit.*;
 import static org.junit.Assert.*;
 import org.sql2o.*;
+import java.util.Date;
+
 
 
 public class ArticleTest {
@@ -54,6 +56,13 @@ public class ArticleTest {
   public void getAuthorByLine_retrievesAuthorByLineCorrectly_authorByLine() {
     Article newArticle = new Article("title","shortTitle","body","picture","subhead","subtitle","authorByLine");
     assertEquals(newArticle.getAuthorByLine(),"authorByLine");
+  }
+
+  @Test
+  public void creationDate_creationDateGetsCorrectlySavedOnCreation_creationDate() {
+    Article newArticle = new Article("title","shortTitle","body","picture","subhead","subtitle","authorByLine");
+    Date currentDate = new Date();
+    assertTrue(newArticle.getCreationDate().before(currentDate));
   }
 
 

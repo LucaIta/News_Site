@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="AuthorTest" tests="19" skipped="0" failures="0" errors="0" timestamp="2016-08-20T09:28:09" hostname="oems-MBP.station" time="1.12">
+<testsuite name="AuthorTest" tests="19" skipped="0" failures="0" errors="0" timestamp="2016-08-20T09:50:02" hostname="oems-MBP.station" time="1.001">
   <properties/>
-  <testcase name="editBio_editBioCorrectly_bio" classname="AuthorTest" time="0.3"/>
-  <testcase name="editFacebook_editFacebookCorrectly_facebookLink2" classname="AuthorTest" time="0.072"/>
-  <testcase name="editPicture_editPictureCorrectly_newUrl" classname="AuthorTest" time="0.061"/>
-  <testcase name="getBio_retrievesBioCorrectly_born_in_may" classname="AuthorTest" time="0.022"/>
-  <testcase name="getName_retrievesNameCorrectly_reporter" classname="AuthorTest" time="0.028"/>
-  <testcase name="author_instantiatesCorrectly_true" classname="AuthorTest" time="0.02"/>
-  <testcase name="getRole_retrievesRoleCorrectly_reporter" classname="AuthorTest" time="0.023"/>
-  <testcase name="find_retrieveAuthorFromDatabaseById_author" classname="AuthorTest" time="0.045"/>
+  <testcase name="editBio_editBioCorrectly_bio" classname="AuthorTest" time="0.209"/>
+  <testcase name="editFacebook_editFacebookCorrectly_facebookLink2" classname="AuthorTest" time="0.069"/>
+  <testcase name="editPicture_editPictureCorrectly_newUrl" classname="AuthorTest" time="0.068"/>
+  <testcase name="getBio_retrievesBioCorrectly_born_in_may" classname="AuthorTest" time="0.024"/>
+  <testcase name="getName_retrievesNameCorrectly_reporter" classname="AuthorTest" time="0.018"/>
+  <testcase name="author_instantiatesCorrectly_true" classname="AuthorTest" time="0.01"/>
+  <testcase name="getRole_retrievesRoleCorrectly_reporter" classname="AuthorTest" time="0.011"/>
+  <testcase name="find_retrieveAuthorFromDatabaseById_author" classname="AuthorTest" time="0.067"/>
   <testcase name="editEmail_editEmailCorrectly_newEmail" classname="AuthorTest" time="0.049"/>
-  <testcase name="getPicture_retrievesPictureCorrectly_url" classname="AuthorTest" time="0.037"/>
-  <testcase name="getFacebook_retrievesFacebookContactCorrectly_facebookLink" classname="AuthorTest" time="0.012"/>
-  <testcase name="delete_deletesAuthorCorrectly_1" classname="AuthorTest" time="0.055"/>
-  <testcase name="editTwitter_editTwitterCorrectly_twitterLink2" classname="AuthorTest" time="0.054"/>
-  <testcase name="getTwitter_retrievesTwitterContactCorrectly_twitterLink" classname="AuthorTest" time="0.028"/>
-  <testcase name="editName_editNameCorrectly_Mark" classname="AuthorTest" time="0.159"/>
-  <testcase name="save_savedAuthorInDatabaseCorrectly_true" classname="AuthorTest" time="0.035"/>
-  <testcase name="editRole_editRoleCorrectly_host" classname="AuthorTest" time="0.053"/>
-  <testcase name="getEmail_retrievesEmailCorrectly_email" classname="AuthorTest" time="0.014"/>
-  <testcase name="equals_compareAuthorsCorrectly_true" classname="AuthorTest" time="0.017"/>
+  <testcase name="getPicture_retrievesPictureCorrectly_url" classname="AuthorTest" time="0.01"/>
+  <testcase name="getFacebook_retrievesFacebookContactCorrectly_facebookLink" classname="AuthorTest" time="0.022"/>
+  <testcase name="delete_deletesAuthorCorrectly_1" classname="AuthorTest" time="0.07"/>
+  <testcase name="editTwitter_editTwitterCorrectly_twitterLink2" classname="AuthorTest" time="0.051"/>
+  <testcase name="getTwitter_retrievesTwitterContactCorrectly_twitterLink" classname="AuthorTest" time="0.009"/>
+  <testcase name="editName_editNameCorrectly_Mark" classname="AuthorTest" time="0.072"/>
+  <testcase name="save_savedAuthorInDatabaseCorrectly_true" classname="AuthorTest" time="0.096"/>
+  <testcase name="editRole_editRoleCorrectly_host" classname="AuthorTest" time="0.057"/>
+  <testcase name="getEmail_retrievesEmailCorrectly_email" classname="AuthorTest" time="0.04"/>
+  <testcase name="equals_compareAuthorsCorrectly_true" classname="AuthorTest" time="0.013"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
