@@ -56,57 +56,65 @@ public class AuthorTest {
     assertEquals(newAuthor.getTwitter(),"twitterLink");
   }
 
+  // edit start here
+
   @Test
   public void editName_editNameCorrectly_Mark() {
     Author newAuthor = new Author("Luca","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink");
+    newAuthor.save();
     newAuthor.editName("Mark");
-    assertEquals(newAuthor.getName(),"Mark");
+    assertEquals(Author.find(newAuthor.getId()).getName(),"Mark");
   }
-
-  private String facebook;
-  private String twitter;
 
   @Test
   public void editRole_editRoleCorrectly_host() {
     Author newAuthor = new Author("Luca","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink");
+    newAuthor.save();
     newAuthor.editRole("Host");
-    assertEquals(newAuthor.getRole(),"Host");
+    assertEquals(Author.find(newAuthor.getId()).getRole(),"Host");
   }
 
   @Test
   public void editBio_editBioCorrectly_bio() {
     Author newAuthor = new Author("Luca","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink");
+    newAuthor.save();
     newAuthor.editBio("Born in June");
-    assertEquals(newAuthor.getBio(),"Born in June");
+    assertEquals(Author.find(newAuthor.getId()).getBio(),"Born in June");
   }
 
   @Test
   public void editPicture_editPictureCorrectly_newUrl() {
     Author newAuthor = new Author("Luca","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink");
+    newAuthor.save();
     newAuthor.editPicture("www.newUrl.com");
-    assertEquals(newAuthor.getPicture(),"www.newUrl.com");
+    assertEquals(Author.find(newAuthor.getId()).getPicture(),"www.newUrl.com");
   }
 
   @Test
   public void editEmail_editEmailCorrectly_newEmail() {
     Author newAuthor = new Author("Luca","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink");
+    newAuthor.save();
     newAuthor.editEmail("luca@hotmail.it");
-    assertEquals(newAuthor.getEmail(),"luca@hotmail.it");
+    assertEquals(Author.find(newAuthor.getId()).getEmail(),"luca@hotmail.it");
   }
 
   @Test
   public void editFacebook_editFacebookCorrectly_facebookLink2() {
     Author newAuthor = new Author("Luca","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink");
+    newAuthor.save();
     newAuthor.editFacebook("facebookLink2");
-    assertEquals(newAuthor.getFacebook(),"facebookLink2");
+    assertEquals(Author.find(newAuthor.getId()).getFacebook(),"facebookLink2");
   }
 
   @Test
   public void editTwitter_editTwitterCorrectly_twitterLink2() {
     Author newAuthor = new Author("Luca","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink");
+    newAuthor.save();
     newAuthor.editTwitter("twitterLink2");
-    assertEquals(newAuthor.getTwitter(),"twitterLink2");
+    assertEquals(Author.find(newAuthor.getId()).getTwitter(),"twitterLink2");
   }
+
+  // edit ends here
 
   @Test
   public void equals_compareAuthorsCorrectly_true() {
@@ -137,7 +145,7 @@ public class AuthorTest {
     newAuthor1.save();
     newAuthor2.save();
     newAuthor1.delete();
-    assertEquals(1,Author.all().size());
+    assertEquals(1, Author.all().size());
   }
 
 

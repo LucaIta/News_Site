@@ -64,31 +64,52 @@ public class Author {
   }
 
   public void editName(String name) {
-    this.name = name;
+    try (Connection con = DB.sql2o.open()) {
+      String sql = "UPDATE authors SET name = :name WHERE id = :id";
+      con.createQuery(sql).addParameter("name",name).addParameter("id", this.id).executeUpdate();
+    }
   }
 
   public void editRole(String role) {
-    this.role = role;
+    try (Connection con = DB.sql2o.open()) {
+    String sql = "UPDATE authors SET role = :role WHERE id = :id";
+    con.createQuery(sql).addParameter("role",role).addParameter("id", this.id).executeUpdate();
+    }
   }
 
   public void editBio(String bio) {
-    this.bio = bio;
+    try (Connection con = DB.sql2o.open()) {
+    String sql = "UPDATE authors SET bio = :bio WHERE id = :id";
+    con.createQuery(sql).addParameter("bio",bio).addParameter("id", this.id).executeUpdate();
+    }
   }
 
   public void editPicture(String picture) {
-    this.picture = picture;
+    try (Connection con = DB.sql2o.open()) {
+    String sql = "UPDATE authors SET picture = :picture WHERE id = :id";
+    con.createQuery(sql).addParameter("picture",picture).addParameter("id", this.id).executeUpdate();
+    }
   }
 
   public void editEmail(String email) {
-    this.email = email;
+    try (Connection con = DB.sql2o.open()) {
+    String sql = "UPDATE authors SET email = :email WHERE id = :id";
+    con.createQuery(sql).addParameter("email",email).addParameter("id", this.id).executeUpdate();
+    }
   }
   //
   public void editFacebook(String facebook) {
-    this.facebook = facebook;
+    try (Connection con = DB.sql2o.open()) {
+    String sql = "UPDATE authors SET facebook = :facebook WHERE id = :id";
+    con.createQuery(sql).addParameter("facebook",facebook).addParameter("id", this.id).executeUpdate();
+    }
   }
 
   public void editTwitter(String twitter) {
-    this.twitter = twitter;
+    try (Connection con = DB.sql2o.open()) {
+    String sql = "UPDATE authors SET twitter = :twitter WHERE id = :id";
+    con.createQuery(sql).addParameter("twitter",twitter).addParameter("id", this.id).executeUpdate();
+    }
   }
 
   public void save() {
