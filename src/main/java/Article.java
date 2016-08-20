@@ -121,13 +121,6 @@ public class Article {
     }
   }
 
-  public void editCreationDate(String creationDate) {
-    try (Connection con = DB.sql2o.open()) {
-      String sql = "UPDATE articles SET creationDate = :creationDate WHERE id = :id";
-      con.createQuery(sql).addParameter("creationDate",creationDate).addParameter("id", this.id).executeUpdate();
-    }
-  }
-
   public void save() {
     try (Connection con = DB.sql2o.open()) {
       String sql = "INSERT into articles (title,shortTitle,body,picture,subhead,subtitle,authorByLine,creationDate) VALUES (:title,:shortTitle,:body,:picture,:subhead,:subtitle,:authorByLine,:creationDate);";
@@ -141,6 +134,13 @@ public class Article {
         .addParameter("authorByLine",this.authorByLine)
         .addParameter("creationDate",this.creationDate)
         .executeUpdate().getKey();
+    }
+  }
+  
+  public void delete() {
+    try (Connection con = DB.sql2o.open()) {
+      String sql = "DELETE FROM articles WHERE id = :id;";
+      con.createQuery(sql).addParameter("id", this.id).executeUpdate();
     }
   }
 

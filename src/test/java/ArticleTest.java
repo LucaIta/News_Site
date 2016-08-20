@@ -133,10 +133,21 @@ public class ArticleTest {
   }
 
   @Test
+  public void delete_deletesArticleCorrectly_1() {
+    Article article1 = new Article("title1","shortTitle","body","picture","subhead","subtitle","authorByLine");
+    Article article2 = new Article("title2","shortTitle","body","picture","subhead","subtitle","authorByLine");
+    article1.save();
+    article2.save();
+    article1.delete();
+    assertEquals(1, Article.all().size());
+  }
+
+  @Test
   public void find_retrieveArticleFromDatabaseById_article() {
     Article newArticle = new Article("title","shortTitle","body","picture","subhead","subtitle","authorByLine");
     newArticle.save();
     assertTrue(Article.find(newArticle.getId()).equals(newArticle));
   }
+
 
 }
