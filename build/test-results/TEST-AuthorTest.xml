@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="AuthorTest" tests="19" skipped="0" failures="0" errors="0" timestamp="2016-08-20T14:51:17" hostname="oems-MBP.station" time="0.879">
+<testsuite name="AuthorTest" tests="19" skipped="0" failures="0" errors="0" timestamp="2016-08-20T14:58:47" hostname="oems-MBP.station" time="0.778">
   <properties/>
-  <testcase name="editBio_editBioCorrectly_bio" classname="AuthorTest" time="0.098"/>
-  <testcase name="editFacebook_editFacebookCorrectly_facebookLink2" classname="AuthorTest" time="0.094"/>
-  <testcase name="editPicture_editPictureCorrectly_newUrl" classname="AuthorTest" time="0.075"/>
-  <testcase name="getBio_retrievesBioCorrectly_born_in_may" classname="AuthorTest" time="0.013"/>
-  <testcase name="getName_retrievesNameCorrectly_reporter" classname="AuthorTest" time="0.01"/>
-  <testcase name="author_instantiatesCorrectly_true" classname="AuthorTest" time="0.02"/>
-  <testcase name="getRole_retrievesRoleCorrectly_reporter" classname="AuthorTest" time="0.027"/>
-  <testcase name="find_retrieveAuthorFromDatabaseById_author" classname="AuthorTest" time="0.057"/>
-  <testcase name="editEmail_editEmailCorrectly_newEmail" classname="AuthorTest" time="0.043"/>
-  <testcase name="getPicture_retrievesPictureCorrectly_url" classname="AuthorTest" time="0.037"/>
+  <testcase name="editBio_editBioCorrectly_bio" classname="AuthorTest" time="0.081"/>
+  <testcase name="editFacebook_editFacebookCorrectly_facebookLink2" classname="AuthorTest" time="0.054"/>
+  <testcase name="editPicture_editPictureCorrectly_newUrl" classname="AuthorTest" time="0.066"/>
+  <testcase name="getBio_retrievesBioCorrectly_born_in_may" classname="AuthorTest" time="0.015"/>
+  <testcase name="getName_retrievesNameCorrectly_reporter" classname="AuthorTest" time="0.013"/>
+  <testcase name="author_instantiatesCorrectly_true" classname="AuthorTest" time="0.014"/>
+  <testcase name="getRole_retrievesRoleCorrectly_reporter" classname="AuthorTest" time="0.011"/>
+  <testcase name="find_retrieveAuthorFromDatabaseById_author" classname="AuthorTest" time="0.05"/>
+  <testcase name="editEmail_editEmailCorrectly_newEmail" classname="AuthorTest" time="0.056"/>
+  <testcase name="getPicture_retrievesPictureCorrectly_url" classname="AuthorTest" time="0.012"/>
   <testcase name="getFacebook_retrievesFacebookContactCorrectly_facebookLink" classname="AuthorTest" time="0.01"/>
-  <testcase name="delete_deletesAuthorCorrectly_1" classname="AuthorTest" time="0.065"/>
-  <testcase name="editTwitter_editTwitterCorrectly_twitterLink2" classname="AuthorTest" time="0.069"/>
-  <testcase name="getTwitter_retrievesTwitterContactCorrectly_twitterLink" classname="AuthorTest" time="0.01"/>
-  <testcase name="editName_editNameCorrectly_Mark" classname="AuthorTest" time="0.064"/>
-  <testcase name="save_savedAuthorInDatabaseCorrectly_true" classname="AuthorTest" time="0.056"/>
-  <testcase name="editRole_editRoleCorrectly_host" classname="AuthorTest" time="0.056"/>
-  <testcase name="getEmail_retrievesEmailCorrectly_email" classname="AuthorTest" time="0.015"/>
-  <testcase name="equals_compareAuthorsCorrectly_true" classname="AuthorTest" time="0.026"/>
+  <testcase name="delete_deletesAuthorCorrectly_1" classname="AuthorTest" time="0.096"/>
+  <testcase name="editTwitter_editTwitterCorrectly_twitterLink2" classname="AuthorTest" time="0.057"/>
+  <testcase name="getTwitter_retrievesTwitterContactCorrectly_twitterLink" classname="AuthorTest" time="0.021"/>
+  <testcase name="editName_editNameCorrectly_Mark" classname="AuthorTest" time="0.063"/>
+  <testcase name="save_savedAuthorInDatabaseCorrectly_true" classname="AuthorTest" time="0.04"/>
+  <testcase name="editRole_editRoleCorrectly_host" classname="AuthorTest" time="0.066"/>
+  <testcase name="getEmail_retrievesEmailCorrectly_email" classname="AuthorTest" time="0.011"/>
+  <testcase name="equals_compareAuthorsCorrectly_true" classname="AuthorTest" time="0.012"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

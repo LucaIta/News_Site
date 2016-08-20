@@ -62,6 +62,16 @@ public class ArticleTest {
   }
 
   @Test
+  public void editTitle_editTitleCorrectly_title2() {
+    Article newArticle = new Article("title","shortTitle","body","picture","subhead","subtitle","authorByLine");
+    newArticle.save();
+    newArticle.editTitle("title2");
+    assertEquals(Article.find(newArticle.getId()).getTitle(),"title2");
+  }
+
+
+
+  @Test
   public void creationDate_creationDateGetsCorrectlySavedOnCreation_creationDateMinorThanCurrentDate() {
     Article newArticle = new Article("title","shortTitle","body","picture","subhead","subtitle","authorByLine");
     assertTrue(newArticle.getCreationDate().after(testDate));
@@ -72,6 +82,13 @@ public class ArticleTest {
     Article newArticle = new Article("title","shortTitle","body","picture","subhead","subtitle","authorByLine");
     newArticle.save();
     assertTrue(Article.all().get(0).equals(newArticle));
+  }
+
+  @Test
+  public void find_retrieveArticleFromDatabaseById_article() {
+    Article newArticle = new Article("title","shortTitle","body","picture","subhead","subtitle","authorByLine");
+    newArticle.save();
+    assertTrue(Article.find(newArticle.getId()).equals(newArticle));
   }
 
 }

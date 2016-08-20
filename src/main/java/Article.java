@@ -68,6 +68,17 @@ public class Article {
     return this.creationDate;
   }
 
+  public int getId() {
+    return this.id;
+  }
+
+  public void editTitle(String title) {
+    try (Connection con = DB.sql2o.open()) {
+      String sql = "UPDATE articles SET title = :title WHERE id = :id";
+      con.createQuery(sql).addParameter("title",title).addParameter("id", this.id).executeUpdate();
+    }
+  }
+
   public void save() {
     try (Connection con = DB.sql2o.open()) {
       String sql = "INSERT into articles (title,shortTitle,body,picture,subhead,subtitle,authorByLine,creationDate) VALUES (:title,:shortTitle,:body,:picture,:subhead,:subtitle,:authorByLine,:creationDate);";
@@ -88,6 +99,13 @@ public class Article {
     try (Connection con = DB.sql2o.open()) {
       String sql = "SELECT * FROM articles;";
       return con.createQuery(sql).executeAndFetch(Article.class);
+    }
+  }
+
+  public static Article find(int id) {
+    try (Connection con = DB.sql2o.open()) {
+      String sql = "SELECT * FROM articles WHERE id = :id;";
+      return con.createQuery(sql).addParameter("id",id).executeAndFetchFirst(Article.class);
     }
   }
 
