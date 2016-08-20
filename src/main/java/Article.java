@@ -14,8 +14,7 @@ public class Article {
   private String subtitle;
   private String authorByLine;
   private int id;
-  // private Date creationDate = new Date();
-  private Date creationDate;
+  private Date creationDate = new Date();
 
   public Article(String title,String shortTitle,String body,String picture,String subhead,String subtitle,String authorByLine) {
     this.title = title;
@@ -25,15 +24,17 @@ public class Article {
     this.subhead = subhead;
     this.subtitle = subtitle;
     this.authorByLine = authorByLine;
-    // saveCreationDate();
-    creationDate = new Date();
   }
 
-  // public void saveCreationDate() {
-  //   // DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-  //   creationDate =
-  //   // System.out.println(dateFormat.format(creationDate));
-  // }
+  @Override
+  public boolean equals(Object article) {
+    if (!(article instanceof Article)) {
+      return false;
+    } else {
+      Article newArticle = (Article) article;
+      return newArticle.getTitle().equals(this.title) && newArticle.getShortTitle().equals(this.shortTitle) && newArticle.getBody().equals(this.body) && newArticle.getPicture().equals(this.picture) && newArticle.getSubhead().equals(this.subhead) && newArticle.getSubtitle().equals(this.subtitle) && newArticle.getAuthorByLine().equals(this.authorByLine);
+    }
+  }
 
   public String getTitle() {
     return this.title;
@@ -67,8 +68,27 @@ public class Article {
     return this.creationDate;
   }
 
-}
+  public void save() {
+    try (Connection con = DB.sql2o.open()) {
+      String sql = "INSERT into articles (title,shortTitle,body,picture,subhead,subtitle,authorByLine,creationDate) VALUES (:title,:shortTitle,:body,:picture,:subhead,:subtitle,:authorByLine,:creationDate);";
+      this.id = (int) con.createQuery(sql, true)
+        .addParameter("title",this.title)
+        .addParameter("shortTitle",this.shortTitle)
+        .addParameter("body",this.body)
+        .addParameter("picture",this.picture)
+        .addParameter("subhead",this.subhead)
+        .addParameter("subtitle",this.subtitle)
+        .addParameter("authorByLine",this.authorByLine)
+        .addParameter("creationDate",this.creationDate)
+        .executeUpdate().getKey();
+    }
+  }
 
-// Data di publicazione (viene mosrato solo quando superato)
-// Autore/autori
-// Tag
+  public static List<Article> all() {
+    try (Connection con = DB.sql2o.open()) {
+      String sql = "SELECT * FROM articles;";
+      return con.createQuery(sql).executeAndFetch(Article.class);
+    }
+  }
+
+}

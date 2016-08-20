@@ -67,4 +67,11 @@ public class ArticleTest {
     assertTrue(newArticle.getCreationDate().after(testDate));
   }
 
+  @Test
+  public void save_savesArticlesCorrectly_true() {
+    Article newArticle = new Article("title","shortTitle","body","picture","subhead","subtitle","authorByLine");
+    newArticle.save();
+    assertTrue(Article.all().get(0).equals(newArticle));
+  }
+
 }
