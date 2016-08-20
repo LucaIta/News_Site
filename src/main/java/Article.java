@@ -14,6 +14,7 @@ public class Article {
   private String subtitle;
   private String authorByLine;
   private int id;
+  // private Date creationDate = new Date();
   private Date creationDate;
 
   public Article(String title,String shortTitle,String body,String picture,String subhead,String subtitle,String authorByLine) {
@@ -24,11 +25,15 @@ public class Article {
     this.subhead = subhead;
     this.subtitle = subtitle;
     this.authorByLine = authorByLine;
-
-    DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+    // saveCreationDate();
     creationDate = new Date();
-    System.out.println(dateFormat.format(creationDate));
   }
+
+  // public void saveCreationDate() {
+  //   // DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+  //   creationDate =
+  //   // System.out.println(dateFormat.format(creationDate));
+  // }
 
   public String getTitle() {
     return this.title;
@@ -62,12 +67,8 @@ public class Article {
     return this.creationDate;
   }
 
-  // DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-  // Date date = new Date();
-  // System.out.println(dateFormat.format(date));
 }
 
-// Data di creazione
 // Data di publicazione (viene mosrato solo quando superato)
 // Autore/autori
 // Tag

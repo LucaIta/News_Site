@@ -2,10 +2,13 @@ import org.junit.*;
 import static org.junit.Assert.*;
 import org.sql2o.*;
 import java.util.Date;
+import java.text.SimpleDateFormat; // could remove if unused
 
 
 
 public class ArticleTest {
+
+  Date testDate = new Date();
 
   @Rule
   public DatabaseRule database = new DatabaseRule();
@@ -59,12 +62,9 @@ public class ArticleTest {
   }
 
   @Test
-  public void creationDate_creationDateGetsCorrectlySavedOnCreation_creationDate() {
+  public void creationDate_creationDateGetsCorrectlySavedOnCreation_creationDateMinorThanCurrentDate() {
     Article newArticle = new Article("title","shortTitle","body","picture","subhead","subtitle","authorByLine");
-    Date currentDate = new Date();
-    assertTrue(newArticle.getCreationDate().before(currentDate));
+    assertTrue(newArticle.getCreationDate().after(testDate));
   }
-
-
 
 }
