@@ -10,9 +10,52 @@ public class ArticleTest {
 
   @Test
   public void article_instantiatesCorrectly_true() {
-    Article newArticle = new Article("How to learn Coding in 2 months...","How to learn Coding","If you have ever...","url","How to","Coding bootcamps","Luca");
+    Article newArticle = new Article("title","shortTitle","body","picture","subhead","subtitle","authorByLine");
     assertTrue(newArticle instanceof Article);
   }
+
+  @Test
+  public void getTitle_retrievesTitleCorrectly_title() {
+    Article newArticle = new Article("title","shortTitle","body","picture","subhead","subtitle","authorByLine");
+    assertEquals(newArticle.getTitle(),"title");
+  }
+
+  @Test
+  public void getShortTitle_retrievesShortTitleCorrectly_ShortTitle() {
+    Article newArticle = new Article("title","shortTitle","body","picture","subhead","subtitle","authorByLine");
+    assertEquals(newArticle.getShortTitle(),"shortTitle");
+  }
+
+  @Test
+  public void getBody_retrievesBodyCorrectly_body() {
+    Article newArticle = new Article("title","shortTitle","body","picture","subhead","subtitle","authorByLine");
+    assertEquals(newArticle.getBody(),"body");
+  }
+
+  @Test
+  public void getPicture_retrievesPictureCorrectly_picture() {
+    Article newArticle = new Article("title","shortTitle","body","picture","subhead","subtitle","authorByLine");
+    assertEquals(newArticle.getPicture(),"picture");
+  }
+
+  @Test
+  public void getSubhead_retrievesSubheadCorrectly_subhead() {
+    Article newArticle = new Article("title","shortTitle","body","picture","subhead","subtitle","authorByLine");
+    assertEquals(newArticle.getSubhead(),"subhead");
+  }
+
+  @Test
+  public void getSubtitle_retrievesSubtitleCorrectly_subtitle() {
+    Article newArticle = new Article("title","shortTitle","body","picture","subhead","subtitle","authorByLine");
+    assertEquals(newArticle.getSubtitle(),"subtitle");
+  }
+
+  @Test
+  public void getAuthorByLine_retrievesAuthorByLineCorrectly_authorByLine() {
+    Article newArticle = new Article("title","shortTitle","body","picture","subhead","subtitle","authorByLine");
+    assertEquals(newArticle.getAuthorByLine(),"authorByLine");
+  }
+
 
 
 }
