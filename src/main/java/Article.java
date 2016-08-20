@@ -79,6 +79,55 @@ public class Article {
     }
   }
 
+  public void editShortTitle(String shortTitle) {
+    try (Connection con = DB.sql2o.open()) {
+      String sql = "UPDATE articles SET shortTitle = :shortTitle WHERE id = :id";
+      con.createQuery(sql).addParameter("shortTitle",shortTitle).addParameter("id", this.id).executeUpdate();
+    }
+  }
+
+  public void editBody(String body) {
+    try (Connection con = DB.sql2o.open()) {
+      String sql = "UPDATE articles SET body = :body WHERE id = :id";
+      con.createQuery(sql).addParameter("body",body).addParameter("id", this.id).executeUpdate();
+    }
+  }
+
+  public void editPicture(String picture) {
+    try (Connection con = DB.sql2o.open()) {
+      String sql = "UPDATE articles SET picture = :picture WHERE id = :id";
+      con.createQuery(sql).addParameter("picture",picture).addParameter("id", this.id).executeUpdate();
+    }
+  }
+
+  public void editSubhead(String subhead) {
+    try (Connection con = DB.sql2o.open()) {
+      String sql = "UPDATE articles SET subhead = :subhead WHERE id = :id";
+      con.createQuery(sql).addParameter("subhead",subhead).addParameter("id", this.id).executeUpdate();
+    }
+  }
+
+  public void editSubtitle(String subtitle) {
+    try (Connection con = DB.sql2o.open()) {
+      String sql = "UPDATE articles SET subtitle = :subtitle WHERE id = :id";
+      con.createQuery(sql).addParameter("subtitle",subtitle).addParameter("id", this.id).executeUpdate();
+    }
+  }
+
+  public void editAuthorByLine(String authorByLine) {
+    try (Connection con = DB.sql2o.open()) {
+      String sql = "UPDATE articles SET authorByLine = :authorByLine WHERE id = :id";
+      con.createQuery(sql).addParameter("authorByLine",authorByLine).addParameter("id", this.id).executeUpdate();
+    }
+  }
+
+  public void editCreationDate(String creationDate) {
+    try (Connection con = DB.sql2o.open()) {
+      String sql = "UPDATE articles SET creationDate = :creationDate WHERE id = :id";
+      con.createQuery(sql).addParameter("creationDate",creationDate).addParameter("id", this.id).executeUpdate();
+    }
+  }
+
   public void save() {
     try (Connection con = DB.sql2o.open()) {
       String sql = "INSERT into articles (title,shortTitle,body,picture,subhead,subtitle,authorByLine,creationDate) VALUES (:title,:shortTitle,:body,:picture,:subhead,:subtitle,:authorByLine,:creationDate);";

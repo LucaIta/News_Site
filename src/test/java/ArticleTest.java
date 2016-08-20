@@ -69,6 +69,54 @@ public class ArticleTest {
     assertEquals(Article.find(newArticle.getId()).getTitle(),"title2");
   }
 
+  @Test
+  public void editShortTitle_editShortTitleCorrectly_shortTitle2() {
+    Article newArticle = new Article("title","shortTitle","body","picture","subhead","subtitle","authorByLine");
+    newArticle.save();
+    newArticle.editShortTitle("shortTitle2");
+    assertEquals(Article.find(newArticle.getId()).getShortTitle(),"shortTitle2");
+  }
+
+  @Test
+  public void editBody_editBodyCorrectly_body2() {
+    Article newArticle = new Article("title","shortTitle","body","picture","subhead","subtitle","authorByLine");
+    newArticle.save();
+    newArticle.editBody("body2");
+    assertEquals(Article.find(newArticle.getId()).getBody(),"body2");
+  }
+
+  @Test
+  public void editPicture_editPictureCorrectly_picture2() {
+    Article newArticle = new Article("title","shortTitle","body","picture","subhead","subtitle","authorByLine");
+    newArticle.save();
+    newArticle.editPicture("picture2");
+    assertEquals(Article.find(newArticle.getId()).getPicture(),"picture2");
+  }
+
+  @Test
+  public void editSubhead_editSubheadCorrectly_subhead2() {
+    Article newArticle = new Article("title","shortTitle","body","picture","subhead","subtitle","authorByLine");
+    newArticle.save();
+    newArticle.editSubhead("subhead2");
+    assertEquals(Article.find(newArticle.getId()).getSubhead(),"subhead2");
+  }
+
+  @Test
+  public void editSubtitle_editSubtitleCorrectly_Subtitle2() {
+    Article newArticle = new Article("title","shortTitle","body","picture","subhead","subtitle","authorByLine");
+    newArticle.save();
+    newArticle.editSubtitle("subtitle2");
+    assertEquals(Article.find(newArticle.getId()).getSubtitle(),"subtitle2");
+  }
+
+  @Test
+  public void editAuthorByLine_editAuthorByLineCorrectly_authorByLine2() {
+    Article newArticle = new Article("title","shortTitle","body","picture","subhead","subtitle","authorByLine");
+    newArticle.save();
+    newArticle.editAuthorByLine("authorByLine2");
+    assertEquals(Article.find(newArticle.getId()).getAuthorByLine(),"authorByLine2");
+  }
+
 
 
   @Test
