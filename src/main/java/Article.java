@@ -1,26 +1,66 @@
 import java.util.List;
 import org.sql2o.*;
+import java.util.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+
 
 public class Article {
   private String title;
-  private String short_title;
+  private String shortTitle;
   private String body;
   private String picture;
   private String subhead;
   private String subtitle;
-  private String author_by_line;
+  private String authorByLine;
   private int id;
+  private Date creationDate;
 
-  public Article(String title,String short_title,String body,String picture,String subhead,String subtitle,String author_by_line) {
+  public Article(String title,String shortTitle,String body,String picture,String subhead,String subtitle,String authorByLine) {
     this.title = title;
-    this.short_title = short_title;
+    this.shortTitle = shortTitle;
     this.body = body;
     this.picture = picture;
     this.subhead = subhead;
     this.subtitle = subtitle;
-    this.author_by_line = author_by_line;
+    this.authorByLine = authorByLine;
+
+    DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+    creationDate = new Date();
+    System.out.println(dateFormat.format(creationDate));
   }
 
+  public String getTitle() {
+    return this.title;
+  }
+
+  public String getShortTitle() {
+    return this.shortTitle;
+  }
+
+  public String getBody() {
+    return this.body;
+  }
+
+  public String getPicture() {
+    return this.picture;
+  }
+
+  public String getSubhead() {
+    return this.subhead;
+  }
+
+  public String getSubtitle() {
+    return this.subtitle;
+  }
+
+  public String getAuthorByLine() {
+    return this.authorByLine;
+  }
+
+  // DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+  // Date date = new Date();
+  // System.out.println(dateFormat.format(date));
 }
 
 // Data di creazione

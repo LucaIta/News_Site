@@ -56,8 +56,6 @@ public class AuthorTest {
     assertEquals(newAuthor.getTwitter(),"twitterLink");
   }
 
-  // edit start here
-
   @Test
   public void editName_editNameCorrectly_Mark() {
     Author newAuthor = new Author("Luca","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink");
@@ -113,8 +111,6 @@ public class AuthorTest {
     newAuthor.editTwitter("twitterLink2");
     assertEquals(Author.find(newAuthor.getId()).getTwitter(),"twitterLink2");
   }
-
-  // edit ends here
 
   @Test
   public void equals_compareAuthorsCorrectly_true() {
