@@ -14,6 +14,7 @@ public class App {
     }, new VelocityTemplateEngine());
 
     post("/articles", (request,response) -> {
+      // code that get from the session the current user
       String title = request.queryParams("title");
       String shortTitle = request.queryParams("shortTitle");
       String body = request.queryParams("body");

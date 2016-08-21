@@ -16,9 +16,14 @@ public class AppTest extends FluentTest {
   @ClassRule
   public static ServerRule server = new ServerRule();
 
-  // @Test public void rootTest() {
-  //   goTo("http://localhost:4567/");
-  //   assertThat(pageSource()).contains("");
-  // }
+  @Test public void newArticlePageIsDisplayed() {
+    goTo("http://localhost:4567/articles/new");
+    assertThat(pageSource()).contains("Add an Article");
+  }
+
+  @Test public void newAuthorPageIsDisplayed() {
+    goTo("http://localhost:4567/authors/new");
+    assertThat(pageSource()).contains("Add an Author");
+  }
 
 }
