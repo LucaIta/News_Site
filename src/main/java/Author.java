@@ -10,9 +10,9 @@ public class Author {
   private String facebook;
   private String twitter;
   private int id;
-  private int password;
+  private String password;
 
-  public Author(String name,String role,String bio,String picture,String email,String facebook,String twitter, int password) {
+  public Author(String name,String role,String bio,String picture,String email,String facebook,String twitter,String password) {
     this.name = name;
     this.role = role;
     this.bio = bio;
@@ -65,8 +65,8 @@ public class Author {
     return this.id;
   }
 
-  public int getPassword() {
-    return password;
+  public String getPassword() {
+    return this.password;
   }
 
   public void editName(String name) {
@@ -120,7 +120,7 @@ public class Author {
 
   public void save() {
     try (Connection con = DB.sql2o.open()) {
-      String sql = "INSERT into authors (name,role,bio,picture,email,facebook,twitter) VALUES (:name,:role,:bio,:picture,:email,:facebook,:twitter);";
+      String sql = "INSERT into authors (name,role,bio,picture,email,facebook,twitter,password) VALUES (:name,:role,:bio,:picture,:email,:facebook,:twitter,:password);";
       this.id = (int) con.createQuery(sql, true)
         .addParameter("name",this.name)
         .addParameter("role",this.role)
@@ -129,6 +129,7 @@ public class Author {
         .addParameter("email",this.email)
         .addParameter("facebook",this.facebook)
         .addParameter("twitter",this.twitter)
+        .addParameter("password",this.password)
         .executeUpdate().getKey();
     }
   }
@@ -164,14 +165,14 @@ public class Author {
     }
   }
 
-  public boolean checkCredentials(String username, int password) {
+  public static boolean checkCredentials(String username, String password) {
     try (Connection con = DB.sql2o.open()) {
-      String sql = "SELECT password FROM authors WHERE name = :name";
+      String sql = "SELECT * FROM authors WHERE name = :name;";
       Author author = con.createQuery(sql).addParameter("name", username).executeAndFetchFirst(Author.class);
       if (author == null) {
         return false;
-      } else { // need to create and test getPassword()
-        return password == author.getPassword();
+      } else {
+        return author.getPassword().equals(password);
       }
     }
   }

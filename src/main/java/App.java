@@ -47,7 +47,7 @@ public class App {
       String email = request.queryParams("email");
       String facebook = request.queryParams("facebook");
       String twitter = request.queryParams("twitter");
-      int password = 123456; // currently we are using fixed password, they are not chosen by the admin
+      String password = "123456"; // currently we are using fixed password, they are not chosen by the admin
       Author newAuthor = new Author(name,role,bio,picture,email,facebook,twitter,password);
       newAuthor.save();
       response.redirect("/authors/new");
