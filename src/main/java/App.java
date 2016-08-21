@@ -13,5 +13,18 @@ public class App {
       return new ModelAndView(model, "/templates/layout.vtl");
     }, new VelocityTemplateEngine());
 
+    post("/articles", (request,response) -> {
+      String title = request.queryParams("title");
+      String shortTitle = request.queryParams("shortTitle");
+      String body = request.queryParams("body");
+      String picture = request.queryParams("picture");
+      String subhead = request.queryParams("subhead");
+      String subtitle = request.queryParams("subtitle");
+      String authorByLine = request.queryParams("authorByLine");
+      Article newArticle = new Article(title,shortTitle,body,picture,subhead,subtitle,authorByLine);
+      newArticle.save();
+      return null;
+    });
+
   }
 }
