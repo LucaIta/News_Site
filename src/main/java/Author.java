@@ -148,4 +148,15 @@ public class Author {
     }
   }
 
+  public void add (Article article) {
+    try (Connection con = DB.sql2o.open()) {
+      String sql = "INSERT into authors_articles (author_id,article_id) VALUES (:author_id,:article_id);";
+      con.createQuery(sql)
+        .addParameter("author_id", this.id)
+        .addParameter("article_id", article.getId())
+        .executeUpdate();
+    }
+
+  }
+
 }

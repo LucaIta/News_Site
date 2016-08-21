@@ -15,6 +15,8 @@ public class App {
 
     post("/articles", (request,response) -> {
       // code that get from the session the current user
+      Author currentAuthor = Author.find(662); // here I'm retrieving always the same user, to get rid of when I implement the login system
+
       String title = request.queryParams("title");
       String shortTitle = request.queryParams("shortTitle");
       String body = request.queryParams("body");
@@ -24,6 +26,9 @@ public class App {
       String authorByLine = request.queryParams("authorByLine");
       Article newArticle = new Article(title,shortTitle,body,picture,subhead,subtitle,authorByLine);
       newArticle.save();
+
+      currentAuthor.add(newArticle); // here we associate the Author and the Article
+
       response.redirect("/articles/new");
       return null;
     });
