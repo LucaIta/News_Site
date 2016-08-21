@@ -10,8 +10,9 @@ public class Author {
   private String facebook;
   private String twitter;
   private int id;
+  private int password;
 
-  public Author(String name,String role,String bio,String picture,String email,String facebook,String twitter) {
+  public Author(String name,String role,String bio,String picture,String email,String facebook,String twitter, int password) {
     this.name = name;
     this.role = role;
     this.bio = bio;
@@ -19,6 +20,7 @@ public class Author {
     this.email = email;
     this.facebook = facebook;
     this.twitter = twitter;
+    this.password = password;
   }
 
   @Override
@@ -61,6 +63,10 @@ public class Author {
 
   public int getId() {
     return this.id;
+  }
+
+  public int getPassword() {
+    return password;
   }
 
   public void editName(String name) {
@@ -156,7 +162,18 @@ public class Author {
         .addParameter("article_id", article.getId())
         .executeUpdate();
     }
+  }
 
+  public boolean checkCredentials(String username, int password) {
+    try (Connection con = DB.sql2o.open()) {
+      String sql = "SELECT password FROM authors WHERE name = :name";
+      Author author = con.createQuery(sql).addParameter("name", username).executeAndFetchFirst(Author.class);
+      if (author == null) {
+        return false;
+      } else { // need to create and test getPassword()
+        return password == author.getPassword();
+      }
+    }
   }
 
 }
