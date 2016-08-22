@@ -13,6 +13,25 @@ public class App {
       return new ModelAndView(model, "templates/layout.vtl");
     },new VelocityTemplateEngine());
 
+    post("/login", (request,response) -> {
+      HashMap<String,Object> model = new HashMap<String,Object>();
+      String username = request.queryParams("username");
+      String password = request.queryParams("password");
+      if (Author.checkCredentials(username,password)) {
+        model.put("template", "/templates/hub.vtl");
+        return new ModelAndView(model, "templates/layout.vtl");
+      } else {
+        model.put("template", "/templates/index.vtl");
+        return new ModelAndView(model, "templates/layout.vtl");
+      }
+    },new VelocityTemplateEngine());
+
+    get("/hub", (request,response) -> { // for this and other paths, I should be able to get there only if the user is autenticated
+      HashMap<String,Object> model = new HashMap<String,Object>();
+      model.put("template", "/templates/hub.vtl");
+      return new ModelAndView(model, "templates/layout.vtl");
+    },new VelocityTemplateEngine());
+
     get("/articles/new", (request,response) -> {
       HashMap<String,Object> model = new HashMap<String,Object>();
       model.put("template", "/templates/article-form.vtl");

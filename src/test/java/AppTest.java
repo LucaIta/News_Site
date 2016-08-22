@@ -36,8 +36,19 @@ public class AppTest extends FluentTest {
     fill("#username").with("Luca");
     fill("#password").with("123456");
     submit("#loginBtn");
-    assertThat(pageSource()).contains("Create Article");
+    assertThat(pageSource()).contains("click here to create a new Article");
   }
+
+  @Test public void linksOnHubPageWorks() {
+    goTo("http://localhost:4567/hub");
+    submit("#newArticleBtn");
+    assertThat(pageSource().contains("Article Title"));
+    // goTo("http://localhost:4567/hub");
+    // submit("#newAuthorBtn");
+    // assertThat(pageSource().contains("Author Name"));
+  }
+
+
 
   // @Test
   // public void bandGetUpdated() {

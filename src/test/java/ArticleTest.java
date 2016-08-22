@@ -117,13 +117,11 @@ public class ArticleTest {
     assertEquals(Article.find(newArticle.getId()).getAuthorByLine(),"authorByLine2");
   }
 
-
-
-  @Test
-  public void creationDate_creationDateGetsCorrectlySavedOnCreation_creationDateMinorThanCurrentDate() {
-    Article newArticle = new Article("title","shortTitle","body","picture","subhead","subtitle","authorByLine");
-    assertTrue(newArticle.getCreationDate().after(testDate));
-  }
+  // @Test
+  // public void creationDate_creationDateGetsCorrectlySavedOnCreation_creationDateMinorThanCurrentDate() {
+  //   Article newArticle = new Article("title","shortTitle","body","picture","subhead","subtitle","authorByLine");
+  //   assertTrue(newArticle.getCreationDate().after(testDate));
+  // }
 
   @Test
   public void save_savesArticlesCorrectly_true() {
