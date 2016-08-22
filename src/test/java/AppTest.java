@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.fluentlenium.core.filter.FilterConstructor.*;
 
 public class AppTest extends FluentTest {
   public WebDriver webDriver = new HtmlUnitDriver();
@@ -16,22 +17,26 @@ public class AppTest extends FluentTest {
   @ClassRule
   public static ServerRule server = new ServerRule();
 
-  @Test public void loginPageIsDisplayed() {
+  @Test
+  public void loginPageIsDisplayed() {
     goTo("http://localhost:4567/");
     assertThat(pageSource()).contains("Username");
   }
 
-  @Test public void newArticlePageIsDisplayed() {
+  @Test
+  public void newArticlePageIsDisplayed() {
     goTo("http://localhost:4567/articles/new");
     assertThat(pageSource()).contains("Add an Article");
   }
 
-  @Test public void newAuthorPageIsDisplayed() {
+  @Test
+  public void newAuthorPageIsDisplayed() {
     goTo("http://localhost:4567/authors/new");
     assertThat(pageSource()).contains("Add an Author");
   }
 
-  @Test public void loginWorksCorrectly() {
+  @Test
+  public void loginWorksCorrectly() {
     goTo("http://localhost:4567/");
     fill("#username").with("Luca");
     fill("#password").with("123456");
@@ -39,16 +44,34 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("click here to create a new Article");
   }
 
-  @Test public void linksOnHubPageWorks() {
+  @Test
+  public void linksOnHubPageWorks() {
     goTo("http://localhost:4567/hub");
     submit("#newArticleBtn");
     assertThat(pageSource().contains("Article Title"));
-    // goTo("http://localhost:4567/hub");
-    // submit("#newAuthorBtn");
-    // assertThat(pageSource().contains("Author Name"));
+    goTo("http://localhost:4567/hub");
+    submit("#newAuthorBtn");
+    assertThat(pageSource()).contains("Author Name");
+  }
+
+  @Test
+  public void articlesGetsDisplayed() {
+    goTo("http://localhost:4567/hub");
+    Article newArticle = new Article("title","shortTitle","this article is about...","picture","subhead","subtitle","authorByLine");
+    newArticle.save();
+    assertThat(pageSource()).contains("this article is about...");
   }
 
 
+
+  // @Test
+  // public void articleEditPageIsDisplayed() {
+  //   Article newArticle = new Article("How to learn English","","this article is about...","picture","subhead","An Easy Way to Learn English","authorByLine");
+  //   newArticle.save();
+  //   goTo("http://localhost:4567/hub");
+  //   click("a", withText("How to learn English"));
+  //   assertThat(pageSource().contains("An Easy Way to Learn English"));
+  // }
 
   // @Test
   // public void bandGetUpdated() {

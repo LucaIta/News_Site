@@ -7,3 +7,20 @@
 </form>
 
 <button type="submit" class="btn btn-success">click here to visit the site</button>
+
+#foreach($article in $articles)
+  <p><a href="/articles/$article.getId()/edit">$article.getTitle()</a></p>
+  <p>$article.getBody()</p>
+  <br>
+  <br>
+#end
+
+
+<!-- <div class="checkbox">
+  #foreach($venue in $venues)
+  <label>
+    <input name= "checkbox" type="checkbox" value="$venue.getId()">
+    $venue.getName()
+  </label>
+  #end
+</div> -->

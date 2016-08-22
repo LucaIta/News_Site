@@ -29,6 +29,7 @@ public class App {
     get("/hub", (request,response) -> { // for this and other paths, I should be able to get there only if the user is autenticated
       HashMap<String,Object> model = new HashMap<String,Object>();
       model.put("template", "/templates/hub.vtl");
+      model.put("articles", Article.all());
       return new ModelAndView(model, "templates/layout.vtl");
     },new VelocityTemplateEngine());
 
@@ -57,6 +58,13 @@ public class App {
       response.redirect("/articles/new");
       return null;
     });
+
+    get("/articles/:article_id/edit", (request,response) -> {
+      HashMap<String,Object> model = new HashMap<String,Object>();
+      model.put("template", "/templates/article-edit-form.vtl");
+      model.put("article", Article.find(Integer.parseInt(request.queryParams("article_id"))));
+      return new ModelAndView(model, "/templates/layout.vtl");
+    }, new VelocityTemplateEngine());
 
     get("/authors/new", (request,response) -> {
       HashMap<String,Object> model = new HashMap<String,Object>();
