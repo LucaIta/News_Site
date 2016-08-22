@@ -62,7 +62,7 @@ public class App {
     get("/articles/:article_id/edit", (request,response) -> {
       HashMap<String,Object> model = new HashMap<String,Object>();
       model.put("template", "/templates/article-edit-form.vtl");
-      model.put("article", Article.find(Integer.parseInt(request.queryParams("article_id"))));
+      model.put("article", Article.find(Integer.parseInt(request.params("article_id"))));
       return new ModelAndView(model, "/templates/layout.vtl");
     }, new VelocityTemplateEngine());
 

@@ -1,6 +1,7 @@
 import org.fluentlenium.adapter.FluentTest;
 import org.junit.ClassRule;
 import org.junit.Test;
+import org.junit.Rule;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -13,6 +14,9 @@ public class AppTest extends FluentTest {
   public WebDriver getDefaultDriver() {
     return webDriver;
   }
+
+  @Rule
+  public DatabaseRule database = new DatabaseRule();
 
   @ClassRule
   public static ServerRule server = new ServerRule();
@@ -37,6 +41,7 @@ public class AppTest extends FluentTest {
 
   @Test
   public void loginWorksCorrectly() {
+    Author newAuthor = new Author("Luca M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink", "123456");
     goTo("http://localhost:4567/");
     fill("#username").with("Luca");
     fill("#password").with("123456");
@@ -56,22 +61,20 @@ public class AppTest extends FluentTest {
 
   @Test
   public void articlesGetsDisplayed() {
-    goTo("http://localhost:4567/hub");
     Article newArticle = new Article("title","shortTitle","this article is about...","picture","subhead","subtitle","authorByLine");
     newArticle.save();
+    goTo("http://localhost:4567/hub");
     assertThat(pageSource()).contains("this article is about...");
   }
 
-
-
-  // @Test
-  // public void articleEditPageIsDisplayed() {
-  //   Article newArticle = new Article("How to learn English","","this article is about...","picture","subhead","An Easy Way to Learn English","authorByLine");
-  //   newArticle.save();
-  //   goTo("http://localhost:4567/hub");
-  //   click("a", withText("How to learn English"));
-  //   assertThat(pageSource().contains("An Easy Way to Learn English"));
-  // }
+  @Test
+  public void articleEditPageIsDisplayed() {
+    Article newArticle = new Article("How to learn English","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","authorByLine");
+    newArticle.save();
+    goTo("http://localhost:4567/hub");
+    click("a", withText("How to learn English"));
+    assertThat(pageSource()).contains("An Easy Way to Learn English");
+  }
 
   // @Test
   // public void bandGetUpdated() {
