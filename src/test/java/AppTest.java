@@ -16,6 +16,11 @@ public class AppTest extends FluentTest {
   @ClassRule
   public static ServerRule server = new ServerRule();
 
+  @Test public void loginPageIsDisplayed() {
+    goTo("http://localhost:4567/");
+    assertThat(pageSource()).contains("Username");
+  }
+
   @Test public void newArticlePageIsDisplayed() {
     goTo("http://localhost:4567/articles/new");
     assertThat(pageSource()).contains("Add an Article");
@@ -25,5 +30,29 @@ public class AppTest extends FluentTest {
     goTo("http://localhost:4567/authors/new");
     assertThat(pageSource()).contains("Add an Author");
   }
+
+  @Test public void loginWorksCorrectly() {
+    goTo("http://localhost:4567/");
+    fill("#username").with("Luca");
+    fill("#password").with("123456");
+    submit("#loginBtn");
+    assertThat(pageSource()).contains("Create Article");
+  }
+
+  // @Test
+  // public void bandGetUpdated() {
+  //   Band newBand = new Band("The Music Band", 4);
+  //   newBand.save();
+  //   String url = String.format("http://localhost:4567/band/%d", newBand.getId());
+  //   goTo(url);
+  //   click("option", withText("Edit band Name"));
+  //   fill("#newValue").with("Sex Bob-omb");
+  //   submit("#editBand");
+  //   assertThat(pageSource()).contains("Sex Bob-omb");
+  //   click("option", withText("Edit band members number"));
+  //   fill("#newValue").with("6");
+  //   submit("#editBand");
+  //   assertThat(pageSource()).contains("Number of members: 6");
+  // }
 
 }

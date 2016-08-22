@@ -7,6 +7,12 @@ public class App {
 
   public static void main (String[] args){
 
+    get("/", (request,response) -> {
+      HashMap<String,Object> model = new HashMap<String,Object>();
+      model.put("template", "/templates/index.vtl");
+      return new ModelAndView(model, "templates/layout.vtl");
+    },new VelocityTemplateEngine());
+
     get("/articles/new", (request,response) -> {
       HashMap<String,Object> model = new HashMap<String,Object>();
       model.put("template", "/templates/article-form.vtl");
