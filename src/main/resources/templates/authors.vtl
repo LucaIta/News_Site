@@ -1,0 +1,13 @@
+#if($authors)
+
+#foreach($author in $authors)
+  <p><a href="/articles/$author.getId()/edit">$article.getTitle()</a></p>
+  <p>$author.getName()</p>
+  <p>$author.getRole()</p>
+  <br>
+  <br>
+#end
+
+#else
+  <p>No author has been created yet</p>
+#end

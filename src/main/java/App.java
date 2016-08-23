@@ -98,6 +98,13 @@ public class App {
       return new ModelAndView(model, "/templates/layout.vtl");
     }, new VelocityTemplateEngine());
 
+    get("/authors", (request,response) -> {
+      HashMap<String,Object> model = new HashMap<String,Object>();
+      model.put("template", "/templates/authors.vtl");
+      model.put("authors", Author.all());
+      return new ModelAndView(model, "/templates/layout.vtl");
+    }, new VelocityTemplateEngine());
+
     post("/authors", (request,response) -> {
       String name = request.queryParams("name");
       String role = request.queryParams("role");

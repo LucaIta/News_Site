@@ -115,4 +115,13 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("How to learn Spanish");
     assertThat(pageSource()).doesNotContain("How to learn English");
   }
+
+  @Test
+  public void authorsGetDIsplayed() {
+    Author newAuthor = new Author("Luca M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink", "123456");
+    newAuthor.save();
+    goTo("http://localhost:4567/authors");
+    assertThat(pageSource()).contains("Luca M");
+  }
+
 }
