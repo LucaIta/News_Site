@@ -1,0 +1,47 @@
+<h1>Edit Author</h1>
+
+
+<form action="/authors/$author.getId()/edit" method="post">
+
+  <div class="form-group">
+    <label for="newName">Author Name</label>
+    <input id="newName" name="newName" type="text" value="$author.getName()">
+  </div>
+
+  <div class="form-group">
+    <label for="newRole">Author Role</label>
+    <input id="newRole" name="newRole" type="text" value="$author.getRole()">
+  </div>
+
+  <div class="form-group">
+    <label for="newBio">Author Bio</label>
+    <input id="newBio" name="newBio" type="text" value="$author.getBio()">
+  </div>
+
+  <div class="form-group">
+    <label for="newPicture">Author Picture URL</label>
+    <input id="newPicture" name="newPicture" type="text" value="$author.getPicture()">
+  </div>
+
+  <div class="form-group">
+    <label for="newEmail">Author Email</label>
+    <input id="newEmail" name="newEmail" type="text" value="$author.getEmail()">
+  </div>
+
+  <div class="form-group">
+    <label for="newFacebook">Author Facebook</label>
+    <input id="newFacebook" name="newFacebook" type="text" value="$author.getFacebook()">
+  </div>
+
+  <div class="form-group">
+    <label for="newTwitter">Author Twitter</label>
+    <input id="newTwitter" name="newTwitter" type="text" value="$author.getTwitter()">
+  </div>
+
+  <button type="submit" class="btn btn-success" id="editBtn">Edit Author</button>
+
+</form>
+
+<form action="/authors/$author.getId()/delete" method="post">
+  <button type="submit" class="btn btn-success" id="deleteBtn">Delete Article</button>
+</form>

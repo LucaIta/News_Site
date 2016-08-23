@@ -123,29 +123,29 @@ public class AppTest extends FluentTest {
     goTo("http://localhost:4567/authors");
     assertThat(pageSource()).contains("Luca M");
   }
-  //
-  // @Test
-  // public void authorsGetEditedCorrectly() {
-  //   Author newAuthor = new Author("Luca M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink", "123456");
-  //   newAuthor.save();
-  //   goTo("http://localhost:4567/authors");
-  //   click("a", withText("Luca M"));
-  //   fill("#newName").with("editedName");
-  //   fill("#newRole").with("editedRole");
-  //   fill("#newBio").with("editedBio");
-  //   fill("#newPicture").with("editedPicture");
-  //   fill("#newEmail").with("editedEmail");
-  //   fill("#newFacebook").with("editedFacebook");
-  //   fill("#newTwitter").with("editedTwitter");
-  //   submit("#editBtn");
-  //   click("a", withText("editedName"));
-  //   assertThat(pageSource()).contains("editedName");
-  //   assertThat(pageSource()).contains("editedRole");
-  //   assertThat(pageSource()).contains("editedBio");
-  //   assertThat(pageSource()).contains("editedPicture");
-  //   assertThat(pageSource()).contains("editedEmail");
-  //   assertThat(pageSource()).contains("editedFacebook");
-  //   assertThat(pageSource()).contains("editedTwitter");
-  // }
+
+  @Test
+  public void authorsGetEditedCorrectly() {
+    Author newAuthor = new Author("Luca M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink", "123456");
+    newAuthor.save();
+    goTo("http://localhost:4567/authors");
+    click("a", withText("Luca M"));
+    fill("#newName").with("editedName");
+    fill("#newRole").with("editedRole");
+    fill("#newBio").with("editedBio");
+    fill("#newPicture").with("editedPicture");
+    fill("#newEmail").with("editedEmail");
+    fill("#newFacebook").with("editedFacebook");
+    fill("#newTwitter").with("editedTwitter");
+    submit("#editBtn");
+    click("a", withText("editedName"));
+    assertThat(pageSource()).contains("editedName");
+    assertThat(pageSource()).contains("editedRole");
+    assertThat(pageSource()).contains("editedBio");
+    assertThat(pageSource()).contains("editedPicture");
+    assertThat(pageSource()).contains("editedEmail");
+    assertThat(pageSource()).contains("editedFacebook");
+    assertThat(pageSource()).contains("editedTwitter");
+  }
 
 }

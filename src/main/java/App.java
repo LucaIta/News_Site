@@ -105,7 +105,7 @@ public class App {
       return new ModelAndView(model, "/templates/layout.vtl");
     }, new VelocityTemplateEngine());
 
-    post("/authors", (request,response) -> {
+    post("/authors", (request,response) -> { // should be /new?
       String name = request.queryParams("name");
       String role = request.queryParams("role");
       String bio = request.queryParams("bio");
@@ -119,6 +119,33 @@ public class App {
       response.redirect("/authors/new");
       return null;
     });
+
+    post("/authors/:author_id/edit", (request,response) -> {
+
+      HashMap<String,Object> model = new HashMap<String,Object>();
+      String name = request.queryParams("newName");
+      String role = request.queryParams("newRole");
+      String bio = request.queryParams("newBio");
+      String picture = request.queryParams("newPicture");
+      String email = request.queryParams("newEmail");
+      String facebook = request.queryParams("newFacebook");
+      String twitter = request.queryParams("newTwitter");
+      int authorId = Integer.parseInt(request.params(":author_id"));
+
+      Author newAuthor = new Author(name,role,bio,picture,email,facebook,twitter,Author.find(authorId).getPassword()); // not very elegant
+
+      newAuthor.edit(authorId);
+      response.redirect("/authors");
+      return null;
+    });
+
+    get("/authors/:author_id/edit", (request,response) -> {
+      HashMap<String,Object> model = new HashMap<String,Object>();
+      model.put("template", "/templates/author-edit-form.vtl");
+      int authorId = Integer.parseInt(request.params("author_id"));
+      model.put("author", Author.find(authorId));
+      return new ModelAndView(model, "/templates/layout.vtl");
+    }, new VelocityTemplateEngine());
 
 
 
