@@ -158,4 +158,13 @@ public class AuthorTest {
     assertTrue(Author.checkCredentials("Luca","123456"));
   }
 
+  @Test
+  public void edit_editAuthorCorrectly_true() {
+    Author author1 = new Author("Luca","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink","123456");
+    author1.save();
+    Author author2 = new Author("Mark","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink","123456");
+    author2.edit(author1.getId());
+    assertEquals(author2, Author.find(author1.getId()));
+  }
+
 }

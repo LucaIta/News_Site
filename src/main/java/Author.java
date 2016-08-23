@@ -134,6 +134,25 @@ public class Author {
     }
   }
 
+
+
+  public void edit(int id) {
+    try (Connection con = DB.sql2o.open()) {
+      String sql = "UPDATE authors SET name = :name, role = :role ,bio = :bio, picture = :picture,email = :email,facebook = :facebook,twitter = :twitter WHERE id = :id";
+      con.createQuery(sql)
+        .addParameter("name",this.name)
+        .addParameter("role",this.role)
+        .addParameter("bio",this.bio)
+        .addParameter("picture",this.picture)
+        .addParameter("email",this.email)
+        .addParameter("facebook",this.facebook)
+        .addParameter("twitter",this.twitter)
+        .addParameter("id",id)
+        .executeUpdate();
+    }
+  }
+
+
   public void delete() {
     try (Connection con = DB.sql2o.open()) {
       String sql = "DELETE FROM authors WHERE id = :id;";

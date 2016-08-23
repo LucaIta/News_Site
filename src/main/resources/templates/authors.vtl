@@ -1,8 +1,7 @@
 #if($authors)
 
 #foreach($author in $authors)
-  <p><a href="/articles/$author.getId()/edit">$article.getTitle()</a></p>
-  <p>$author.getName()</p>
+  <p><a href="/authors/$author.getId()/edit">$author.getName()</a></p>
   <p>$author.getRole()</p>
   <br>
   <br>
