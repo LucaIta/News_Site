@@ -59,6 +59,14 @@ public class App {
       return null;
     });
 
+    post("/articles/:article_id/delete", (request,response) -> {
+      int articleId = Integer.parseInt(request.params("article_id"));
+      Article articleToDelete = Article.find(articleId);
+      articleToDelete.delete();
+      response.redirect("/hub");
+      return null;
+    });
+
     get("/articles/:article_id/edit", (request,response) -> {
       HashMap<String,Object> model = new HashMap<String,Object>();
       model.put("template", "/templates/article-edit-form.vtl");
@@ -104,6 +112,8 @@ public class App {
       response.redirect("/authors/new");
       return null;
     });
+
+
 
   }
 }

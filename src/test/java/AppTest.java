@@ -103,21 +103,16 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("editedAuthorByLine");
   }
 
-
-  // @Test
-  // public void bandGetUpdated() {
-  //   Band newBand = new Band("The Music Band", 4);
-  //   newBand.save();
-  //   String url = String.format("http://localhost:4567/band/%d", newBand.getId());
-  //   goTo(url);
-  //   click("option", withText("Edit band Name"));
-  //   fill("#newValue").with("Sex Bob-omb");
-  //   submit("#editBand");
-  //   assertThat(pageSource()).contains("Sex Bob-omb");
-  //   click("option", withText("Edit band members number"));
-  //   fill("#newValue").with("6");
-  //   submit("#editBand");
-  //   assertThat(pageSource()).contains("Number of members: 6");
-  // }
-
+  @Test
+  public void articleGetsDelitedCorrectly() {
+    Article article1 = new Article("How to learn English","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","authorByLine");
+    Article article2 = new Article("How to learn Spanish","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","authorByLine");
+    article1.save();
+    article2.save();
+    String url = String.format("http://localhost:4567/articles/%d/edit", article1.getId());
+    goTo(url);
+    submit("#deleteBtn");
+    assertThat(pageSource()).contains("How to learn Spanish");
+    assertThat(pageSource()).doesNotContain("How to learn English");
+  }
 }
