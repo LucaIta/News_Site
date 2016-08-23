@@ -1,43 +1,43 @@
 <h1>Edit Article</h1>
 
 
-<form action="/articles/:id/edit" method="post">
+<form action="/articles/$article.getId()/edit" method="post">
 
   <div class="form-group">
-    <label for="title">Article Title</label>
-    <input id="title" name="title" type="text" value="$article.getTitle()">
+    <label for="newTitle">Article Title</label>
+    <input id="newTitle" name="newTitle" type="text" value="$article.getTitle()">
   </div>
 
   <div class="form-group">
-    <label for="shortTitle">Article Short-Title</label>
-    <input id="shortTitle" name="shortTitle" type="text" value="$article.getShortTitle()">
+    <label for="newShortTitle">Article Short-Title</label>
+    <input id="newShortTitle" name="newShortTitle" type="text" value="$article.getShortTitle()">
   </div>
 
   <div class="form-group">
-    <label for="body">Article Body</label>
-    <input id="body" name="body" type="text" value="$article.getBody()">
+    <label for="newBody">Article Body</label>
+    <input id="newBody" name="newBody" type="text" value="$article.getBody()">
   </div>
 
   <div class="form-group">
-    <label for="picture">Article Picture URL</label>
-    <input id="picture" name="picture" type="text" value="$article.getPicture()">
+    <label for="newPicture">Article Picture URL</label>
+    <input id="newPicture" name="newPicture" type="text" value="$article.getPicture()">
   </div>
 
   <div class="form-group">
-    <label for="subhead">Article Subhead</label>
-    <input id="subhead" name="subhead" type="text" value="$article.getSubhead()">
+    <label for="newSubhead">Article Subhead</label>
+    <input id="newSubhead" name="newSubhead" type="text" value="$article.getSubhead()">
   </div>
 
   <div class="form-group">
-    <label for="subtitle">Article Subtitle</label>
-    <input id="subtitle" name="subtitle" type="text" value="$article.getSubtitle()">
+    <label for="newSubtitle">Article Subtitle</label>
+    <input id="newSubtitle" name="newSubtitle" type="text" value="$article.getSubtitle()">
   </div>
 
   <div class="form-group">
-    <label for="authorByLine">Article Author By Line</label>
-    <input id="authorByLine" name="authorByLine" type="text" value="$article.getAuthorByLine()">
+    <label for="newAuthorByLine">Article Author By Line</label>
+    <input id="newAuthorByLine" name="newAuthorByLine" type="text" value="$article.getAuthorByLine()">
   </div>
 
-  <button type="submit" class="btn btn-success">Edit Article</button>
+  <button type="submit" class="btn btn-success" id="editBtn">Edit Article</button>
 
 </form>

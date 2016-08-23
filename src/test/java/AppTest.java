@@ -78,6 +78,31 @@ public class AppTest extends FluentTest {
   }
 
   // @Test
+  // public void articleGetsEditedCorrectly() {
+  //   Article newArticle = new Article("How to learn English","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","authorByLine");
+  //   newArticle.save();
+  //   String url = String.format("http://localhost:4567/articles/%d/edit", newArticle.getId());
+  //   goTo(url);
+  //   fill("#newTitle").with("editedTitle");
+  //   fill("#newShortTitle").with("editedShortTitle");
+  //   fill("#newBody").with("editedBody");
+  //   fill("#newPicture").with("editedPicture");
+  //   fill("#newSubhead").with("editedSubhead");
+  //   fill("#newSubtitle").with("editedSubtitle");
+  //   fill("#newAuthorByLine").with("editedAuthorByLine");
+  //   submit("#editBtn");
+  //   assertThat(pageSource()).contains("click here to create a new Article");
+  //   assertThat(pageSource()).contains("editedTitle");
+  //   // assertThat(pageSource()).contains("editedShortTitle");
+  //   assertThat(pageSource()).contains("editedBody");
+  //   // assertThat(pageSource()).contains("editedPicture");
+  //   // assertThat(pageSource()).contains("editedSubhead");
+  //   // assertThat(pageSource()).contains("editedSubtitle");
+  //   // assertThat(pageSource()).contains("editedAuthorByLine");
+  // }
+
+
+  // @Test
   // public void bandGetUpdated() {
   //   Band newBand = new Band("The Music Band", 4);
   //   newBand.save();

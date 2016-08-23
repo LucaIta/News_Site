@@ -66,6 +66,24 @@ public class App {
       return new ModelAndView(model, "/templates/layout.vtl");
     }, new VelocityTemplateEngine());
 
+    post("/articles/:article_id/edit", (request,response) -> {
+
+      HashMap<String,Object> model = new HashMap<String,Object>();
+      String title = request.queryParams("newTitle");
+      String shortTitle = request.queryParams("newShortTitle");
+      String body = request.queryParams("newBody");
+      String picture = request.queryParams("newPicture");
+      String subhead = request.queryParams("newSubhead");
+      String subtitle = request.queryParams("newSubtitle");
+      String authorByLine = request.queryParams("newAuthorByLine");
+      int articleId = Integer.parseInt(request.params(":article_id"));
+
+      Article newArticle = new Article(title,shortTitle,body,picture,subhead,subtitle,authorByLine);
+      newArticle.edit(articleId);
+      response.redirect("/hub");
+      return null;
+    });
+
     get("/authors/new", (request,response) -> {
       HashMap<String,Object> model = new HashMap<String,Object>();
       model.put("template", "/templates/author-form.vtl");

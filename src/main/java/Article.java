@@ -136,7 +136,25 @@ public class Article {
         .executeUpdate().getKey();
     }
   }
-  
+
+  public void edit(int id) {
+    try (Connection con = DB.sql2o.open()) {
+      String sql = "UPDATE articles SET title = :title, shortTitle = :shortTitle ,body = :body, picture = :picture,subhead = :subhead,subtitle = :subtitle,authorByLine = :authorByLine WHERE id = :id";
+      con.createQuery(sql)
+        .addParameter("title",this.title)
+        .addParameter("shortTitle",this.shortTitle)
+        .addParameter("body",this.body)
+        .addParameter("picture",this.picture)
+        .addParameter("subhead",this.subhead)
+        .addParameter("subtitle",this.subtitle)
+        .addParameter("authorByLine",this.authorByLine)
+        .addParameter("id",id)
+        .executeUpdate();
+    }
+  }
+
+  // the SQL string is correct, if I insert it manually, it works ...
+
   public void delete() {
     try (Connection con = DB.sql2o.open()) {
       String sql = "DELETE FROM articles WHERE id = :id;";

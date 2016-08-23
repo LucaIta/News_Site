@@ -147,5 +147,16 @@ public class ArticleTest {
     assertTrue(Article.find(newArticle.getId()).equals(newArticle));
   }
 
+  @Test
+  public void edit_editArticleCorrectly_true() {
+    Article newArticle = new Article("titleToBeEdited","shortTitle","body","picture","subhead","subtitle","authorByLine");
+    newArticle.save();
+    int articleId = newArticle.getId();
+    Article editedArticle = new Article("editedTitle","editedShortTitle","editedBody","editedPicture","editedSubhead","editedSubtitle","editedAuthorByLine");
+    editedArticle.edit(articleId);
+    assertTrue(Article.find(articleId).equals(editedArticle));
+  }
+
+
 
 }
