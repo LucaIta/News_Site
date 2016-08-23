@@ -147,7 +147,12 @@ public class App {
       return new ModelAndView(model, "/templates/layout.vtl");
     }, new VelocityTemplateEngine());
 
-
+    post("/authors/:author_id/delete", (request,response) -> {
+      int authorId = Integer.parseInt(request.params("author_id"));
+      Author.find(authorId).delete();
+      response.redirect("/authors");
+      return null;
+    });
 
   }
 }

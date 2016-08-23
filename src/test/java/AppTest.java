@@ -148,4 +148,17 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("editedTwitter");
   }
 
+  @Test
+  public void authorsGetDelitedCorrectly() {
+    Author author1 = new Author("Luca M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink", "123456");
+    Author author2 = new Author("Mark M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink", "123456");
+    author1.save();
+    author2.save();
+    String url = String.format("http://localhost:4567/authors/%d/edit", author1.getId());
+    goTo(url);
+    submit("#deleteBtn");
+    assertThat(pageSource()).contains("Mark M");
+    assertThat(pageSource()).doesNotContain("Luca M");
+  }
+
 }
