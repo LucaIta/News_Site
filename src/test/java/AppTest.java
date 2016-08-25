@@ -41,7 +41,7 @@ public class AppTest extends FluentTest {
 
   @Test
   public void loginWorksCorrectly() {
-    Author newAuthor = new Author("Luca M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink", "123456");
+    Author newAuthor = new Author("Luca M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink", "123456",true,true,true,true,true,true);
     newAuthor.save();
     goTo("http://localhost:4567/");
     fill("#username").with("Luca M");
@@ -118,7 +118,7 @@ public class AppTest extends FluentTest {
 
   @Test
   public void authorsGetDisplayed() {
-    Author newAuthor = new Author("Luca M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink", "123456");
+    Author newAuthor = new Author("Luca M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink", "123456",true,true,true,true,true,true);
     newAuthor.save();
     goTo("http://localhost:4567/authors");
     assertThat(pageSource()).contains("Luca M");
@@ -126,7 +126,7 @@ public class AppTest extends FluentTest {
 
   @Test
   public void authorsGetEditedCorrectly() {
-    Author newAuthor = new Author("Luca M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink", "123456");
+    Author newAuthor = new Author("Luca M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink", "123456",true,true,true,true,true,true);
     newAuthor.save();
     goTo("http://localhost:4567/authors");
     click("a", withText("Luca M"));
@@ -150,8 +150,8 @@ public class AppTest extends FluentTest {
 
   @Test
   public void authorsGetDelitedCorrectly() {
-    Author author1 = new Author("Luca M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink", "123456");
-    Author author2 = new Author("Mark M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink", "123456");
+    Author author1 = new Author("Luca M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink", "123456",true,true,true,true,true,true);
+    Author author2 = new Author("Mark M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink", "123456",true,true,true,true,true,true);
     author1.save();
     author2.save();
     String url = String.format("http://localhost:4567/authors/%d/edit", author1.getId());

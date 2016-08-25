@@ -114,7 +114,13 @@ public class App {
       String facebook = request.queryParams("facebook");
       String twitter = request.queryParams("twitter");
       String password = "123456"; // currently we are using fixed password, they are not chosen by the admin
-      Author newAuthor = new Author(name,role,bio,picture,email,facebook,twitter,password);
+      boolean canCreateAuthor = Boolean.parseBoolean(request.queryParams("canCreateAuthor"));
+      boolean canCreateArticle = Boolean.parseBoolean(request.queryParams("canCreateArticle"));
+      boolean canEditAuthor = Boolean.parseBoolean(request.queryParams("canEditAuthor"));
+      boolean canEditArticle = Boolean.parseBoolean(request.queryParams("canEditArticle"));
+      boolean canDeleteArticle = Boolean.parseBoolean(request.queryParams("canDeleteArticle"));
+      boolean canDeleteAuthor = Boolean.parseBoolean(request.queryParams("canDeleteAuthor"));
+      Author newAuthor = new Author(name,role,bio,picture,email,facebook,twitter,password,canCreateAuthor,canCreateArticle,canEditAuthor,canEditArticle,canDeleteArticle,canDeleteAuthor);
       newAuthor.save();
       response.redirect("/authors/new");
       return null;
@@ -131,8 +137,13 @@ public class App {
       String facebook = request.queryParams("newFacebook");
       String twitter = request.queryParams("newTwitter");
       int authorId = Integer.parseInt(request.params(":author_id"));
-
-      Author newAuthor = new Author(name,role,bio,picture,email,facebook,twitter,Author.find(authorId).getPassword()); // not very elegant
+      boolean canCreateAuthor = Boolean.parseBoolean(request.queryParams("canCreateAuthor"));
+      boolean canCreateArticle = Boolean.parseBoolean(request.queryParams("canCreateArticle"));
+      boolean canEditAuthor = Boolean.parseBoolean(request.queryParams("canEditAuthor"));
+      boolean canEditArticle = Boolean.parseBoolean(request.queryParams("canEditArticle"));
+      boolean canDeleteArticle = Boolean.parseBoolean(request.queryParams("canDeleteArticle"));
+      boolean canDeleteAuthor = Boolean.parseBoolean(request.queryParams("canDeleteAuthor"));
+      Author newAuthor = new Author(name,role,bio,picture,email,facebook,twitter,Author.find(authorId).getPassword(),canCreateAuthor,canCreateArticle,canEditAuthor,canEditArticle,canDeleteArticle,canDeleteAuthor); // not very elegant because of the Author.get....
 
       newAuthor.edit(authorId);
       response.redirect("/authors");

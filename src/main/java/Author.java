@@ -11,8 +11,20 @@ public class Author {
   private String twitter;
   private int id;
   private String password;
+  private boolean canCreateAuthor;
+  private boolean canCreateArticle;
+  private boolean canEditAuthor;
+  private boolean canEditArticle;
+  private boolean canDeleteArticle;
+  private boolean canDeleteAuthor;
 
-  public Author(String name,String role,String bio,String picture,String email,String facebook,String twitter,String password) {
+  // Creazione autori
+  // Creazione articoli (amministratore non potrebbe)
+  // Canzellazione (se ha il permesso puo cancellare tuti)
+  // Modifica articolo (se ha questo permesso puo modificare tutti)
+  // Modifica autori
+
+  public Author(String name,String role,String bio,String picture,String email,String facebook,String twitter,String password,   boolean canCreateAuthor, boolean canCreateArticle, boolean canEditAuthor, boolean canEditArticle,boolean canDeleteArticle,boolean canDeleteAuthor) {
     this.name = name;
     this.role = role;
     this.bio = bio;
@@ -21,6 +33,12 @@ public class Author {
     this.facebook = facebook;
     this.twitter = twitter;
     this.password = password;
+    this.canCreateAuthor = canCreateAuthor;
+    this.canCreateArticle = canCreateArticle;
+    this.canEditAuthor = canEditAuthor;
+    this.canEditArticle = canEditArticle;
+    this.canDeleteArticle = canDeleteArticle;
+    this.canDeleteAuthor = canDeleteAuthor;
   }
 
   @Override
