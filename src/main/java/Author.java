@@ -138,7 +138,7 @@ public class Author {
 
   public void save() {
     try (Connection con = DB.sql2o.open()) {
-      String sql = "INSERT into authors (name,role,bio,picture,email,facebook,twitter,password) VALUES (:name,:role,:bio,:picture,:email,:facebook,:twitter,:password);";
+      String sql = "INSERT into authors (name,role,bio,picture,email,facebook,twitter,password,canCreateAuthor,canCreateArticle,canEditAuthor,canEditArticle,canDeleteArticle,canDeleteAuthor) VALUES (:name,:role,:bio,:picture,:email,:facebook,:twitter,:password,:canCreateAuthor,:canCreateArticle,:canEditAuthor,:canEditArticle,:canDeleteArticle,:canDeleteAuthor);";
       this.id = (int) con.createQuery(sql, true)
         .addParameter("name",this.name)
         .addParameter("role",this.role)
@@ -148,6 +148,12 @@ public class Author {
         .addParameter("facebook",this.facebook)
         .addParameter("twitter",this.twitter)
         .addParameter("password",this.password)
+        .addParameter("canCreateAuthor",this.canCreateAuthor)
+        .addParameter("canCreateArticle",this.canCreateArticle)
+        .addParameter("canEditAuthor",this.canEditAuthor)
+        .addParameter("canEditArticle",this.canEditArticle)
+        .addParameter("canDeleteArticle",this.canDeleteArticle)
+        .addParameter("canDeleteAuthor",this.canDeleteAuthor)
         .executeUpdate().getKey();
     }
   }
@@ -156,7 +162,7 @@ public class Author {
 
   public void edit(int id) {
     try (Connection con = DB.sql2o.open()) {
-      String sql = "UPDATE authors SET name = :name, role = :role ,bio = :bio, picture = :picture,email = :email,facebook = :facebook,twitter = :twitter WHERE id = :id";
+      String sql = "UPDATE authors SET name = :name, role = :role ,bio = :bio, picture = :picture,email = :email,facebook = :facebook,twitter = :twitter ,canCreateAuthor = :canCreateAuthor,canCreateArticle = :canCreateArticle,canEditAuthor = :canEditAuthor,canEditArticle = :canEditArticle,canDeleteArticle = :canDeleteArticle,canDeleteAuthor = :canDeleteAuthor WHERE id = :id";
       con.createQuery(sql)
         .addParameter("name",this.name)
         .addParameter("role",this.role)
@@ -165,6 +171,12 @@ public class Author {
         .addParameter("email",this.email)
         .addParameter("facebook",this.facebook)
         .addParameter("twitter",this.twitter)
+        .addParameter("canCreateAuthor",this.canCreateAuthor)
+        .addParameter("canCreateArticle",this.canCreateArticle)
+        .addParameter("canEditAuthor",this.canEditAuthor)
+        .addParameter("canEditArticle",this.canEditArticle)
+        .addParameter("canDeleteArticle",this.canDeleteArticle)
+        .addParameter("canDeleteAuthor",this.canDeleteAuthor)
         .addParameter("id",id)
         .executeUpdate();
     }

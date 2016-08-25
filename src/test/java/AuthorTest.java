@@ -160,9 +160,9 @@ public class AuthorTest {
 
   @Test
   public void edit_editAuthorCorrectly_true() {
-    Author author1 = new Author("Luca","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink","123456",true,true,true,true,true,true);
+    Author author1 = new Author("Luca","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink","123456",true,false,true,false,true,false);
     author1.save();
-    Author author2 = new Author("Mark","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink","123456",true,true,true,true,true,true);
+    Author author2 = new Author("Mark","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink","123456",false,true,false,true,false,true);
     author2.edit(author1.getId());
     assertEquals(author2, Author.find(author1.getId()));
   }
