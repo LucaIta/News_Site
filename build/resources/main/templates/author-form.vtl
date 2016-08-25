@@ -38,6 +38,43 @@
     <input id="twitter" name="twitter" type="text">
   </div>
 
+
+  <div class="checkbox">
+    <label for="canCreateAuthor">Can Create Author
+      <input name= "canCreateAuthor" type="checkbox" value="true">
+    </label>
+
+    <label for="canCreateArticle">Can Create Article
+      <input name= "canCreateArticle" type="checkbox" value="true">
+    </label>
+
+    <label for="canEditAuthor">Can Edit Author
+      <input name= "canEditAuthor" type="checkbox" value="true">
+    </label>
+
+    <label for="canEditArticle">Can Edit Article
+      <input name= "canEditArticle" type="checkbox" value="true">
+    </label>
+
+    <label for="canDeleteArticle">Can Delete Article
+      <input name= "canDeleteArticle" type="checkbox" value="true">
+    </label>
+
+    <label for="canDeleteAuthor">Can Delete Author
+      <input name= "canDeleteAuthor" type="checkbox" value="true">
+    </label>
+  </div>
+
+  <!--
+  <div class="checkbox">
+    #foreach($venue in $venues)
+    <label>
+      <input name= "checkbox" type="checkbox" value="$venue.getId()">
+      $venue.getName()
+    </label>
+    #end
+  </div> -->
+
   <button type="submit" class="btn btn-success">Add Author</button>
 
 </form>
