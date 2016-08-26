@@ -40,27 +40,45 @@
 
   <div class="checkbox">
     <label for="canCreateAuthor">Can Create Author
-      <input id="canCreateAuthor" name= "canCreateAuthor" type="checkbox" value="true">
+      <input id="canCreateAuthor" name= "canCreateAuthor" type="checkbox" value="true"
+      #if($author.getCanCreateAuthor())
+      checked
+      #end>
     </label>
 
     <label for="canCreateArticle">Can Create Article
-      <input id="canCreateArticle" name= "canCreateArticle" type="checkbox" value="true">
+      <input id="canCreateArticle" name= "canCreateArticle" type="checkbox" value="true"
+      #if($author.getCanCreateArticle())
+      checked
+      #end>
     </label>
 
     <label for="canEditAuthor">Can Edit Author
-      <input id="canEditAuthor" name= "canEditAuthor" type="checkbox" value="true">
+      <input id="canEditAuthor" name= "canEditAuthor" type="checkbox" value="true"
+      #if($author.getCanEditAuthor())
+      checked
+      #end>
     </label>
 
     <label for="canEditArticle">Can Edit Article
-      <input id="canEditArticle" name= "canEditArticle" type="checkbox" value="true">
+      <input id="canEditArticle" name= "canEditArticle" type="checkbox" value="true"
+      #if($author.getCanEditArticle())
+      checked
+      #end>
     </label>
 
     <label for="canDeleteArticle">Can Delete Article
-      <input id="canDeleteArticle" name= "canDeleteArticle" type="checkbox" value="true">
+      <input id="canDeleteArticle" name= "canDeleteArticle" type="checkbox" value="true"
+      #if($author.getCanDeleteArticle())
+      checked
+      #end>
     </label>
 
     <label for="canDeleteAuthor">Can Delete Author
-      <input id="canDeleteAuthor" name= "canDeleteAuthor" type="checkbox" value="true">
+      <input id="canDeleteAuthor" name= "canDeleteAuthor" type="checkbox" value="true"
+      #if($author.getCanDeleteAuthor())
+      checked
+      #end>
     </label>
   </div>
 
