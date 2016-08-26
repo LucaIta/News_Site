@@ -140,6 +140,7 @@ public class AppTest extends FluentTest {
     fill("#newEmail").with("editedEmail");
     fill("#newFacebook").with("editedFacebook");
     fill("#newTwitter").with("editedTwitter");
+    fill("#newUsername").with("editedUsername");
     click("#canCreateAuthor"); // here I'm clicking in order to unflag those checkboxes
     click("#canEditAuthor");
     click("#canDeleteAuthor");
@@ -152,6 +153,7 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("editedEmail");
     assertThat(pageSource()).contains("editedFacebook");
     assertThat(pageSource()).contains("editedTwitter");
+    assertThat(pageSource()).contains("editedUsername");
 
     try (Connection con = DB.sql2o.open()) {
       String sql = "SELECT * FROM authors";

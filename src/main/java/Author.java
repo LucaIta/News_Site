@@ -117,13 +117,6 @@ public class Author {
     return this.canDeleteAuthor;
   }
 
-  // public static int getUserIdFromName(String name) {
-  //   try (Connection con = DB.sql2o.open()) {
-  //     String sql = "SELECT id FROM authors WHERE name = :name";
-  //     return con.createQuery(sql).addParameter("name",name).executeAndFetchFirst(int.class);
-  //   }
-  // }
-
   public void editName(String name) {
     try (Connection con = DB.sql2o.open()) {
       String sql = "UPDATE authors SET name = :name WHERE id = :id";
@@ -207,7 +200,7 @@ public class Author {
 
   public void edit(int id) {
     try (Connection con = DB.sql2o.open()) {
-      String sql = "UPDATE authors SET name = :name, role = :role ,bio = :bio, picture = :picture,email = :email,facebook = :facebook,twitter = :twitter ,canCreateAuthor = :canCreateAuthor,canCreateArticle = :canCreateArticle,canEditAuthor = :canEditAuthor,canEditArticle = :canEditArticle,canDeleteArticle = :canDeleteArticle,canDeleteAuthor = :canDeleteAuthor WHERE id = :id";
+      String sql = "UPDATE authors SET name = :name, role = :role ,bio = :bio, picture = :picture,email = :email,facebook = :facebook,twitter = :twitter,username = :username ,canCreateAuthor = :canCreateAuthor,canCreateArticle = :canCreateArticle,canEditAuthor = :canEditAuthor,canEditArticle = :canEditArticle,canDeleteArticle = :canDeleteArticle,canDeleteAuthor = :canDeleteAuthor WHERE id = :id";
       con.createQuery(sql)
         .addParameter("name",this.name)
         .addParameter("role",this.role)
@@ -216,6 +209,7 @@ public class Author {
         .addParameter("email",this.email)
         .addParameter("facebook",this.facebook)
         .addParameter("twitter",this.twitter)
+        .addParameter("username",this.username)
         .addParameter("canCreateAuthor",this.canCreateAuthor)
         .addParameter("canCreateArticle",this.canCreateArticle)
         .addParameter("canEditAuthor",this.canEditAuthor)
