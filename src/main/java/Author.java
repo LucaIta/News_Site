@@ -81,6 +81,10 @@ public class Author {
     return this.twitter;
   }
 
+  public String getUsername() {
+    return this.username;
+  }
+
   public int getId() {
     return this.id;
   }

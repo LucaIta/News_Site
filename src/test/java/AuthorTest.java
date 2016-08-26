@@ -51,6 +51,12 @@ public class AuthorTest {
   }
 
   @Test
+  public void getUsername_retrievesUsernameCorrectly_LucaABC() {
+    Author newAuthor = new Author("Luca","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink","LucaABC", "123456",true,true,true,true,true,true);
+    assertEquals(newAuthor.getUsername(),"LucaABC");
+  }
+
+  @Test
   public void getTwitter_retrievesTwitterContactCorrectly_twitterLink() {
     Author newAuthor = new Author("Luca","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink","LucaABC", "123456",true,true,true,true,true,true);
     assertEquals(newAuthor.getTwitter(),"twitterLink");
