@@ -217,6 +217,14 @@ public class AppTest extends FluentTest {
         && newAuthor.getCanDeleteArticle());
   }
 
-
+  @Test
+  public void ifUsernameIsAlreadyTakenAuthorDoesNotGetCreated() {
+    Author author1 = new Author("Luca M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink","LucaABC","123456",true,true,true,true,true,true);
+    author1.save();
+    goTo("http://localhost:4567/authors/new");
+    fill("#username").with("LucaABC");
+    submit("#createAuthorBtn");
+    assertEquals(1,Author.all().size());
+  }
 
 }

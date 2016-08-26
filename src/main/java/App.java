@@ -109,24 +109,28 @@ public class App {
     }, new VelocityTemplateEngine());
 
     post("/authors", (request,response) -> { // should be /new?
-      String name = request.queryParams("name");
-      String role = request.queryParams("role");
-      String bio = request.queryParams("bio");
-      String picture = request.queryParams("picture");
-      String email = request.queryParams("email");
-      String facebook = request.queryParams("facebook");
-      String twitter = request.queryParams("twitter");
       String username = request.queryParams("username");
-      String password = "123456"; // currently we are using fixed password, they are not chosen by the admin
-      boolean canCreateAuthor = Boolean.parseBoolean(request.queryParams("canCreateAuthor"));
-      boolean canCreateArticle = Boolean.parseBoolean(request.queryParams("canCreateArticle"));
-      boolean canEditAuthor = Boolean.parseBoolean(request.queryParams("canEditAuthor"));
-      boolean canEditArticle = Boolean.parseBoolean(request.queryParams("canEditArticle"));
-      boolean canDeleteArticle = Boolean.parseBoolean(request.queryParams("canDeleteArticle"));
-      boolean canDeleteAuthor = Boolean.parseBoolean(request.queryParams("canDeleteAuthor"));
-      Author newAuthor = new Author(name,role,bio,picture,email,facebook,twitter,username,password,canCreateAuthor,canCreateArticle,canEditAuthor,canEditArticle,canDeleteArticle,canDeleteAuthor);
-      newAuthor.save();
-      response.redirect("/authors/new");
+      if (Author.getExistingUsernames().contains(username)) {
+        response.redirect("/authors/new");
+      } else {
+        String name = request.queryParams("name");
+        String role = request.queryParams("role");
+        String bio = request.queryParams("bio");
+        String picture = request.queryParams("picture");
+        String email = request.queryParams("email");
+        String facebook = request.queryParams("facebook");
+        String twitter = request.queryParams("twitter");
+        String password = "123456"; // currently we are using fixed password, they are not chosen by the admin
+        boolean canCreateAuthor = Boolean.parseBoolean(request.queryParams("canCreateAuthor"));
+        boolean canCreateArticle = Boolean.parseBoolean(request.queryParams("canCreateArticle"));
+        boolean canEditAuthor = Boolean.parseBoolean(request.queryParams("canEditAuthor"));
+        boolean canEditArticle = Boolean.parseBoolean(request.queryParams("canEditArticle"));
+        boolean canDeleteArticle = Boolean.parseBoolean(request.queryParams("canDeleteArticle"));
+        boolean canDeleteAuthor = Boolean.parseBoolean(request.queryParams("canDeleteAuthor"));
+        Author newAuthor = new Author(name,role,bio,picture,email,facebook,twitter,username,password,canCreateAuthor,canCreateArticle,canEditAuthor,canEditArticle,canDeleteArticle,canDeleteAuthor);
+        newAuthor.save();
+        response.redirect("/authors/new");
+      }
       return null;
     });
 
