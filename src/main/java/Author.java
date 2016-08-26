@@ -2,6 +2,7 @@ import java.util.List;
 import org.sql2o.*;
 
 public class Author {
+  private String username;
   private String name;
   private String role;
   private String bio;
@@ -24,7 +25,7 @@ public class Author {
   // Modifica articolo (se ha questo permesso puo modificare tutti)
   // Modifica autori
 
-  public Author(String name,String role,String bio,String picture,String email,String facebook,String twitter,String password,   boolean canCreateAuthor, boolean canCreateArticle, boolean canEditAuthor, boolean canEditArticle,boolean canDeleteArticle,boolean canDeleteAuthor) {
+  public Author(String name,String role,String bio,String picture,String email,String facebook,String twitter,String username,String password,   boolean canCreateAuthor, boolean canCreateArticle, boolean canEditAuthor, boolean canEditArticle,boolean canDeleteArticle,boolean canDeleteAuthor) {
     this.name = name;
     this.role = role;
     this.bio = bio;
@@ -32,6 +33,7 @@ public class Author {
     this.email = email;
     this.facebook = facebook;
     this.twitter = twitter;
+    this.username = username;
     this.password = password;
     this.canCreateAuthor = canCreateAuthor;
     this.canCreateArticle = canCreateArticle;
@@ -111,6 +113,13 @@ public class Author {
     return this.canDeleteAuthor;
   }
 
+  // public static int getUserIdFromName(String name) {
+  //   try (Connection con = DB.sql2o.open()) {
+  //     String sql = "SELECT id FROM authors WHERE name = :name";
+  //     return con.createQuery(sql).addParameter("name",name).executeAndFetchFirst(int.class);
+  //   }
+  // }
+
   public void editName(String name) {
     try (Connection con = DB.sql2o.open()) {
       String sql = "UPDATE authors SET name = :name WHERE id = :id";
@@ -162,7 +171,7 @@ public class Author {
 
   public void save() {
     try (Connection con = DB.sql2o.open()) {
-      String sql = "INSERT into authors (name,role,bio,picture,email,facebook,twitter,password,canCreateAuthor,canCreateArticle,canEditAuthor,canEditArticle,canDeleteArticle,canDeleteAuthor) VALUES (:name,:role,:bio,:picture,:email,:facebook,:twitter,:password,:canCreateAuthor,:canCreateArticle,:canEditAuthor,:canEditArticle,:canDeleteArticle,:canDeleteAuthor);";
+      String sql = "INSERT into authors (name,role,bio,picture,email,facebook,twitter,username,password,canCreateAuthor,canCreateArticle,canEditAuthor,canEditArticle,canDeleteArticle,canDeleteAuthor) VALUES (:name,:role,:bio,:picture,:email,:facebook,:twitter,:username,:password,:canCreateAuthor,:canCreateArticle,:canEditAuthor,:canEditArticle,:canDeleteArticle,:canDeleteAuthor);";
       this.id = (int) con.createQuery(sql, true)
         .addParameter("name",this.name)
         .addParameter("role",this.role)
@@ -171,6 +180,7 @@ public class Author {
         .addParameter("email",this.email)
         .addParameter("facebook",this.facebook)
         .addParameter("twitter",this.twitter)
+        .addParameter("username",this.username)
         .addParameter("password",this.password)
         .addParameter("canCreateAuthor",this.canCreateAuthor)
         .addParameter("canCreateArticle",this.canCreateArticle)
@@ -179,6 +189,13 @@ public class Author {
         .addParameter("canDeleteArticle",this.canDeleteArticle)
         .addParameter("canDeleteAuthor",this.canDeleteAuthor)
         .executeUpdate().getKey();
+    }
+  }
+
+  public static List<String> getExistingUsernames() {
+    try (Connection con = DB.sql2o.open()) {
+      String sql = "SELECT username FROM authors;";
+      return con.createQuery(sql).executeAndFetch(String.class);
     }
   }
 

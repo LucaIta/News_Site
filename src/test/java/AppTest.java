@@ -1,5 +1,4 @@
 import org.fluentlenium.adapter.FluentTest;
-import org.junit.*;
 import org.junit.ClassRule;
 import org.junit.Test;
 import org.junit.Rule;
@@ -45,7 +44,7 @@ public class AppTest extends FluentTest {
 
   @Test
   public void loginWorksCorrectly() {
-    Author newAuthor = new Author("Luca M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink", "123456",true,true,true,true,true,true);
+    Author newAuthor = new Author("Luca M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink","LucaABC", "123456",true,true,true,true,true,true);
     newAuthor.save();
     goTo("http://localhost:4567/");
     fill("#username").with("Luca M");
@@ -122,7 +121,7 @@ public class AppTest extends FluentTest {
 
   @Test
   public void authorsGetDisplayed() {
-    Author newAuthor = new Author("Luca M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink", "123456",true,true,true,true,true,true);
+    Author newAuthor = new Author("Luca M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink","LucaABC", "123456",true,true,true,true,true,true);
     newAuthor.save();
     goTo("http://localhost:4567/authors");
     assertThat(pageSource()).contains("Luca M");
@@ -130,7 +129,7 @@ public class AppTest extends FluentTest {
 
   @Test
   public void authorsGetEditedCorrectly() {
-    Author newAuthor = new Author("Luca M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink", "123456",true,true,true,true,true,true);
+    Author newAuthor = new Author("Luca M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink","LucaABC", "123456",true,true,true,true,true,true);
     newAuthor.save();
     goTo("http://localhost:4567/authors");
     click("a", withText("Luca M"));
@@ -141,11 +140,9 @@ public class AppTest extends FluentTest {
     fill("#newEmail").with("editedEmail");
     fill("#newFacebook").with("editedFacebook");
     fill("#newTwitter").with("editedTwitter");
-
-    click("#canCreateAuthor"); // here I/m clicking in order to unflag those checkboxes
+    click("#canCreateAuthor"); // here I'm clicking in order to unflag those checkboxes
     click("#canEditAuthor");
     click("#canDeleteAuthor");
-
     submit("#editBtn");
     click("a", withText("editedName"));
     assertThat(pageSource()).contains("editedName");
@@ -167,8 +164,8 @@ public class AppTest extends FluentTest {
 
   @Test
   public void authorsGetDelitedCorrectly() {
-    Author author1 = new Author("Luca M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink", "123456",true,true,true,true,true,true);
-    Author author2 = new Author("Mark M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink", "123456",true,true,true,true,true,true);
+    Author author1 = new Author("Luca M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink","LucaABC","123456",true,true,true,true,true,true);
+    Author author2 = new Author("Mark M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink","LucaABC","123456",true,true,true,true,true,true);
     author1.save();
     author2.save();
     String url = String.format("http://localhost:4567/authors/%d/edit", author1.getId());
@@ -188,6 +185,7 @@ public class AppTest extends FluentTest {
     fill("#email").with("Email");
     fill("#facebook").with("Facebook");
     fill("#twitter").with("Twitter");
+    fill("#username").with("Username");
     click("#canCreateAuthor");
     click("#canCreateArticle");
     click("#canEditAuthor");

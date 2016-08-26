@@ -17,9 +17,13 @@ public class App {
       HashMap<String,Object> model = new HashMap<String,Object>();
       String username = request.queryParams("username");
       String password = request.queryParams("password");
+      // int userId =
       if (Author.checkCredentials(username,password)) {
         model.put("template", "/templates/hub.vtl");
         return new ModelAndView(model, "templates/layout.vtl");
+        // put user id in the session
+        // request.session().attribute("userId",);
+
       } else {
         model.put("template", "/templates/index.vtl");
         return new ModelAndView(model, "templates/layout.vtl");
@@ -112,6 +116,7 @@ public class App {
       String email = request.queryParams("email");
       String facebook = request.queryParams("facebook");
       String twitter = request.queryParams("twitter");
+      String username = request.queryParams("username");
       String password = "123456"; // currently we are using fixed password, they are not chosen by the admin
       boolean canCreateAuthor = Boolean.parseBoolean(request.queryParams("canCreateAuthor"));
       boolean canCreateArticle = Boolean.parseBoolean(request.queryParams("canCreateArticle"));
@@ -119,7 +124,7 @@ public class App {
       boolean canEditArticle = Boolean.parseBoolean(request.queryParams("canEditArticle"));
       boolean canDeleteArticle = Boolean.parseBoolean(request.queryParams("canDeleteArticle"));
       boolean canDeleteAuthor = Boolean.parseBoolean(request.queryParams("canDeleteAuthor"));
-      Author newAuthor = new Author(name,role,bio,picture,email,facebook,twitter,password,canCreateAuthor,canCreateArticle,canEditAuthor,canEditArticle,canDeleteArticle,canDeleteAuthor);
+      Author newAuthor = new Author(name,role,bio,picture,email,facebook,twitter,username,password,canCreateAuthor,canCreateArticle,canEditAuthor,canEditArticle,canDeleteArticle,canDeleteAuthor);
       newAuthor.save();
       response.redirect("/authors/new");
       return null;
@@ -135,6 +140,7 @@ public class App {
       String email = request.queryParams("newEmail");
       String facebook = request.queryParams("newFacebook");
       String twitter = request.queryParams("newTwitter");
+      String username = request.queryParams("newUsername");
       int authorId = Integer.parseInt(request.params(":author_id"));
       boolean canCreateAuthor = Boolean.parseBoolean(request.queryParams("canCreateAuthor"));
       boolean canCreateArticle = Boolean.parseBoolean(request.queryParams("canCreateArticle"));
@@ -142,7 +148,7 @@ public class App {
       boolean canEditArticle = Boolean.parseBoolean(request.queryParams("canEditArticle"));
       boolean canDeleteArticle = Boolean.parseBoolean(request.queryParams("canDeleteArticle"));
       boolean canDeleteAuthor = Boolean.parseBoolean(request.queryParams("canDeleteAuthor"));
-      Author newAuthor = new Author(name,role,bio,picture,email,facebook,twitter,Author.find(authorId).getPassword(),canCreateAuthor,canCreateArticle,canEditAuthor,canEditArticle,canDeleteArticle,canDeleteAuthor); // not very elegant because of the Author.get....
+      Author newAuthor = new Author(name,role,bio,picture,email,facebook,twitter,username,Author.find(authorId).getPassword(),canCreateAuthor,canCreateArticle,canEditAuthor,canEditArticle,canDeleteArticle,canDeleteAuthor); // not very elegant because of the Author.get....
 
       newAuthor.edit(authorId);
       response.redirect("/authors");
