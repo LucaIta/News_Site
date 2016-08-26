@@ -85,7 +85,6 @@ public class App {
       String subtitle = request.queryParams("newSubtitle");
       String authorByLine = request.queryParams("newAuthorByLine");
       int articleId = Integer.parseInt(request.params(":article_id"));
-
       Article newArticle = new Article(title,shortTitle,body,picture,subhead,subtitle,authorByLine);
       newArticle.edit(articleId);
       response.redirect("/hub");
