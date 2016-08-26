@@ -1,11 +1,15 @@
 import org.fluentlenium.adapter.FluentTest;
+import org.junit.*;
 import org.junit.ClassRule;
 import org.junit.Test;
 import org.junit.Rule;
+import static org.junit.Assert.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.fluentlenium.core.filter.FilterConstructor.*;
+import org.sql2o.*;
+
 
 public class AppTest extends FluentTest {
   public WebDriver webDriver = new HtmlUnitDriver();
@@ -171,8 +175,12 @@ public class AppTest extends FluentTest {
     fill("#email").with("Email");
     fill("#facebook").with("Facebook");
     fill("#twitter").with("Twitter");
-    find("#canCreateAuthor").click();
-    // click("#canCreateAuthor");
+    click("#canCreateAuthor");
+    click("#canCreateArticle");
+    click("#canEditAuthor");
+    click("#canEditArticle");
+    click("#canDeleteAuthor");
+    click("#canDeleteArticle");
     submit("#createAuthorBtn");
     goTo("http://localhost:4567/authors");
     click("a", withText("Name"));
@@ -183,7 +191,17 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("Email");
     assertThat(pageSource()).contains("Facebook");
     assertThat(pageSource()).contains("Twitter");
-
+    Author newAuthor;
+    try (Connection con = DB.sql2o.open()) {
+      String sql = "SELECT * FROM authors";
+      newAuthor = con.createQuery(sql).executeAndFetchFirst(Author.class);
+    }
+    assertTrue(newAuthor.getCanCreateAuthor()
+        && newAuthor.getCanCreateArticle()
+        && newAuthor.getCanEditAuthor()
+        && newAuthor.getCanEditArticle()
+        && newAuthor.getCanDeleteAuthor()
+        && newAuthor.getCanDeleteArticle());
   }
 
 
