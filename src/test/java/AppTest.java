@@ -161,4 +161,31 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).doesNotContain("Luca M");
   }
 
+  @Test
+  public void authorsGetsCreatedCorrectly() {
+    goTo("http://localhost:4567/authors/new");
+    fill("#name").with("Name");
+    fill("#role").with("Role");
+    fill("#bio").with("Bio");
+    fill("#picture").with("Picture");
+    fill("#email").with("Email");
+    fill("#facebook").with("Facebook");
+    fill("#twitter").with("Twitter");
+    find("#canCreateAuthor").click();
+    // click("#canCreateAuthor");
+    submit("#createAuthorBtn");
+    goTo("http://localhost:4567/authors");
+    click("a", withText("Name"));
+    assertThat(pageSource()).contains("Name");
+    assertThat(pageSource()).contains("Role");
+    assertThat(pageSource()).contains("Bio");
+    assertThat(pageSource()).contains("Picture");
+    assertThat(pageSource()).contains("Email");
+    assertThat(pageSource()).contains("Facebook");
+    assertThat(pageSource()).contains("Twitter");
+
+  }
+
+
+
 }

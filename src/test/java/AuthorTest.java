@@ -166,5 +166,41 @@ public class AuthorTest {
     author2.edit(author1.getId());
     assertEquals(author2, Author.find(author1.getId()));
   }
+  @Test
+  public void getCanCreateAuthor_returnParameterCorrectly_true() {
+    Author author1 = new Author("Luca","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink","123456",true,false,true,false,true,false);
+    assertTrue(author1.getCanCreateAuthor());
+  }
+
+  @Test
+  public void getCanCreateArticle_returnParameterCorrectly_false() {
+    Author author1 = new Author("Luca","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink","123456",true,false,true,false,true,false);
+    assertTrue(!(author1.getCanCreateArticle()));
+  }
+
+  @Test
+  public void getCanEditAuthor_returnParameterCorrectly_true() {
+    Author author1 = new Author("Luca","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink","123456",true,false,true,false,true,false);
+    assertTrue(author1.getCanEditAuthor());
+  }
+
+  @Test
+  public void getCanEditArticle_returnParameterCorrectly_false() {
+    Author author1 = new Author("Luca","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink","123456",true,false,true,false,true,false);
+    assertTrue(!(author1.getCanEditArticle()));
+  }
+
+  @Test
+  public void getCanDeleteArticle_returnParameterCorrectly_true() {
+    Author author1 = new Author("Luca","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink","123456",true,false,true,false,true,false);
+    assertTrue(author1.getCanDeleteArticle());
+  }
+
+  @Test
+  public void getCanDeleteAuthor_returnParameterCorrectly_false() {
+    Author author1 = new Author("Luca","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink","123456",true,false,true,false,true,false);
+    assertTrue(!(author1.getCanDeleteAuthor()));
+  }
+
 
 }

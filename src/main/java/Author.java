@@ -87,6 +87,30 @@ public class Author {
     return this.password;
   }
 
+  public boolean getCanCreateAuthor() {
+    return this.canCreateAuthor;
+  }
+
+  public boolean getCanCreateArticle() {
+    return this.canCreateArticle;
+  }
+
+  public boolean getCanEditAuthor() {
+    return this.canEditAuthor;
+  }
+
+  public boolean getCanEditArticle() {
+    return this.canEditArticle;
+  }
+
+  public boolean getCanDeleteArticle() {
+    return this.canDeleteArticle;
+  }
+
+  public boolean getCanDeleteAuthor() {
+    return this.canDeleteAuthor;
+  }
+
   public void editName(String name) {
     try (Connection con = DB.sql2o.open()) {
       String sql = "UPDATE authors SET name = :name WHERE id = :id";
