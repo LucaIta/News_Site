@@ -169,7 +169,7 @@ public class AuthorTest {
     Author newAuthor = new Author("Luca","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink","LucaABC","123456",true,true,true,true,true,true);
     newAuthor.save();
     assertEquals(false, Author.checkCredentials("Luca","12345"));
-    assertTrue(Author.checkCredentials("Luca","123456"));
+    assertTrue(Author.checkCredentials("LucaABC","123456"));
   }
 
   @Test

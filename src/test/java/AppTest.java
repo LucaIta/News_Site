@@ -47,7 +47,7 @@ public class AppTest extends FluentTest {
     Author newAuthor = new Author("Luca M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink","LucaABC", "123456",true,true,true,true,true,true);
     newAuthor.save();
     goTo("http://localhost:4567/");
-    fill("#username").with("Luca M");
+    fill("#username").with("LucaABC");
     fill("#password").with("123456");
     submit("#loginBtn");
     assertThat(pageSource()).contains("click here to create a new Article");

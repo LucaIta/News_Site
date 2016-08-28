@@ -255,8 +255,8 @@ public class Author {
 
   public static boolean checkCredentials(String username, String password) {
     try (Connection con = DB.sql2o.open()) {
-      String sql = "SELECT * FROM authors WHERE name = :name;";
-      Author author = con.createQuery(sql).addParameter("name", username).executeAndFetchFirst(Author.class);
+      String sql = "SELECT * FROM authors WHERE username = :username;";
+      Author author = con.createQuery(sql).addParameter("username", username).executeAndFetchFirst(Author.class);
       if (author == null) {
         return false;
       } else {
