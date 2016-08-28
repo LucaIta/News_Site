@@ -243,6 +243,13 @@ public class Author {
     }
   }
 
+  public static Author findByUsername(String username) {
+    try (Connection con = DB.sql2o.open()) {
+      String sql = "SELECT * FROM authors WHERE username = :username;";
+      return con.createQuery(sql).addParameter("username",username).executeAndFetchFirst(Author.class);
+    }
+  }
+
   public void add (Article article) {
     try (Connection con = DB.sql2o.open()) {
       String sql = "INSERT into authors_articles (author_id,article_id) VALUES (:author_id,:article_id);";

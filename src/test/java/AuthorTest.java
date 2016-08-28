@@ -148,10 +148,17 @@ public class AuthorTest {
 
 
   @Test
-  public void find_retrieveAuthorFromDatabaseById_author() {
+  public void find_retrieveAuthorFromDatabaseCorrectly_author() {
     Author newAuthor = new Author("Luca","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink", "LucaABC","123456",true,true,true,true,true,true);
     newAuthor.save();
     assertTrue(Author.find(newAuthor.getId()).equals(newAuthor));
+  }
+
+  @Test
+  public void findByUsername_retrieveAuthorFromDatabaseCorrectly_author() {
+    Author newAuthor = new Author("Luca","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink", "LucaABC","123456",true,true,true,true,true,true);
+    newAuthor.save();
+    assertTrue(Author.findByUsername("LucaABC").equals(newAuthor));
   }
 
   @Test
