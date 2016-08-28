@@ -54,6 +54,17 @@ public class AppTest extends FluentTest {
   }
 
   @Test
+  public void whenWrongCredentialsAreInsertedErrorMessageIsDisplayed() {
+    Author newAuthor = new Author("Luca M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink","LucaABC", "123456",true,true,true,true,true,true);
+    newAuthor.save();
+    goTo("http://localhost:4567/");
+    fill("#username").with("MarkABC");
+    fill("#password").with("123456");
+    submit("#loginBtn");
+    assertThat(pageSource()).contains("Inserted Username or Password were incorrect, try again");
+  }
+
+  @Test
   public void linksOnHubPageWorks() {
     goTo("http://localhost:4567/hub");
     submit("#newArticleBtn");

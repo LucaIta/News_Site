@@ -9,6 +9,10 @@ public class App {
 
     get("/", (request,response) -> {
       HashMap<String,Object> model = new HashMap<String,Object>();
+      if(request.session().attribute("credentialsAreIncorrect") != null) { // when I get to this path for the first time, "usernameIsTaken" is null. So I need this check to retrieve the value of "usernameIsTaken" and put it in the model only when it is not null.
+        boolean credentialsAreIncorrect = request.session().attribute("credentialsAreIncorrect");
+        model.put("credentialsAreIncorrect", credentialsAreIncorrect);
+      }
       model.put("template", "/templates/index.vtl");
       return new ModelAndView(model, "templates/layout.vtl");
     },new VelocityTemplateEngine());
@@ -17,16 +21,14 @@ public class App {
       HashMap<String,Object> model = new HashMap<String,Object>();
       String username = request.queryParams("username");
       String password = request.queryParams("password");
-      // int userId =
       if (Author.checkCredentials(username,password)) {
         model.put("template", "/templates/hub.vtl");
+        request.session().attribute("credentialsAreIncorrect", false);
         return new ModelAndView(model, "templates/layout.vtl");
-        // put user id in the session
-        // request.session().attribute("userId",);
-
       } else {
-        model.put("template", "/templates/index.vtl");
-        return new ModelAndView(model, "templates/layout.vtl");
+        request.session().attribute("credentialsAreIncorrect", true); // I store in the session a boolean indicating that the credentials were wrong so that the login page can display a message error
+        response.redirect("/");
+        return null;
       }
     },new VelocityTemplateEngine());
 
