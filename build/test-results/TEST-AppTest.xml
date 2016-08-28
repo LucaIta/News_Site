@@ -1,425 +1,425 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="AppTest" tests="15" skipped="0" failures="0" errors="0" timestamp="2016-08-28T11:00:52" hostname="oems-MBP.station" time="8.26">
+<testsuite name="AppTest" tests="15" skipped="0" failures="0" errors="0" timestamp="2016-08-28T11:56:42" hostname="oems-MBP.station" time="8.835">
   <properties/>
-  <testcase name="authorsGetsCreatedCorrectly" classname="AppTest" time="4.764"/>
-  <testcase name="authorsGetDisplayed" classname="AppTest" time="0.062"/>
-  <testcase name="articleEditPageIsDisplayed" classname="AppTest" time="0.767"/>
-  <testcase name="authorsGetDelitedCorrectly" classname="AppTest" time="0.143"/>
-  <testcase name="articlesGetsDisplayed" classname="AppTest" time="0.07"/>
-  <testcase name="newAuthorPageIsDisplayed" classname="AppTest" time="0.034"/>
-  <testcase name="ifUsernameIsAlreadyTakenAuthorDoesNotGetCreatedAndErrorIsDisplayed" classname="AppTest" time="0.128"/>
-  <testcase name="authorsGetEditedCorrectly" classname="AppTest" time="0.869"/>
-  <testcase name="newArticlePageIsDisplayed" classname="AppTest" time="0.042"/>
-  <testcase name="articleGetsDelitedCorrectly" classname="AppTest" time="0.125"/>
-  <testcase name="linksOnHubPageWorks" classname="AppTest" time="0.159"/>
-  <testcase name="loginWorksCorrectly" classname="AppTest" time="0.101"/>
-  <testcase name="loginPageIsDisplayed" classname="AppTest" time="0.022"/>
-  <testcase name="whenWrongCredentialsAreInsertedErrorMessageIsDisplayed" classname="AppTest" time="0.078"/>
-  <testcase name="articleGetsEditedCorrectly" classname="AppTest" time="0.721"/>
+  <testcase name="authorsGetsCreatedCorrectly" classname="AppTest" time="5.352"/>
+  <testcase name="authorsGetDisplayed" classname="AppTest" time="0.105"/>
+  <testcase name="articleEditPageIsDisplayed" classname="AppTest" time="0.923"/>
+  <testcase name="authorsGetDelitedCorrectly" classname="AppTest" time="0.15"/>
+  <testcase name="articlesGetsDisplayed" classname="AppTest" time="0.056"/>
+  <testcase name="newAuthorPageIsDisplayed" classname="AppTest" time="0.057"/>
+  <testcase name="ifUsernameIsAlreadyTakenAuthorDoesNotGetCreatedAndErrorIsDisplayed" classname="AppTest" time="0.109"/>
+  <testcase name="authorsGetEditedCorrectly" classname="AppTest" time="0.564"/>
+  <testcase name="newArticlePageIsDisplayed" classname="AppTest" time="0.105"/>
+  <testcase name="articleGetsDelitedCorrectly" classname="AppTest" time="0.136"/>
+  <testcase name="linksOnHubPageWorks" classname="AppTest" time="0.128"/>
+  <testcase name="loginWorksCorrectly" classname="AppTest" time="0.139"/>
+  <testcase name="loginPageIsDisplayed" classname="AppTest" time="0.027"/>
+  <testcase name="whenWrongCredentialsAreInsertedErrorMessageIsDisplayed" classname="AppTest" time="0.09"/>
+  <testcase name="articleGetsEditedCorrectly" classname="AppTest" time="0.697"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[[Thread-4] INFO org.eclipse.jetty.util.log - Logging initialized @2181ms
+  <system-err><![CDATA[[Thread-4] INFO org.eclipse.jetty.util.log - Logging initialized @3108ms
 [Thread-4] INFO spark.webserver.JettySparkServer - == Spark has ignited ...
 [Thread-4] INFO spark.webserver.JettySparkServer - >> Listening on 0.0.0.0:4567
 [Thread-4] INFO org.eclipse.jetty.server.Server - jetty-9.3.2.v20150730
-[Thread-4] INFO org.eclipse.jetty.server.ServerConnector - Started ServerConnector@7c915b86{HTTP/1.1,[http/1.1]}{0.0.0.0:4567}
-[Thread-4] INFO org.eclipse.jetty.server.Server - Started @2695ms
-Aug 28, 2016 1:00:55 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+[Thread-4] INFO org.eclipse.jetty.server.ServerConnector - Started ServerConnector@7b4b18ac{HTTP/1.1,[http/1.1]}{0.0.0.0:4567}
+[Thread-4] INFO org.eclipse.jetty.server.Server - Started @4651ms
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:14693] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:55 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:16291] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:55 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:18566] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:55 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:18615] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:55 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:18664] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:21148] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:22914] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:24680] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:30763] Error in @media rule. (Invalid token "and". Was expecting one of: <S>, <LBRACE>, <COMMA>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler warning
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler warning
 WARNING: CSS warning: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:30763] Ignoring the whole rule.
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:38743] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:39908] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:40086] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:40178] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:49282] Error in expression; ':' found after identifier "progid".
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:49917] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:58448] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:58772] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:59475] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:59801] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:60287] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:60339] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:60666] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:61158] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:61459] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:61687] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:61928] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:62269] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:62756] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:62912] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:63379] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:63572] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:63996] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:64867] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:64936] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:65554] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:66892] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:69193] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:74964] Error in @media rule. (Invalid token "and". Was expecting one of: <S>, <LBRACE>, <COMMA>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler warning
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler warning
 WARNING: CSS warning: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:74964] Ignoring the whole rule.
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:97355] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:97543] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:102209] Error in expression; ':' found after identifier "progid".
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:102752] Error in expression; ':' found after identifier "progid".
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:104304] Error in @media rule. (Invalid token "and". Was expecting one of: <S>, <LBRACE>, <COMMA>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler warning
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler warning
 WARNING: CSS warning: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:104304] Ignoring the whole rule.
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:106626] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:106818] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:106886] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:106956] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:107038] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:107252] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:107342] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:107434] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:107538] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:107753] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:107844] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:107937] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:108042] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:108235] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:108304] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:108375] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:108458] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:108518] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:108600] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:56 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:47 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:108683] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:14693] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:16291] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:18566] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:18615] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:18664] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:21148] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:22914] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:24680] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:30763] Error in @media rule. (Invalid token "and". Was expecting one of: <S>, <LBRACE>, <COMMA>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler warning
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler warning
 WARNING: CSS warning: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:30763] Ignoring the whole rule.
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:38743] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:39908] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:40086] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:40178] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:49282] Error in expression; ':' found after identifier "progid".
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:49917] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:58448] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:58772] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:59475] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:59801] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:60287] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:60339] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:60666] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:61158] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:61459] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:61687] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:61928] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:62269] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:62756] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:62912] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:63379] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:63572] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:63996] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:64867] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:64936] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:65554] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:66892] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:69193] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:74964] Error in @media rule. (Invalid token "and". Was expecting one of: <S>, <LBRACE>, <COMMA>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler warning
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler warning
 WARNING: CSS warning: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:74964] Ignoring the whole rule.
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:97355] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:97543] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:102209] Error in expression; ':' found after identifier "progid".
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:102752] Error in expression; ':' found after identifier "progid".
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:104304] Error in @media rule. (Invalid token "and". Was expecting one of: <S>, <LBRACE>, <COMMA>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler warning
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler warning
 WARNING: CSS warning: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:104304] Ignoring the whole rule.
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:106626] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:106818] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:106886] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:106956] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:107038] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:107252] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:107342] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:107434] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:107538] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:107753] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:107844] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:48 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:107937] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:49 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:108042] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:49 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:108235] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:49 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:108304] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:49 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:108375] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:49 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:108458] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:49 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:108518] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:49 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:108600] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:57 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:49 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:108683] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:49 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:14693] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:49 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:16291] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:49 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:18566] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:49 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:18615] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:49 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:18664] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:49 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:21148] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:49 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:22914] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:49 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:24680] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:49 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:30763] Error in @media rule. (Invalid token "and". Was expecting one of: <S>, <LBRACE>, <COMMA>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler warning
+Aug 28, 2016 1:56:49 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler warning
 WARNING: CSS warning: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:30763] Ignoring the whole rule.
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:38743] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:39908] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:40086] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:40178] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:49282] Error in expression; ':' found after identifier "progid".
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:49917] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:58448] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:58772] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:59475] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:59801] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:60287] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:60339] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:60666] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:61158] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:61459] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:61687] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:61928] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:62269] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:62756] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:62912] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:63379] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:63572] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:63996] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:64867] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:64936] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:65554] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:66892] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:69193] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:74964] Error in @media rule. (Invalid token "and". Was expecting one of: <S>, <LBRACE>, <COMMA>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler warning
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler warning
 WARNING: CSS warning: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:74964] Ignoring the whole rule.
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:97355] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:97543] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:102209] Error in expression; ':' found after identifier "progid".
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:102752] Error in expression; ':' found after identifier "progid".
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:104304] Error in @media rule. (Invalid token "and". Was expecting one of: <S>, <LBRACE>, <COMMA>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler warning
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler warning
 WARNING: CSS warning: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:104304] Ignoring the whole rule.
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:106626] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:106818] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:106886] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:106956] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:107038] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:107252] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:107342] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:107434] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:107538] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:107753] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:107844] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:107937] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:108042] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:108235] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:108304] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:108375] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:108458] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:108518] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:108600] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:58 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:50 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:108683] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-[qtp788415447-20] ERROR spark.webserver.MatcherFilter - 
+[qtp1472033639-18] ERROR spark.webserver.MatcherFilter - 
 java.lang.NullPointerException
 	at spark.template.velocity.VelocityTemplateEngine.render(VelocityTemplateEngine.java:67)
 	at spark.TemplateViewRouteImpl$1.render(TemplateViewRouteImpl.java:61)
@@ -441,140 +441,140 @@ java.lang.NullPointerException
 	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:654)
 	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:572)
 	at java.lang.Thread.run(Thread.java:745)
-Aug 28, 2016 1:00:59 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:14693] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:59 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:16291] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:59 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:18566] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:59 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:18615] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:59 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:18664] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:59 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:21148] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:59 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:22914] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:59 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:24680] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:59 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:30763] Error in @media rule. (Invalid token "and". Was expecting one of: <S>, <LBRACE>, <COMMA>.)
-Aug 28, 2016 1:00:59 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler warning
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler warning
 WARNING: CSS warning: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:30763] Ignoring the whole rule.
-Aug 28, 2016 1:00:59 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:38743] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:59 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:39908] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:59 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:40086] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:59 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:40178] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:00:59 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:49282] Error in expression; ':' found after identifier "progid".
-Aug 28, 2016 1:00:59 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:49917] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:58448] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:58772] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:59475] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:59801] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:60287] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:60339] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:60666] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:61158] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:61459] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:61687] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:61928] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:62269] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:62756] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:62912] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:63379] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:63572] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:63996] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:64867] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:64936] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:65554] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:66892] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:69193] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:74964] Error in @media rule. (Invalid token "and". Was expecting one of: <S>, <LBRACE>, <COMMA>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler warning
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler warning
 WARNING: CSS warning: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:74964] Ignoring the whole rule.
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:97355] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:97543] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:102209] Error in expression; ':' found after identifier "progid".
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:102752] Error in expression; ':' found after identifier "progid".
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:104304] Error in @media rule. (Invalid token "and". Was expecting one of: <S>, <LBRACE>, <COMMA>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler warning
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler warning
 WARNING: CSS warning: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:104304] Ignoring the whole rule.
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:106626] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:106818] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:106886] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:106956] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:107038] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:107252] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:107342] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:107434] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:107538] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:107753] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:107844] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:107937] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:108042] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:108235] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:108304] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:108375] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:108458] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:108518] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:108600] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
-Aug 28, 2016 1:01:00 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
+Aug 28, 2016 1:56:51 PM com.gargoylesoftware.htmlunit.DefaultCssErrorHandler error
 WARNING: CSS error: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' [5:108683] Error in media list. (Invalid token "(". Was expecting one of: <S>, <IDENT>.)
 [Test worker] INFO spark.webserver.JettySparkServer - >>> Spark shutting down ...
-[Test worker] INFO org.eclipse.jetty.server.ServerConnector - Stopped ServerConnector@7c915b86{HTTP/1.1,[http/1.1]}{0.0.0.0:4567}
+[Test worker] INFO org.eclipse.jetty.server.ServerConnector - Stopped ServerConnector@7b4b18ac{HTTP/1.1,[http/1.1]}{0.0.0.0:4567}
 [Test worker] INFO spark.webserver.JettySparkServer - done
 ]]></system-err>
 </testsuite>

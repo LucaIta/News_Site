@@ -23,7 +23,9 @@ public class App {
       String password = request.queryParams("password");
       if (Author.checkCredentials(username,password)) {
         model.put("template", "/templates/hub.vtl");
+        Author author = Author.findByUsername(username);
         request.session().attribute("credentialsAreIncorrect", false);
+        request.session().attribute("author", author); // here I store in the session the author so that I can check the permits in the other paths
         return new ModelAndView(model, "templates/layout.vtl");
       } else {
         request.session().attribute("credentialsAreIncorrect", true); // I store in the session a boolean indicating that the credentials were wrong so that the login page can display a message error
