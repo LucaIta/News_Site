@@ -97,6 +97,10 @@ public class App {
 
     get("/authors/new", (request,response) -> {
       HashMap<String,Object> model = new HashMap<String,Object>();
+      if(request.session().attribute("usernameIsTaken") != null) { // when I get to this path for the first time, "usernameIsTaken" is null. So I need this check to retrieve the value of "usernameIsTaken" and put it in the model only when it is not null.
+        boolean usernameIsTaken = request.session().attribute("usernameIsTaken");
+        model.put("usernameIsTaken", usernameIsTaken);
+      }
       model.put("template", "/templates/author-form.vtl");
       return new ModelAndView(model, "/templates/layout.vtl");
     }, new VelocityTemplateEngine());
@@ -111,8 +115,10 @@ public class App {
     post("/authors", (request,response) -> { // should be /new?
       String username = request.queryParams("username");
       if (Author.getExistingUsernames().contains(username)) {
+        request.session().attribute("usernameIsTaken", true); // Here I set the "Username" attribute to true so that the boolean can get to "/authors/new" path through the session and display an error
         response.redirect("/authors/new");
       } else {
+        request.session().attribute("usernameIsTaken", false);
         String name = request.queryParams("name");
         String role = request.queryParams("role");
         String bio = request.queryParams("bio");

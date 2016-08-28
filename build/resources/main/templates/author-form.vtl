@@ -1,5 +1,10 @@
 <h1>Add an Author</h1>
 
+#if($usernameIsTaken)
+  <p>selected username was already taken, please select a different username</p>
+#else
+#end
+
 
 <form action="/authors" method="post">
 

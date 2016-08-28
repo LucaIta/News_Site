@@ -218,12 +218,13 @@ public class AppTest extends FluentTest {
   }
 
   @Test
-  public void ifUsernameIsAlreadyTakenAuthorDoesNotGetCreated() {
+  public void ifUsernameIsAlreadyTakenAuthorDoesNotGetCreatedAndErrorIsDisplayed() {
     Author author1 = new Author("Luca M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink","LucaABC","123456",true,true,true,true,true,true);
     author1.save();
     goTo("http://localhost:4567/authors/new");
     fill("#username").with("LucaABC");
     submit("#createAuthorBtn");
+    assertThat(pageSource()).contains("selected username was already taken, please select a different username");
     assertEquals(1,Author.all().size());
   }
 
