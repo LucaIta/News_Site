@@ -76,7 +76,7 @@ public class AppTest extends FluentTest {
 
   @Test
   public void articlesGetsDisplayed() {
-    Article newArticle = new Article("title","shortTitle","this article is about...","picture","subhead","subtitle","authorByLine");
+    Article newArticle = new Article("title","shortTitle","this article is about...","picture","subhead","subtitle","author","authorByLine");
     newArticle.save();
     goTo("http://localhost:4567/hub");
     assertThat(pageSource()).contains("this article is about...");
@@ -84,7 +84,7 @@ public class AppTest extends FluentTest {
 
   @Test
   public void articleEditPageIsDisplayed() {
-    Article newArticle = new Article("How to learn English","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","authorByLine");
+    Article newArticle = new Article("How to learn English","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","author","authorByLine");
     newArticle.save();
     goTo("http://localhost:4567/hub");
     click("a", withText("How to learn English"));
@@ -93,7 +93,13 @@ public class AppTest extends FluentTest {
 
   @Test
   public void articleGetsEditedCorrectly() {
-    Article newArticle = new Article("How to learn English","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","authorByLine");
+    Author newAuthor = new Author("Luca M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink","LucaABC", "123456",true,true,true,true,true,true);
+    newAuthor.save();
+    goTo("http://localhost:4567/");
+    fill("#username").with("LucaABC");
+    fill("#password").with("123456");
+    submit("#loginBtn");
+    Article newArticle = new Article("How to learn English","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","author","authorByLine");
     newArticle.save();
     String url = String.format("http://localhost:4567/articles/%d/edit", newArticle.getId());
     goTo(url);
@@ -119,8 +125,8 @@ public class AppTest extends FluentTest {
 
   @Test
   public void articleGetsDelitedCorrectly() {
-    Article article1 = new Article("How to learn English","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","authorByLine");
-    Article article2 = new Article("How to learn Spanish","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","authorByLine");
+    Article article1 = new Article("How to learn English","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","author","authorByLine");
+    Article article2 = new Article("How to learn Spanish","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","author","authorByLine");
     article1.save();
     article2.save();
     String url = String.format("http://localhost:4567/articles/%d/edit", article1.getId());

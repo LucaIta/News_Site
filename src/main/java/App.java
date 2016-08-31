@@ -57,8 +57,9 @@ public class App {
       String picture = request.queryParams("picture");
       String subhead = request.queryParams("subhead");
       String subtitle = request.queryParams("subtitle");
+      String author = ((Author) request.session().attribute("author")).getUsername();
       String authorByLine = request.queryParams("authorByLine");
-      Article newArticle = new Article(title,shortTitle,body,picture,subhead,subtitle,authorByLine);
+      Article newArticle = new Article(title,shortTitle,body,picture,subhead,subtitle,author,authorByLine);
       newArticle.save();
 
       currentAuthor.add(newArticle); // here we associate the Author and the Article
@@ -91,9 +92,10 @@ public class App {
       String picture = request.queryParams("newPicture");
       String subhead = request.queryParams("newSubhead");
       String subtitle = request.queryParams("newSubtitle");
+      String author = ((Author) request.session().attribute("author")).getUsername();
       String authorByLine = request.queryParams("newAuthorByLine");
       int articleId = Integer.parseInt(request.params(":article_id"));
-      Article newArticle = new Article(title,shortTitle,body,picture,subhead,subtitle,authorByLine);
+      Article newArticle = new Article(title,shortTitle,body,picture,subhead,subtitle,author,authorByLine);
       newArticle.edit(articleId);
       response.redirect("/hub");
       return null;

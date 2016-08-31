@@ -7,12 +7,6 @@ import java.util.Date;
 public class PasswordEncrypterTest {
 
   @Test
-  public void article_instantiatesCorrectly_true() {
-    Article newArticle = new Article("title","shortTitle","body","picture","subhead","subtitle","authorByLine");
-    assertTrue(newArticle instanceof Article);
-  }
-
-  @Test
   public void getSha1SecurePassword_encryptPasswordCorrectly_encryptedPassword() {
     byte[] salt = PasswordEncrypter.getSalt();
     String hashedPassword1 = PasswordEncrypter.getSha1SecurePassword("password", salt);

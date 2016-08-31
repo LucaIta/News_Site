@@ -12,17 +12,19 @@ public class Article {
   private String picture;
   private String subhead;
   private String subtitle;
+  private String author;
   private String authorByLine;
   private int id;
   private Date creationDate = new Date();
 
-  public Article(String title,String shortTitle,String body,String picture,String subhead,String subtitle,String authorByLine) {
+  public Article(String title,String shortTitle,String body,String picture,String subhead,String subtitle,String author,String authorByLine) {
     this.title = title;
     this.shortTitle = shortTitle;
     this.body = body;
     this.picture = picture;
     this.subhead = subhead;
     this.subtitle = subtitle;
+    this.author = author;
     this.authorByLine = authorByLine;
   }
 
