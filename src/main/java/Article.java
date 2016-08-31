@@ -184,11 +184,11 @@ public class Article {
     }
   }
 
-  // public static Article findByAuthor(String author) {
-  //   try (Connection con = DB.sql2o.open()) {
-  //     String sql = "SELECT * FROM articles WHERE authoruser = :id;";
-  //     return con.createQuery(sql).addParameter("id",id).executeAndFetchFirst(Article.class);
-  //   }
-  // }
+  public static List<Article> findByAuthor(String author) {
+    try (Connection con = DB.sql2o.open()) {
+      String sql = "SELECT * FROM articles WHERE author = :author;";
+      return con.createQuery(sql).addParameter("author",author).executeAndFetch(Article.class);
+    }
+  }
 
 }
