@@ -22,10 +22,14 @@ public class PasswordEncrypter {
     return generatedPassword;
   }
 
-  public static byte[] getSalt() throws NoSuchAlgorithmException {
-    SecureRandom sr = SecureRandom.getInstance("SHA1PRNG");
+  public static byte[] getSalt() {
     byte[] salt = new byte[16];
-    sr.nextBytes(salt);
+    try {
+      SecureRandom sr = SecureRandom.getInstance("SHA1PRNG");
+      sr.nextBytes(salt);
+    } catch (NoSuchAlgorithmException e) {
+      System.err.println("NoSuchAlgorithmException: " + e.getMessage());
+    }
     return salt;
   }
 

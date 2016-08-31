@@ -1,4 +1,5 @@
 import java.util.List;
+import java.security.NoSuchAlgorithmException;
 import org.sql2o.*;
 
 public class Author {
@@ -11,6 +12,7 @@ public class Author {
   private String facebook;
   private String twitter;
   private int id;
+  private byte[] salt;
   private String password;
   private boolean canCreateAuthor;
   private boolean canCreateArticle;
@@ -34,7 +36,8 @@ public class Author {
     this.facebook = facebook;
     this.twitter = twitter;
     this.username = username;
-    this.password = password;
+    this.salt = PasswordEncrypter.getSalt();
+    this.password = PasswordEncrypter.getSha1SecurePassword(password,this.salt);
     this.canCreateAuthor = canCreateAuthor;
     this.canCreateArticle = canCreateArticle;
     this.canEditAuthor = canEditAuthor;
@@ -91,6 +94,10 @@ public class Author {
 
   public String getPassword() {
     return this.password;
+  }
+
+  public byte[] getSalt() {
+    return this.salt;
   }
 
   public boolean getCanCreateAuthor() {
@@ -168,7 +175,7 @@ public class Author {
 
   public void save() {
     try (Connection con = DB.sql2o.open()) {
-      String sql = "INSERT into authors (name,role,bio,picture,email,facebook,twitter,username,password,canCreateAuthor,canCreateArticle,canEditAuthor,canEditArticle,canDeleteArticle,canDeleteAuthor) VALUES (:name,:role,:bio,:picture,:email,:facebook,:twitter,:username,:password,:canCreateAuthor,:canCreateArticle,:canEditAuthor,:canEditArticle,:canDeleteArticle,:canDeleteAuthor);";
+      String sql = "INSERT into authors (name,role,bio,picture,email,facebook,twitter,username,salt,password,canCreateAuthor,canCreateArticle,canEditAuthor,canEditArticle,canDeleteArticle,canDeleteAuthor) VALUES (:name,:role,:bio,:picture,:email,:facebook,:twitter,:username,:salt,:password,:canCreateAuthor,:canCreateArticle,:canEditAuthor,:canEditArticle,:canDeleteArticle,:canDeleteAuthor);";
       this.id = (int) con.createQuery(sql, true)
         .addParameter("name",this.name)
         .addParameter("role",this.role)
@@ -178,7 +185,8 @@ public class Author {
         .addParameter("facebook",this.facebook)
         .addParameter("twitter",this.twitter)
         .addParameter("username",this.username)
-        .addParameter("password",this.password)
+        .addParameter("salt",this.salt)
+        .addParameter("password", this.password)
         .addParameter("canCreateAuthor",this.canCreateAuthor)
         .addParameter("canCreateArticle",this.canCreateArticle)
         .addParameter("canEditAuthor",this.canEditAuthor)
@@ -267,7 +275,9 @@ public class Author {
       if (author == null) {
         return false;
       } else {
-        return author.getPassword().equals(password);
+        byte[] salt = author.getSalt();
+        String hashedPassword = PasswordEncrypter.getSha1SecurePassword(password,salt);
+        return author.getPassword().equals(hashedPassword);
       }
     }
   }

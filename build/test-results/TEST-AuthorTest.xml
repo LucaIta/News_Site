@@ -1,37 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="AuthorTest" tests="31" skipped="0" failures="0" errors="0" timestamp="2016-08-31T09:43:56" hostname="oems-MBP.station" time="1.276">
+<testsuite name="AuthorTest" tests="31" skipped="0" failures="1" errors="0" timestamp="2016-08-31T14:04:34" hostname="oems-MBP.station" time="1.293">
   <properties/>
-  <testcase name="editBio_editBioCorrectly_bio" classname="AuthorTest" time="0.052"/>
-  <testcase name="getCanDeleteArticle_returnParameterCorrectly_true" classname="AuthorTest" time="0.014"/>
-  <testcase name="editFacebook_editFacebookCorrectly_facebookLink2" classname="AuthorTest" time="0.051"/>
-  <testcase name="editPicture_editPictureCorrectly_newUrl" classname="AuthorTest" time="0.072"/>
-  <testcase name="getBio_retrievesBioCorrectly_born_in_may" classname="AuthorTest" time="0.029"/>
-  <testcase name="getName_retrievesNameCorrectly_reporter" classname="AuthorTest" time="0.015"/>
-  <testcase name="edit_editAuthorCorrectly_true" classname="AuthorTest" time="0.055"/>
-  <testcase name="getCanEditAuthor_returnParameterCorrectly_true" classname="AuthorTest" time="0.025"/>
-  <testcase name="author_instantiatesCorrectly_true" classname="AuthorTest" time="0.019"/>
-  <testcase name="getRole_retrievesRoleCorrectly_reporter" classname="AuthorTest" time="0.018"/>
-  <testcase name="editEmail_editEmailCorrectly_newEmail" classname="AuthorTest" time="0.101"/>
-  <testcase name="getCanEditArticle_returnParameterCorrectly_false" classname="AuthorTest" time="0.01"/>
-  <testcase name="getPicture_retrievesPictureCorrectly_url" classname="AuthorTest" time="0.011"/>
-  <testcase name="checkCredentials_returnTrueIfCredentialsAreCorrectAndFalseIfTheyAreNot_true" classname="AuthorTest" time="0.1"/>
-  <testcase name="getPassword_returnPasswordCorrectly" classname="AuthorTest" time="0.013"/>
-  <testcase name="getUsername_retrievesUsernameCorrectly_LucaABC" classname="AuthorTest" time="0.012"/>
-  <testcase name="getFacebook_retrievesFacebookContactCorrectly_facebookLink" classname="AuthorTest" time="0.01"/>
-  <testcase name="find_retrieveAuthorFromDatabaseCorrectly_author" classname="AuthorTest" time="0.05"/>
-  <testcase name="delete_deletesAuthorCorrectly_1" classname="AuthorTest" time="0.076"/>
-  <testcase name="findByUsername_retrieveAuthorFromDatabaseCorrectly_author" classname="AuthorTest" time="0.054"/>
-  <testcase name="getCanCreateAuthor_returnParameterCorrectly_true" classname="AuthorTest" time="0.014"/>
-  <testcase name="editTwitter_editTwitterCorrectly_twitterLink2" classname="AuthorTest" time="0.084"/>
-  <testcase name="getExistingUsernames_returnListOfUSernames_true" classname="AuthorTest" time="0.091"/>
-  <testcase name="getTwitter_retrievesTwitterContactCorrectly_twitterLink" classname="AuthorTest" time="0.011"/>
-  <testcase name="editName_editNameCorrectly_Mark" classname="AuthorTest" time="0.058"/>
-  <testcase name="save_savedAuthorInDatabaseCorrectly_true" classname="AuthorTest" time="0.051"/>
-  <testcase name="editRole_editRoleCorrectly_host" classname="AuthorTest" time="0.058"/>
+  <testcase name="editBio_editBioCorrectly_bio" classname="AuthorTest" time="0.071"/>
+  <testcase name="getCanDeleteArticle_returnParameterCorrectly_true" classname="AuthorTest" time="0.012"/>
+  <testcase name="editFacebook_editFacebookCorrectly_facebookLink2" classname="AuthorTest" time="0.05"/>
+  <testcase name="editPicture_editPictureCorrectly_newUrl" classname="AuthorTest" time="0.044"/>
+  <testcase name="getBio_retrievesBioCorrectly_born_in_may" classname="AuthorTest" time="0.011"/>
+  <testcase name="getName_retrievesNameCorrectly_reporter" classname="AuthorTest" time="0.017"/>
+  <testcase name="edit_editAuthorCorrectly_true" classname="AuthorTest" time="0.162"/>
+  <testcase name="getCanEditAuthor_returnParameterCorrectly_true" classname="AuthorTest" time="0.011"/>
+  <testcase name="author_instantiatesCorrectly_true" classname="AuthorTest" time="0.012"/>
+  <testcase name="getRole_retrievesRoleCorrectly_reporter" classname="AuthorTest" time="0.013"/>
+  <testcase name="editEmail_editEmailCorrectly_newEmail" classname="AuthorTest" time="0.073"/>
+  <testcase name="getCanEditArticle_returnParameterCorrectly_false" classname="AuthorTest" time="0.013"/>
+  <testcase name="getPicture_retrievesPictureCorrectly_url" classname="AuthorTest" time="0.018"/>
+  <testcase name="checkCredentials_returnTrueIfCredentialsAreCorrectAndFalseIfTheyAreNot_true" classname="AuthorTest" time="0.057"/>
+  <testcase name="getPassword_returnPasswordCorrectly" classname="AuthorTest" time="0.016">
+    <failure message="org.junit.ComparisonFailure: expected:&lt;[123456]&gt; but was:&lt;[32be90343e8c55e29a4157e22f8a83433862a74b]&gt;" type="org.junit.ComparisonFailure">org.junit.ComparisonFailure: expected:&lt;[123456]&gt; but was:&lt;[32be90343e8c55e29a4157e22f8a83433862a74b]&gt;
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at AuthorTest.getPassword_returnPasswordCorrectly(AuthorTest.java:68)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:48)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.runTestClass(JUnitTestClassExecuter.java:112)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.execute(JUnitTestClassExecuter.java:56)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassProcessor.processTestClass(JUnitTestClassProcessor.java:66)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.messaging.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:109)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:360)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:54)
+	at org.gradle.internal.concurrent.StoppableExecutorImpl$1.run(StoppableExecutorImpl.java:40)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+</failure>
+  </testcase>
+  <testcase name="getUsername_retrievesUsernameCorrectly_LucaABC" classname="AuthorTest" time="0.022"/>
+  <testcase name="getFacebook_retrievesFacebookContactCorrectly_facebookLink" classname="AuthorTest" time="0.016"/>
+  <testcase name="find_retrieveAuthorFromDatabaseCorrectly_author" classname="AuthorTest" time="0.034"/>
+  <testcase name="delete_deletesAuthorCorrectly_1" classname="AuthorTest" time="0.08"/>
+  <testcase name="findByUsername_retrieveAuthorFromDatabaseCorrectly_author" classname="AuthorTest" time="0.062"/>
+  <testcase name="getCanCreateAuthor_returnParameterCorrectly_true" classname="AuthorTest" time="0.017"/>
+  <testcase name="editTwitter_editTwitterCorrectly_twitterLink2" classname="AuthorTest" time="0.107"/>
+  <testcase name="getExistingUsernames_returnListOfUSernames_true" classname="AuthorTest" time="0.05"/>
+  <testcase name="getTwitter_retrievesTwitterContactCorrectly_twitterLink" classname="AuthorTest" time="0.013"/>
+  <testcase name="editName_editNameCorrectly_Mark" classname="AuthorTest" time="0.099"/>
+  <testcase name="save_savedAuthorInDatabaseCorrectly_true" classname="AuthorTest" time="0.054"/>
+  <testcase name="editRole_editRoleCorrectly_host" classname="AuthorTest" time="0.053"/>
   <testcase name="getCanDeleteAuthor_returnParameterCorrectly_false" classname="AuthorTest" time="0.012"/>
   <testcase name="getEmail_retrievesEmailCorrectly_email" classname="AuthorTest" time="0.013"/>
-  <testcase name="equals_compareAuthorsCorrectly_true" classname="AuthorTest" time="0.011"/>
-  <testcase name="getCanCreateArticle_returnParameterCorrectly_false" classname="AuthorTest" time="0.037"/>
+  <testcase name="equals_compareAuthorsCorrectly_true" classname="AuthorTest" time="0.012"/>
+  <testcase name="getCanCreateArticle_returnParameterCorrectly_false" classname="AuthorTest" time="0.013"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -174,7 +174,7 @@ public class AuthorTest {
   @Test
   public void checkCredentials_returnTrueIfCredentialsAreCorrectAndFalseIfTheyAreNot_true() {
     Author newAuthor = new Author("Luca","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink","LucaABC","123456",true,true,true,true,true,true);
-    newAuthor.save();
+    newAuthor.save(); // save // check
     assertEquals(false, Author.checkCredentials("Luca","12345"));
     assertTrue(Author.checkCredentials("LucaABC","123456"));
   }
