@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ArticleTest" tests="19" skipped="0" failures="0" errors="0" timestamp="2016-08-31T15:05:41" hostname="oems-MBP.station" time="0.85">
+<testsuite name="ArticleTest" tests="20" skipped="0" failures="0" errors="0" timestamp="2016-08-31T15:08:45" hostname="oems-MBP.station" time="0.718">
   <properties/>
-  <testcase name="getAuthorByLine_retrievesAuthorByLineCorrectly_authorByLine" classname="ArticleTest" time="0.014"/>
+  <testcase name="getAuthorByLine_retrievesAuthorByLineCorrectly_authorByLine" classname="ArticleTest" time="0.011"/>
   <testcase name="getTitle_retrievesTitleCorrectly_title" classname="ArticleTest" time="0.012"/>
   <testcase name="getBody_retrievesBodyCorrectly_body" classname="ArticleTest" time="0.012"/>
-  <testcase name="editTitle_editTitleCorrectly_title2" classname="ArticleTest" time="0.051"/>
-  <testcase name="editSubtitle_editSubtitleCorrectly_Subtitle2" classname="ArticleTest" time="0.067"/>
-  <testcase name="editSubhead_editSubheadCorrectly_subhead2" classname="ArticleTest" time="0.056"/>
-  <testcase name="editBody_editBodyCorrectly_body2" classname="ArticleTest" time="0.109"/>
+  <testcase name="editTitle_editTitleCorrectly_title2" classname="ArticleTest" time="0.063"/>
+  <testcase name="editSubtitle_editSubtitleCorrectly_Subtitle2" classname="ArticleTest" time="0.047"/>
+  <testcase name="editSubhead_editSubheadCorrectly_subhead2" classname="ArticleTest" time="0.044"/>
+  <testcase name="editBody_editBodyCorrectly_body2" classname="ArticleTest" time="0.054"/>
   <testcase name="editAuthorByLine_editAuthorByLineCorrectly_authorByLine2" classname="ArticleTest" time="0.049"/>
-  <testcase name="save_savesArticlesCorrectly_true" classname="ArticleTest" time="0.037"/>
-  <testcase name="editPicture_editPictureCorrectly_picture2" classname="ArticleTest" time="0.055"/>
-  <testcase name="find_retrieveArticleFromDatabaseById_article" classname="ArticleTest" time="0.043"/>
-  <testcase name="edit_editArticleCorrectly_true" classname="ArticleTest" time="0.11"/>
-  <testcase name="editShortTitle_editShortTitleCorrectly_shortTitle2" classname="ArticleTest" time="0.058"/>
-  <testcase name="delete_deletesArticleCorrectly_1" classname="ArticleTest" time="0.097"/>
-  <testcase name="article_instantiatesCorrectly_true" classname="ArticleTest" time="0.01"/>
-  <testcase name="getShortTitle_retrievesShortTitleCorrectly_ShortTitle" classname="ArticleTest" time="0.011"/>
-  <testcase name="getPicture_retrievesPictureCorrectly_picture" classname="ArticleTest" time="0.013"/>
-  <testcase name="getSubtitle_retrievesSubtitleCorrectly_subtitle" classname="ArticleTest" time="0.014"/>
-  <testcase name="getSubhead_retrievesSubheadCorrectly_subhead" classname="ArticleTest" time="0.013"/>
+  <testcase name="save_savesArticlesCorrectly_true" classname="ArticleTest" time="0.06"/>
+  <testcase name="editPicture_editPictureCorrectly_picture2" classname="ArticleTest" time="0.045"/>
+  <testcase name="find_retrieveArticleFromDatabaseById_article" classname="ArticleTest" time="0.031"/>
+  <testcase name="edit_editArticleCorrectly_true" classname="ArticleTest" time="0.077"/>
+  <testcase name="editShortTitle_editShortTitleCorrectly_shortTitle2" classname="ArticleTest" time="0.048"/>
+  <testcase name="delete_deletesArticleCorrectly_1" classname="ArticleTest" time="0.067"/>
+  <testcase name="article_instantiatesCorrectly_true" classname="ArticleTest" time="0.011"/>
+  <testcase name="getShortTitle_retrievesShortTitleCorrectly_ShortTitle" classname="ArticleTest" time="0.013"/>
+  <testcase name="getAuthor_retrievesAuthorByLineCorrectly_author" classname="ArticleTest" time="0.012"/>
+  <testcase name="getPicture_retrievesPictureCorrectly_picture" classname="ArticleTest" time="0.01"/>
+  <testcase name="getSubtitle_retrievesSubtitleCorrectly_subtitle" classname="ArticleTest" time="0.011"/>
+  <testcase name="getSubhead_retrievesSubheadCorrectly_subhead" classname="ArticleTest" time="0.01"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

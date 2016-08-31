@@ -62,6 +62,10 @@ public class Article {
     return this.subtitle;
   }
 
+  public String getAuthor() {
+    return this.author;
+  }
+
   public String getAuthorByLine() {
     return this.authorByLine;
   }

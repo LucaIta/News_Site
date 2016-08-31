@@ -56,6 +56,12 @@ public class ArticleTest {
   }
 
   @Test
+  public void getAuthor_retrievesAuthorByLineCorrectly_author() {
+    Article newArticle = new Article("title","shortTitle","body","picture","subhead","subtitle","author","authorByLine");
+    assertEquals(newArticle.getAuthor(),"author");
+  }
+
+  @Test
   public void getAuthorByLine_retrievesAuthorByLineCorrectly_authorByLine() {
     Article newArticle = new Article("title","shortTitle","body","picture","subhead","subtitle","author","authorByLine");
     assertEquals(newArticle.getAuthorByLine(),"authorByLine");
