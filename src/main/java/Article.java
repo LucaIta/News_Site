@@ -34,7 +34,7 @@ public class Article {
       return false;
     } else {
       Article newArticle = (Article) article;
-      return newArticle.getTitle().equals(this.title) && newArticle.getShortTitle().equals(this.shortTitle) && newArticle.getBody().equals(this.body) && newArticle.getPicture().equals(this.picture) && newArticle.getSubhead().equals(this.subhead) && newArticle.getSubtitle().equals(this.subtitle) && newArticle.getAuthorByLine().equals(this.authorByLine);
+      return newArticle.getTitle().equals(this.title) && newArticle.getShortTitle().equals(this.shortTitle) && newArticle.getBody().equals(this.body) && newArticle.getPicture().equals(this.picture) && newArticle.getSubhead().equals(this.subhead) && newArticle.getSubtitle().equals(this.subtitle) && newArticle.getAuthor().equals(this.author) && newArticle.getAuthorByLine().equals(this.authorByLine);
     }
   }
 
@@ -129,7 +129,7 @@ public class Article {
 
   public void save() {
     try (Connection con = DB.sql2o.open()) {
-      String sql = "INSERT into articles (title,shortTitle,body,picture,subhead,subtitle,authorByLine,creationDate) VALUES (:title,:shortTitle,:body,:picture,:subhead,:subtitle,:authorByLine,:creationDate);";
+      String sql = "INSERT into articles (title,shortTitle,body,picture,subhead,subtitle,author,authorByLine,creationDate) VALUES (:title,:shortTitle,:body,:picture,:subhead,:subtitle,:author,:authorByLine,:creationDate);";
       this.id = (int) con.createQuery(sql, true)
         .addParameter("title",this.title)
         .addParameter("shortTitle",this.shortTitle)
@@ -137,6 +137,7 @@ public class Article {
         .addParameter("picture",this.picture)
         .addParameter("subhead",this.subhead)
         .addParameter("subtitle",this.subtitle)
+        .addParameter("author",this.author)
         .addParameter("authorByLine",this.authorByLine)
         .addParameter("creationDate",this.creationDate)
         .executeUpdate().getKey();
@@ -145,7 +146,7 @@ public class Article {
 
   public void edit(int id) {
     try (Connection con = DB.sql2o.open()) {
-      String sql = "UPDATE articles SET title = :title, shortTitle = :shortTitle ,body = :body, picture = :picture,subhead = :subhead,subtitle = :subtitle,authorByLine = :authorByLine WHERE id = :id";
+      String sql = "UPDATE articles SET title = :title, shortTitle = :shortTitle ,body = :body, picture = :picture,subhead = :subhead,subtitle = :subtitle,author = :author,authorByLine = :authorByLine WHERE id = :id";
       con.createQuery(sql)
         .addParameter("title",this.title)
         .addParameter("shortTitle",this.shortTitle)
@@ -153,6 +154,7 @@ public class Article {
         .addParameter("picture",this.picture)
         .addParameter("subhead",this.subhead)
         .addParameter("subtitle",this.subtitle)
+        .addParameter("author",this.author)
         .addParameter("authorByLine",this.authorByLine)
         .addParameter("id",id)
         .executeUpdate();
@@ -181,5 +183,12 @@ public class Article {
       return con.createQuery(sql).addParameter("id",id).executeAndFetchFirst(Article.class);
     }
   }
+
+  // public static Article findByAuthor(String author) {
+  //   try (Connection con = DB.sql2o.open()) {
+  //     String sql = "SELECT * FROM articles WHERE authoruser = :id;";
+  //     return con.createQuery(sql).addParameter("id",id).executeAndFetchFirst(Article.class);
+  //   }
+  // }
 
 }
