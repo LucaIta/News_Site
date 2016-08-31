@@ -65,7 +65,8 @@ public class AuthorTest {
   @Test
   public void getPassword_returnPasswordCorrectly() {
     Author newAuthor = new Author("Luca","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink","LucaABC", "123456",true,true,true,true,true,true);
-    assertEquals("123456",newAuthor.getPassword());
+    String hashedPassword = PasswordEncrypter.getSha1SecurePassword("123456", newAuthor.getSalt());
+    assertEquals(hashedPassword,newAuthor.getPassword());
   }
 
   // @Test
