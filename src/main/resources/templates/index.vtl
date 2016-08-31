@@ -1,9 +1,10 @@
+
 #if($credentialsAreIncorrect)
   <p>Inserted Username or Password were incorrect, try again</p>
 #else
 #end
 
-<form action="/login" method="post">
+<form action="/login" method="post" id="login_form">
 
   <div class="form-group">
     <label for="username">Username</label>

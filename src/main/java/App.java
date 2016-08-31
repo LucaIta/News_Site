@@ -6,6 +6,7 @@ import static spark.Spark.*;
 public class App {
 
   public static void main (String[] args){
+    staticFileLocation("/public");
 
     get("/", (request,response) -> {
       HashMap<String,Object> model = new HashMap<String,Object>();
@@ -48,7 +49,6 @@ public class App {
     }, new VelocityTemplateEngine());
 
     post("/articles", (request,response) -> {
-      // code that get from the session the current user
       Author currentAuthor = Author.find(662); // here I'm retrieving always the same user, to get rid of when I implement the login system
 
       String title = request.queryParams("title");
