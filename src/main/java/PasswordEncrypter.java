@@ -19,7 +19,7 @@ public class PasswordEncrypter {
     catch (NoSuchAlgorithmException e) {
       e.printStackTrace();
     }
-    return generatedPassword;
+    return generatedPassword; 
   }
 
   public static byte[] getSalt() {
