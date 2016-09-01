@@ -154,14 +154,14 @@ public class ArticleTest {
   }
 
   @Test
-  public void findByAuthor_retrieveAllArticlesAssociatedWithAuthor_2() {
+  public void findAllByAuthor_retrieveAllArticlesAssociatedWithAuthor_2() {
     Article article1 = new Article("title1","shortTitle","body","picture","subhead","subtitle","author1","authorByLine");
     Article article2 = new Article("title2","shortTitle","body","picture","subhead","subtitle","author1","authorByLine");
     Article article3 = new Article("title3","shortTitle","body","picture","subhead","subtitle","author2","authorByLine");
     article1.save();
     article2.save();
     article3.save();
-    assertTrue(Article.findByAuthor("author1").size() == 2);
+    assertTrue(Article.findAllByAuthor("author1").size() == 2);
   }
 
 

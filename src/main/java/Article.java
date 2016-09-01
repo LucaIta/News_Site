@@ -184,7 +184,7 @@ public class Article {
     }
   }
 
-  public static List<Article> findByAuthor(String author) {
+  public static List<Article> findAllByAuthor(String author) {
     try (Connection con = DB.sql2o.open()) {
       String sql = "SELECT * FROM articles WHERE author = :author;";
       return con.createQuery(sql).addParameter("author",author).executeAndFetch(Article.class);
