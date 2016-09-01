@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.List;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 import static spark.Spark.*;
@@ -23,11 +24,14 @@ public class App {
       String username = request.queryParams("username");
       String password = request.queryParams("password");
       if (Author.checkCredentials(username,password)) {
-        model.put("template", "/templates/hub.vtl");
+        // model.put("template", "/templates/hub.vtl"); - ok
         Author author = Author.findByUsername(username);
         request.session().attribute("credentialsAreIncorrect", false);
         request.session().attribute("author", author); // here I store in the session the author so that I can check the permits in the other paths
-        return new ModelAndView(model, "templates/layout.vtl");
+
+        // return new ModelAndView(model, "templates/layout.vtl");
+        response.redirect("/hub");
+        return null;
       } else {
         request.session().attribute("credentialsAreIncorrect", true); // I store in the session a boolean indicating that the credentials were wrong so that the login page can display a message error
         response.redirect("/");
@@ -38,7 +42,11 @@ public class App {
     get("/hub", (request,response) -> { // for this and other paths, I should be able to get there only if the user is autenticated
       HashMap<String,Object> model = new HashMap<String,Object>();
       model.put("template", "/templates/hub.vtl");
-      model.put("articles", Article.all());
+      Author author = request.session().attribute("author");
+      if (Article.findAllByAuthor(author.getUsername()) != null) {
+        List<Article> articles = Article.findAllByAuthor(author.getUsername());
+        model.put("articles",articles);
+      }
       return new ModelAndView(model, "templates/layout.vtl");
     },new VelocityTemplateEngine());
 
@@ -49,8 +57,7 @@ public class App {
     }, new VelocityTemplateEngine());
 
     post("/articles", (request,response) -> {
-      Author currentAuthor = Author.find(662); // here I'm retrieving always the same user, to get rid of when I implement the login system
-
+      Author currentAuthor = request.session().attribute("author"); // here I'm retrieving always the same user, to get rid of when I implement the login system
       String title = request.queryParams("title");
       String shortTitle = request.queryParams("shortTitle");
       String body = request.queryParams("body");
