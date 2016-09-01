@@ -3,5 +3,9 @@ body {
 }
 
 #login_form {
-  align: center;
+  /*width: 300px;
+  height: 300px;*/
+  margin: 300px;
 }
+
+/*#aDiv{*/
