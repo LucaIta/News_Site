@@ -24,6 +24,19 @@ public class AppTest extends FluentTest {
   @ClassRule
   public static ServerRule server = new ServerRule();
 
+  // Here I store the methods for the tests repetitive actions
+
+  public void createUserAndLogin() {
+    Author newAuthor = new Author("Luca M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink","LucaABC", "123456",true,true,true,true,true,true);
+    newAuthor.save();
+    goTo("http://localhost:4567/");
+    fill("#username").with("LucaABC");
+    fill("#password").with("123456");
+    submit("#loginBtn");
+  }
+
+  //
+
   @Test
   public void loginPageIsDisplayed() {
     goTo("http://localhost:4567/");
@@ -44,12 +57,7 @@ public class AppTest extends FluentTest {
 
   @Test
   public void loginWorksCorrectly() {
-    Author newAuthor = new Author("Luca M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink","LucaABC", "123456",true,true,true,true,true,true);
-    newAuthor.save();
-    goTo("http://localhost:4567/");
-    fill("#username").with("LucaABC");
-    fill("#password").with("123456");
-    submit("#loginBtn");
+    createUserAndLogin();
     assertThat(pageSource()).contains("click here to create a new Article");
   }
 
@@ -66,12 +74,7 @@ public class AppTest extends FluentTest {
 
   @Test
   public void linksOnHubPageWorks() {
-    Author newAuthor = new Author("Luca M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink","LucaABC", "123456",true,true,true,true,true,true);
-    newAuthor.save();
-    goTo("http://localhost:4567/");
-    fill("#username").with("LucaABC");
-    fill("#password").with("123456");
-    submit("#loginBtn");
+    createUserAndLogin();
     // goTo("http://localhost:4567/hub");
     submit("#newArticleBtn");
     assertThat(pageSource().contains("Article Title"));
@@ -82,12 +85,7 @@ public class AppTest extends FluentTest {
 
   @Test
   public void articlesGetsDisplayed() {
-    Author newAuthor = new Author("Luca M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink","LucaABC", "123456",true,true,true,true,true,true);
-    newAuthor.save();
-    goTo("http://localhost:4567/");
-    fill("#username").with("LucaABC");
-    fill("#password").with("123456");
-    submit("#loginBtn");
+createUserAndLogin();
     Article newArticle = new Article("title","shortTitle","this article is about...","picture","subhead","subtitle","LucaABC","authorByLine");
     newArticle.save();
     goTo("http://localhost:4567/hub");
@@ -96,12 +94,7 @@ public class AppTest extends FluentTest {
 
   @Test
   public void articleEditPageIsDisplayed() {
-    Author newAuthor = new Author("Luca M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink","LucaABC", "123456",true,true,true,true,true,true);
-    newAuthor.save();
-    goTo("http://localhost:4567/");
-    fill("#username").with("LucaABC");
-    fill("#password").with("123456");
-    submit("#loginBtn");
+createUserAndLogin();
     Article newArticle = new Article("How to learn English","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","LucaABC","authorByLine");
     newArticle.save();
     goTo("http://localhost:4567/hub");
@@ -111,12 +104,7 @@ public class AppTest extends FluentTest {
 
   @Test
   public void articleGetsEditedCorrectly() {
-    Author newAuthor = new Author("Luca M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink","LucaABC", "123456",true,true,true,true,true,true);
-    newAuthor.save();
-    goTo("http://localhost:4567/");
-    fill("#username").with("LucaABC");
-    fill("#password").with("123456");
-    submit("#loginBtn");
+createUserAndLogin();
     Article newArticle = new Article("How to learn English","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","author","authorByLine");
     newArticle.save();
     String url = String.format("http://localhost:4567/articles/%d/edit", newArticle.getId());
@@ -143,12 +131,7 @@ public class AppTest extends FluentTest {
 
   @Test
   public void articleGetsDelitedCorrectly() {
-    Author newAuthor = new Author("Luca M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink","LucaABC", "123456",true,true,true,true,true,true);
-    newAuthor.save();
-    goTo("http://localhost:4567/");
-    fill("#username").with("LucaABC");
-    fill("#password").with("123456");
-    submit("#loginBtn");
+createUserAndLogin();
     Article article1 = new Article("How to learn English","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","LucaABC","authorByLine");
     Article article2 = new Article("How to learn Spanish","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","LucaABC","authorByLine");
     article1.save();
