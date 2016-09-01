@@ -163,6 +163,24 @@ public class AuthorTest {
   }
 
   @Test
+  public void findArticles_retrievesAllAuthorTests_2() {
+    Author author1 = new Author("Luca","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink", "LucaABC","123456",true,true,true,true,true,true);
+    Author author2 = new Author("Mark","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink", "MarkABC","123456",true,true,true,true,true,true);
+    author1.save();
+    author2.save();
+    Article article1 = new Article("title","shortTitle","body","picture","subhead","subtitle","author","authorByLine");
+    Article article2 = new Article("title","shortTitle","body","picture","subhead","subtitle","author","authorByLine");
+    Article article3 = new Article("title","shortTitle","body","picture","subhead","subtitle","author","authorByLine");
+    article1.save();
+    article2.save();
+    article3.save();
+    author1.add(article1);
+    author1.add(article2);
+    author2.add(article3);
+    assertTrue(author1.findArticles().size() == 2);
+  }
+
+  @Test
   public void delete_deletesAuthorCorrectly_1() {
     Author newAuthor1 = new Author("Luca","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink", "LucaABC","123456",true,true,true,true,true,true);
     Author newAuthor2 = new Author("Luca","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink", "LucaABC","123456",true,true,true,true,true,true);

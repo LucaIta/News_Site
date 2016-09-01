@@ -26,13 +26,14 @@ public class AppTest extends FluentTest {
 
   // Here I store the methods for the tests repetitive actions
 
-  public void createUserAndLogin() {
+  public  Author createUserAndLogin() {
     Author newAuthor = new Author("Luca M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink","LucaABC", "123456",true,true,true,true,true,true);
     newAuthor.save();
     goTo("http://localhost:4567/");
     fill("#username").with("LucaABC");
     fill("#password").with("123456");
     submit("#loginBtn");
+    return newAuthor;
   }
 
   //
@@ -75,7 +76,6 @@ public class AppTest extends FluentTest {
   @Test
   public void linksOnHubPageWorks() {
     createUserAndLogin();
-    // goTo("http://localhost:4567/hub");
     submit("#newArticleBtn");
     assertThat(pageSource().contains("Article Title"));
     goTo("http://localhost:4567/hub");
@@ -85,7 +85,7 @@ public class AppTest extends FluentTest {
 
   @Test
   public void articlesGetsDisplayed() {
-createUserAndLogin();
+    createUserAndLogin();
     Article newArticle = new Article("title","shortTitle","this article is about...","picture","subhead","subtitle","LucaABC","authorByLine");
     newArticle.save();
     goTo("http://localhost:4567/hub");
@@ -94,9 +94,10 @@ createUserAndLogin();
 
   @Test
   public void articleEditPageIsDisplayed() {
-createUserAndLogin();
+    Author author = createUserAndLogin();
     Article newArticle = new Article("How to learn English","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","LucaABC","authorByLine");
     newArticle.save();
+    author.add(newArticle);
     goTo("http://localhost:4567/hub");
     click("a", withText("How to learn English"));
     assertThat(pageSource()).contains("An Easy Way to Learn English");
@@ -104,9 +105,10 @@ createUserAndLogin();
 
   @Test
   public void articleGetsEditedCorrectly() {
-createUserAndLogin();
+    Author author = createUserAndLogin();
     Article newArticle = new Article("How to learn English","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","author","authorByLine");
     newArticle.save();
+    author.add(newArticle);
     String url = String.format("http://localhost:4567/articles/%d/edit", newArticle.getId());
     goTo(url);
     fill("#newTitle").with("editedTitle");
@@ -131,11 +133,13 @@ createUserAndLogin();
 
   @Test
   public void articleGetsDelitedCorrectly() {
-createUserAndLogin();
+    Author author = createUserAndLogin();
     Article article1 = new Article("How to learn English","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","LucaABC","authorByLine");
     Article article2 = new Article("How to learn Spanish","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","LucaABC","authorByLine");
     article1.save();
     article2.save();
+    author.add(article1);
+    author.add(article2);
     String url = String.format("http://localhost:4567/articles/%d/edit", article1.getId());
     goTo(url);
     submit("#deleteBtn");

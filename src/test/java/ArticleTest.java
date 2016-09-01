@@ -153,16 +153,16 @@ public class ArticleTest {
     assertTrue(Article.find(newArticle.getId()).equals(newArticle));
   }
 
-  @Test
-  public void findAllByAuthor_retrieveAllArticlesAssociatedWithAuthor_2() {
-    Article article1 = new Article("title1","shortTitle","body","picture","subhead","subtitle","author1","authorByLine");
-    Article article2 = new Article("title2","shortTitle","body","picture","subhead","subtitle","author1","authorByLine");
-    Article article3 = new Article("title3","shortTitle","body","picture","subhead","subtitle","author2","authorByLine");
-    article1.save();
-    article2.save();
-    article3.save();
-    assertTrue(Article.findAllByAuthor("author1").size() == 2);
-  }
+  // @Test
+  // public void findAllByAuthor_retrieveAllArticlesAssociatedWithAuthor_2() {
+  //   Article article1 = new Article("title1","shortTitle","body","picture","subhead","subtitle","author1","authorByLine");
+  //   Article article2 = new Article("title2","shortTitle","body","picture","subhead","subtitle","author1","authorByLine");
+  //   Article article3 = new Article("title3","shortTitle","body","picture","subhead","subtitle","author2","authorByLine");
+  //   article1.save();
+  //   article2.save();
+  //   article3.save();
+  //   assertTrue(Article.findAllByAuthor("author1").size() == 2);
+  // }
 
 
 

@@ -1,6 +1,8 @@
 import java.util.List;
 import java.security.NoSuchAlgorithmException;
 import org.sql2o.*;
+import java.util.ArrayList;
+
 
 public class Author {
   private String username;
@@ -281,5 +283,26 @@ public class Author {
       }
     }
   }
+
+  public List<Article> findArticles() {
+    try (Connection con = DB.sql2o.open()) {
+      String articleIdsQuery = "SELECT article_id FROM authors_articles WHERE author_id = :author_id";
+      List<Integer> articleIds = con.createQuery(articleIdsQuery).addParameter("author_id",this.id).executeAndFetch(Integer.class);
+      List<Article> articles = new ArrayList<Article>();
+      for (int articleId : articleIds) {
+        String articlesQuery = "SELECT * FROM articles WHERE id = :id;";
+        Article article = con.createQuery(articlesQuery).addParameter("id", articleId).executeAndFetchFirst(Article.class);
+        articles.add(article);
+      }
+      return articles;
+    }
+  }
+
+  // public static List<Article> findAllByAuthor(String author) {
+  //   try (Connection con = DB.sql2o.open()) {
+  //     String sql = "SELECT * FROM articles WHERE author = :author;";
+  //     return con.createQuery(sql).addParameter("author",author).executeAndFetch(Article.class);
+  //   }
+  // }
 
 }
