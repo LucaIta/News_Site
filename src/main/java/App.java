@@ -56,6 +56,13 @@ public class App {
       return new ModelAndView(model, "/templates/layout.vtl");
     }, new VelocityTemplateEngine());
 
+    get("/articles/:article_id", (request,response) -> {
+      HashMap<String,Object> model = new HashMap<String,Object>();
+      model.put("template", "/templates/article.vtl");
+      model.put("article", Article.find(Integer.parseInt(request.params("article_id"))));
+      return new ModelAndView(model, "/templates/layout.vtl");
+    }, new VelocityTemplateEngine());
+
     post("/articles", (request,response) -> {
       Author currentAuthor = request.session().attribute("author"); // here I'm retrieving always the same user, to get rid of when I implement the login system
       String title = request.queryParams("title");

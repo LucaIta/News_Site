@@ -59,7 +59,7 @@ public class AppTest extends FluentTest {
   @Test
   public void loginWorksCorrectly() {
     createUserAndLogin();
-    assertThat(pageSource()).contains("click here to create a new Article");
+    assertThat(pageSource()).contains("create a new Article");
   }
 
   @Test
@@ -93,6 +93,21 @@ public class AppTest extends FluentTest {
   }
 
   @Test
+  public void articlePageIsDisplayed() {
+    Author author = createUserAndLogin();
+    Article newArticle = new Article("How to learn English","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","LucaABC","authorByLine");
+    newArticle.save();
+    String url = String.format("http://localhost:4567/articles/%d",newArticle.getId());
+    goTo(url);
+    assertThat(pageSource()).contains("How to learn English");
+    assertThat(pageSource()).contains("subhead");
+    assertThat(pageSource()).contains("An Easy Way to Learn English");
+    assertThat(pageSource()).contains("LucaABC");
+    assertThat(pageSource()).contains("picture");
+    assertThat(pageSource()).contains("this article is about...");
+  }
+
+  @Test
   public void articleEditPageIsDisplayed() {
     Author author = createUserAndLogin();
     Article newArticle = new Article("How to learn English","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","LucaABC","authorByLine");
@@ -102,6 +117,8 @@ public class AppTest extends FluentTest {
     click(".btn", withText("Edit Article"));
     // click("a", withText("How to learn English"));
     assertThat(pageSource()).contains("An Easy Way to Learn English");
+    assertThat(pageSource()).contains("this article is about...");
+    assertThat(pageSource()).contains("picture");
   }
 
   @Test
@@ -120,7 +137,7 @@ public class AppTest extends FluentTest {
     fill("#newSubtitle").with("editedSubtitle");
     fill("#newAuthorByLine").with("editedAuthorByLine");
     submit("#editBtn");
-    assertThat(pageSource()).contains("click here to create a new Article");
+    assertThat(pageSource()).contains("create a new Article");
     assertThat(pageSource()).contains("editedTitle");
     // click("a", withText("editedTitle"));
     click(".btn", withText("Edit Article"));

@@ -1,17 +1,17 @@
 <div class="col-md-3">
   <form action="/articles/new" method="get">
-    <button type="submit" class="btn btn-success" id="newArticleBtn">click here to create a new Article</button>
+    <button type="submit" class="btn btn-success" id="newArticleBtn">create a new Article</button>
   </form>
 
   <form action="/authors/new" method="get">
-    <button type="submit" class="btn btn-success" id="newAuthorBtn">click here to create a new User</button>
+    <button type="submit" class="btn btn-success" id="newAuthorBtn">create a new User</button>
   </form>
 
   <form action="/authors" method="get">
-    <button type="submit" class="btn btn-success" id="authorsBtn">click here to manage the authors</button>
+    <button type="submit" class="btn btn-success" id="authorsBtn">manage the authors</button>
   </form>
 
-  <button type="submit" class="btn btn-success">click here to visit the site</button>
+  <button type="submit" class="btn btn-success">visit the site</button>
 </div>
 
 
@@ -19,9 +19,10 @@
   <h3>Your Articles:</h3>
   #if($articles.size() != 0)
     #foreach($article in $articles)
-      <h3>$article.getTitle()</h3>
+      <h3><a href="/articles/$article.getId()">$article.getTitle()</a></h3>
+      <hr>
       <p>$article.getBodyPreview() ...</p>
-      <br>
+      <hr>
       <form action="/articles/$article.getId()/edit" method="get">
         <button type="submit" class="btn btn-success pull-right">Edit Article</button>
       </form>
