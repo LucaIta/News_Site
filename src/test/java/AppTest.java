@@ -260,7 +260,7 @@ public class AppTest extends FluentTest {
   public void ifNoArticleIsCreatedTheUserIsInformedAboutIt() {
     createUserAndLogin();
     goTo("http://localhost:4567/hub");
-    assertThat(pageSource()).contains("You haven't created any article yet!");
+    assertThat(pageSource()).contains("You haven't created any article yet");
   }
 
 

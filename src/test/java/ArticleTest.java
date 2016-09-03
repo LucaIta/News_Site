@@ -157,7 +157,7 @@ public class ArticleTest {
       numberOfRecordsInJointTable = Integer.parseInt(con.createQuery(jointTableRowCountsQuery).addParameter("author_id", author_id).executeAndFetchFirst(String.class));
     }
     assertEquals(1, numberOfRecordsInJointTable);
-    assertEquals(1, Article.all().size());
+    assertEquals(1, newAuthor.findArticles().size());
   }
 
   @Test

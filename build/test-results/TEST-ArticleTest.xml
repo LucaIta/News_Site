@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ArticleTest" tests="20" skipped="0" failures="0" errors="0" timestamp="2016-09-03T10:22:39" hostname="oems-MBP.station" time="0.837">
+<testsuite name="ArticleTest" tests="20" skipped="0" failures="0" errors="0" timestamp="2016-09-03T10:45:42" hostname="oems-MBP.station" time="0.623">
   <properties/>
-  <testcase name="getAuthorByLine_retrievesAuthorByLineCorrectly_authorByLine" classname="ArticleTest" time="0.014"/>
-  <testcase name="getTitle_retrievesTitleCorrectly_title" classname="ArticleTest" time="0.016"/>
+  <testcase name="getAuthorByLine_retrievesAuthorByLineCorrectly_authorByLine" classname="ArticleTest" time="0.011"/>
+  <testcase name="getTitle_retrievesTitleCorrectly_title" classname="ArticleTest" time="0.011"/>
   <testcase name="getBody_retrievesBodyCorrectly_body" classname="ArticleTest" time="0.011"/>
-  <testcase name="editTitle_editTitleCorrectly_title2" classname="ArticleTest" time="0.044"/>
-  <testcase name="delete_deletesArticleCorrectlyFromArticleTableAndJoinTable_1" classname="ArticleTest" time="0.112"/>
-  <testcase name="editSubtitle_editSubtitleCorrectly_Subtitle2" classname="ArticleTest" time="0.043"/>
-  <testcase name="editSubhead_editSubheadCorrectly_subhead2" classname="ArticleTest" time="0.095"/>
-  <testcase name="editBody_editBodyCorrectly_body2" classname="ArticleTest" time="0.053"/>
-  <testcase name="editAuthorByLine_editAuthorByLineCorrectly_authorByLine2" classname="ArticleTest" time="0.062"/>
+  <testcase name="editTitle_editTitleCorrectly_title2" classname="ArticleTest" time="0.042"/>
+  <testcase name="delete_deletesArticleCorrectlyFromArticleTableAndJoinTable_1" classname="ArticleTest" time="0.099"/>
+  <testcase name="editSubtitle_editSubtitleCorrectly_Subtitle2" classname="ArticleTest" time="0.042"/>
+  <testcase name="editSubhead_editSubheadCorrectly_subhead2" classname="ArticleTest" time="0.042"/>
+  <testcase name="editBody_editBodyCorrectly_body2" classname="ArticleTest" time="0.041"/>
+  <testcase name="editAuthorByLine_editAuthorByLineCorrectly_authorByLine2" classname="ArticleTest" time="0.041"/>
   <testcase name="save_savesArticlesCorrectly_true" classname="ArticleTest" time="0.032"/>
-  <testcase name="editPicture_editPictureCorrectly_picture2" classname="ArticleTest" time="0.05"/>
-  <testcase name="find_retrieveArticleFromDatabaseById_article" classname="ArticleTest" time="0.083"/>
-  <testcase name="edit_editArticleCorrectly_true" classname="ArticleTest" time="0.066"/>
-  <testcase name="editShortTitle_editShortTitleCorrectly_shortTitle2" classname="ArticleTest" time="0.047"/>
-  <testcase name="article_instantiatesCorrectly_true" classname="ArticleTest" time="0.011"/>
-  <testcase name="getShortTitle_retrievesShortTitleCorrectly_ShortTitle" classname="ArticleTest" time="0.015"/>
-  <testcase name="getAuthor_retrievesAuthorByLineCorrectly_author" classname="ArticleTest" time="0.016"/>
+  <testcase name="editPicture_editPictureCorrectly_picture2" classname="ArticleTest" time="0.041"/>
+  <testcase name="find_retrieveArticleFromDatabaseById_article" classname="ArticleTest" time="0.031"/>
+  <testcase name="edit_editArticleCorrectly_true" classname="ArticleTest" time="0.044"/>
+  <testcase name="editShortTitle_editShortTitleCorrectly_shortTitle2" classname="ArticleTest" time="0.051"/>
+  <testcase name="article_instantiatesCorrectly_true" classname="ArticleTest" time="0.013"/>
+  <testcase name="getShortTitle_retrievesShortTitleCorrectly_ShortTitle" classname="ArticleTest" time="0.011"/>
+  <testcase name="getAuthor_retrievesAuthorByLineCorrectly_author" classname="ArticleTest" time="0.011"/>
   <testcase name="getPicture_retrievesPictureCorrectly_picture" classname="ArticleTest" time="0.011"/>
-  <testcase name="getSubtitle_retrievesSubtitleCorrectly_subtitle" classname="ArticleTest" time="0.014"/>
-  <testcase name="getSubhead_retrievesSubheadCorrectly_subhead" classname="ArticleTest" time="0.014"/>
+  <testcase name="getSubtitle_retrievesSubtitleCorrectly_subtitle" classname="ArticleTest" time="0.01"/>
+  <testcase name="getSubhead_retrievesSubheadCorrectly_subhead" classname="ArticleTest" time="0.012"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

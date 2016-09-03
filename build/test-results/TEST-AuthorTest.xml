@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="AuthorTest" tests="32" skipped="0" failures="0" errors="0" timestamp="2016-09-03T10:22:40" hostname="oems-MBP.station" time="1.104">
+<testsuite name="AuthorTest" tests="32" skipped="0" failures="0" errors="0" timestamp="2016-09-03T10:45:43" hostname="oems-MBP.station" time="0.955">
   <properties/>
-  <testcase name="editBio_editBioCorrectly_bio" classname="AuthorTest" time="0.074"/>
+  <testcase name="editBio_editBioCorrectly_bio" classname="AuthorTest" time="0.042"/>
   <testcase name="getCanDeleteArticle_returnParameterCorrectly_true" classname="AuthorTest" time="0.011"/>
-  <testcase name="editFacebook_editFacebookCorrectly_facebookLink2" classname="AuthorTest" time="0.047"/>
-  <testcase name="editPicture_editPictureCorrectly_newUrl" classname="AuthorTest" time="0.054"/>
-  <testcase name="getBio_retrievesBioCorrectly_born_in_may" classname="AuthorTest" time="0.009"/>
-  <testcase name="getName_retrievesNameCorrectly_reporter" classname="AuthorTest" time="0.009"/>
-  <testcase name="edit_editAuthorCorrectly_true" classname="AuthorTest" time="0.045"/>
-  <testcase name="getCanEditAuthor_returnParameterCorrectly_true" classname="AuthorTest" time="0.012"/>
-  <testcase name="findArticles_retrievesAllAuthorTests_2" classname="AuthorTest" time="0.132"/>
-  <testcase name="author_instantiatesCorrectly_true" classname="AuthorTest" time="0.029"/>
-  <testcase name="getRole_retrievesRoleCorrectly_reporter" classname="AuthorTest" time="0.012"/>
-  <testcase name="editEmail_editEmailCorrectly_newEmail" classname="AuthorTest" time="0.045"/>
-  <testcase name="getCanEditArticle_returnParameterCorrectly_false" classname="AuthorTest" time="0.011"/>
+  <testcase name="editFacebook_editFacebookCorrectly_facebookLink2" classname="AuthorTest" time="0.041"/>
+  <testcase name="editPicture_editPictureCorrectly_newUrl" classname="AuthorTest" time="0.042"/>
+  <testcase name="getBio_retrievesBioCorrectly_born_in_may" classname="AuthorTest" time="0.011"/>
+  <testcase name="getName_retrievesNameCorrectly_reporter" classname="AuthorTest" time="0.012"/>
+  <testcase name="edit_editAuthorCorrectly_true" classname="AuthorTest" time="0.043"/>
+  <testcase name="getCanEditAuthor_returnParameterCorrectly_true" classname="AuthorTest" time="0.011"/>
+  <testcase name="findArticles_retrievesAllAuthorTests_2" classname="AuthorTest" time="0.118"/>
+  <testcase name="author_instantiatesCorrectly_true" classname="AuthorTest" time="0.013"/>
+  <testcase name="getRole_retrievesRoleCorrectly_reporter" classname="AuthorTest" time="0.011"/>
+  <testcase name="editEmail_editEmailCorrectly_newEmail" classname="AuthorTest" time="0.042"/>
+  <testcase name="getCanEditArticle_returnParameterCorrectly_false" classname="AuthorTest" time="0.01"/>
   <testcase name="getPicture_retrievesPictureCorrectly_url" classname="AuthorTest" time="0.011"/>
-  <testcase name="checkCredentials_returnTrueIfCredentialsAreCorrectAndFalseIfTheyAreNot_true" classname="AuthorTest" time="0.051"/>
-  <testcase name="getPassword_returnPasswordCorrectly" classname="AuthorTest" time="0.018"/>
-  <testcase name="getUsername_retrievesUsernameCorrectly_LucaABC" classname="AuthorTest" time="0.023"/>
-  <testcase name="getFacebook_retrievesFacebookContactCorrectly_facebookLink" classname="AuthorTest" time="0.017"/>
-  <testcase name="find_retrieveAuthorFromDatabaseCorrectly_author" classname="AuthorTest" time="0.037"/>
-  <testcase name="delete_deletesAuthorCorrectly_1" classname="AuthorTest" time="0.073"/>
-  <testcase name="findByUsername_retrieveAuthorFromDatabaseCorrectly_author" classname="AuthorTest" time="0.039"/>
+  <testcase name="checkCredentials_returnTrueIfCredentialsAreCorrectAndFalseIfTheyAreNot_true" classname="AuthorTest" time="0.043"/>
+  <testcase name="getPassword_returnPasswordCorrectly" classname="AuthorTest" time="0.01"/>
+  <testcase name="getUsername_retrievesUsernameCorrectly_LucaABC" classname="AuthorTest" time="0.01"/>
+  <testcase name="getFacebook_retrievesFacebookContactCorrectly_facebookLink" classname="AuthorTest" time="0.01"/>
+  <testcase name="find_retrieveAuthorFromDatabaseCorrectly_author" classname="AuthorTest" time="0.031"/>
+  <testcase name="delete_deletesAuthorCorrectly_1" classname="AuthorTest" time="0.051"/>
+  <testcase name="findByUsername_retrieveAuthorFromDatabaseCorrectly_author" classname="AuthorTest" time="0.032"/>
   <testcase name="getCanCreateAuthor_returnParameterCorrectly_true" classname="AuthorTest" time="0.011"/>
-  <testcase name="editTwitter_editTwitterCorrectly_twitterLink2" classname="AuthorTest" time="0.045"/>
-  <testcase name="getExistingUsernames_returnListOfUSernames_true" classname="AuthorTest" time="0.053"/>
+  <testcase name="editTwitter_editTwitterCorrectly_twitterLink2" classname="AuthorTest" time="0.042"/>
+  <testcase name="getExistingUsernames_returnListOfUSernames_true" classname="AuthorTest" time="0.047"/>
   <testcase name="getTwitter_retrievesTwitterContactCorrectly_twitterLink" classname="AuthorTest" time="0.011"/>
-  <testcase name="editName_editNameCorrectly_Mark" classname="AuthorTest" time="0.044"/>
-  <testcase name="save_savedAuthorInDatabaseCorrectly_true" classname="AuthorTest" time="0.036"/>
-  <testcase name="editRole_editRoleCorrectly_host" classname="AuthorTest" time="0.048"/>
-  <testcase name="getCanDeleteAuthor_returnParameterCorrectly_false" classname="AuthorTest" time="0.01"/>
+  <testcase name="editName_editNameCorrectly_Mark" classname="AuthorTest" time="0.04"/>
+  <testcase name="save_savedAuthorInDatabaseCorrectly_true" classname="AuthorTest" time="0.052"/>
+  <testcase name="editRole_editRoleCorrectly_host" classname="AuthorTest" time="0.046"/>
+  <testcase name="getCanDeleteAuthor_returnParameterCorrectly_false" classname="AuthorTest" time="0.012"/>
   <testcase name="getEmail_retrievesEmailCorrectly_email" classname="AuthorTest" time="0.01"/>
-  <testcase name="equals_compareAuthorsCorrectly_true" classname="AuthorTest" time="0.022"/>
-  <testcase name="getCanCreateArticle_returnParameterCorrectly_false" classname="AuthorTest" time="0.013"/>
+  <testcase name="equals_compareAuthorsCorrectly_true" classname="AuthorTest" time="0.026"/>
+  <testcase name="getCanCreateArticle_returnParameterCorrectly_false" classname="AuthorTest" time="0.017"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
