@@ -26,7 +26,7 @@ public class AppTest extends FluentTest {
 
   // Here I store the methods for the tests repetitive actions
 
-  public  Author createUserAndLogin() {
+  public Author createUserAndLogin() {
     Author newAuthor = new Author("Luca M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink","LucaABC", "123456",true,true,true,true,true,true);
     newAuthor.save();
     goTo("http://localhost:4567/");
@@ -255,5 +255,13 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("selected username was already taken, please select a different username");
     assertEquals(1,Author.all().size());
   }
+
+  @Test
+  public void ifNoArticleIsCreatedTheUserIsInformedAboutIt() {
+    createUserAndLogin();
+    goTo("http://localhost:4567/hub");
+    assertThat(pageSource()).contains("You haven't created any article yet!");
+  }
+
 
 }

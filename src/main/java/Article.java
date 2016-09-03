@@ -167,6 +167,8 @@ public class Article {
     try (Connection con = DB.sql2o.open()) {
       String sql = "DELETE FROM articles WHERE id = :id;";
       con.createQuery(sql).addParameter("id", this.id).executeUpdate();
+      String sql2 = "DELETE FROM authors_articles WHERE article_id = :id;";
+      con.createQuery(sql2).addParameter("id", this.id).executeUpdate();
     }
   }
 

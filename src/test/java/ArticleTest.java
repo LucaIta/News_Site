@@ -67,6 +67,7 @@ public class ArticleTest {
     assertEquals(newArticle.getAuthorByLine(),"authorByLine");
   }
 
+
   @Test
   public void editTitle_editTitleCorrectly_title2() {
     Article newArticle = new Article("title","shortTitle","body","picture","subhead","subtitle","author","authorByLine");
@@ -123,6 +124,8 @@ public class ArticleTest {
     assertEquals(Article.find(newArticle.getId()).getAuthorByLine(),"authorByLine2");
   }
 
+
+
   // @Test
   // public void creationDate_creationDateGetsCorrectlySavedOnCreation_creationDateMinorThanCurrentDate() {
   //   Article newArticle = new Article("title","shortTitle","body","picture","subhead","subtitle","author","authorByLine");
@@ -137,12 +140,23 @@ public class ArticleTest {
   }
 
   @Test
-  public void delete_deletesArticleCorrectly_1() {
+  public void delete_deletesArticleCorrectlyFromArticleTableAndJoinTable_1() {
+    Author newAuthor = new Author("Luca M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink","LucaABC", "123456",true,true,true,true,true,true);
+    newAuthor.save();
     Article article1 = new Article("title1","shortTitle","body","picture","subhead","subtitle","author","authorByLine");
     Article article2 = new Article("title2","shortTitle","body","picture","subhead","subtitle","author","authorByLine");
     article1.save();
     article2.save();
+    newAuthor.add(article1);
+    newAuthor.add(article2);
+    Integer author_id = newAuthor.getId();
     article1.delete();
+    int numberOfRecordsInJointTable = 0; // in this variable it will be stored the number of rows related to newAuthor
+    try (Connection con = DB.sql2o.open()) {
+      String jointTableRowCountsQuery = "SELECT count(*) from authors_articles WHERE author_id = :author_id;";
+      numberOfRecordsInJointTable = Integer.parseInt(con.createQuery(jointTableRowCountsQuery).addParameter("author_id", author_id).executeAndFetchFirst(String.class));
+    }
+    assertEquals(1, numberOfRecordsInJointTable);
     assertEquals(1, Article.all().size());
   }
 

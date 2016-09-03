@@ -13,7 +13,11 @@
 <button type="submit" class="btn btn-success">click here to visit the site</button>
 
 <h3>Your Articles:</h3>
-#foreach($article in $articles)
-  <p><a href="/articles/$article.getId()/edit">$article.getTitle()</a></p>
-  <br>
+#if($articles)
+  #foreach($article in $articles)
+    <p><a href="/articles/$article.getId()/edit">$article.getTitle()</a></p>
+    <br>
+  #end
+#else
+   <p>You haven't created any article yet!</p>
 #end
