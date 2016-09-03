@@ -19,9 +19,12 @@
   <h3>Your Articles:</h3>
   #if($articles.size() != 0)
     #foreach($article in $articles)
-      <p><a href="/articles/$article.getId()/edit">$article.getTitle()</a></p>
+      <h3>$article.getTitle()</h3>
       <p>$article.getBodyPreview() ...</p>
       <br>
+      <form action="/articles/$article.getId()/edit" method="get">
+        <button type="submit" class="btn btn-success">Edit Article</button>
+      </form>
     #end
   #else
      <p>You haven't created any article yet</p>

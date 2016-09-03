@@ -99,7 +99,8 @@ public class AppTest extends FluentTest {
     newArticle.save();
     author.add(newArticle);
     goTo("http://localhost:4567/hub");
-    click("a", withText("How to learn English"));
+    click(".btn", withText("Edit Article"));
+    // click("a", withText("How to learn English"));
     assertThat(pageSource()).contains("An Easy Way to Learn English");
   }
 
@@ -121,7 +122,8 @@ public class AppTest extends FluentTest {
     submit("#editBtn");
     assertThat(pageSource()).contains("click here to create a new Article");
     assertThat(pageSource()).contains("editedTitle");
-    click("a", withText("editedTitle"));
+    // click("a", withText("editedTitle"));
+    click(".btn", withText("Edit Article"));
     assertThat(pageSource()).contains("editedTitle");
     assertThat(pageSource()).contains("editedShortTitle");
     assertThat(pageSource()).contains("editedBody");
