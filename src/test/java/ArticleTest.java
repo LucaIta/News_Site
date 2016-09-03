@@ -67,6 +67,16 @@ public class ArticleTest {
     assertEquals(newArticle.getAuthorByLine(),"authorByLine");
   }
 
+  @Test
+  public void getBodyPreview_returnsShorterVersionOfTheString() {
+    Article article1 = new Article("titleToBeEdited","shortTitle","testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest","picture","subhead","subtitle","author","authorByLine");
+    Article article2 = new Article("titleToBeEdited","shortTitle","body","picture","subhead","subtitle","author","authorByLine");
+    String article1BodyPreview = article1.getBodyPreview();
+    String article2BodyPreview = article2.getBodyPreview();
+    assertTrue(article1BodyPreview.length() == 400);
+    assertTrue(article2BodyPreview.length() == 4);
+  }
+
 
   @Test
   public void editTitle_editTitleCorrectly_title2() {
@@ -189,6 +199,8 @@ public class ArticleTest {
     editedArticle.edit(articleId);
     assertTrue(Article.find(articleId).equals(editedArticle));
   }
+
+
 
 
 

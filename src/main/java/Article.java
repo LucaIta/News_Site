@@ -186,6 +186,14 @@ public class Article {
     }
   }
 
+  public String getBodyPreview() {
+    if (this.body.length() > 400) {
+      return this.body.substring(0,400);
+    } else {
+      return this.body;
+    }
+  }
+
   // public static List<Article> findAllByAuthor(String author) {
   //   try (Connection con = DB.sql2o.open()) {
   //     String sql = "SELECT * FROM articles WHERE author = :author;";

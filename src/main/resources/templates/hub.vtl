@@ -1,23 +1,29 @@
-<form action="/articles/new" method="get">
-  <button type="submit" class="btn btn-success" id="newArticleBtn">click here to create a new Article</button>
-</form>
+<div class="col-md-3">
+  <form action="/articles/new" method="get">
+    <button type="submit" class="btn btn-success" id="newArticleBtn">click here to create a new Article</button>
+  </form>
 
-<form action="/authors/new" method="get">
-  <button type="submit" class="btn btn-success" id="newAuthorBtn">click here to create a new User</button>
-</form>
+  <form action="/authors/new" method="get">
+    <button type="submit" class="btn btn-success" id="newAuthorBtn">click here to create a new User</button>
+  </form>
 
-<form action="/authors" method="get">
-  <button type="submit" class="btn btn-success" id="authorsBtn">click here to manage the authors</button>
-</form>
+  <form action="/authors" method="get">
+    <button type="submit" class="btn btn-success" id="authorsBtn">click here to manage the authors</button>
+  </form>
 
-<button type="submit" class="btn btn-success">click here to visit the site</button>
+  <button type="submit" class="btn btn-success">click here to visit the site</button>
+</div>
 
-<h3>Your Articles:</h3>
-#if($articles.size() != 0)
-  #foreach($article in $articles)
-    <p><a href="/articles/$article.getId()/edit">$article.getTitle()</a></p>
-    <br>
+
+<div class="col-md-9">
+  <h3>Your Articles:</h3>
+  #if($articles.size() != 0)
+    #foreach($article in $articles)
+      <p><a href="/articles/$article.getId()/edit">$article.getTitle()</a></p>
+      <p>$article.getBodyPreview() ...</p>
+      <br>
+    #end
+  #else
+     <p>You haven't created any article yet</p>
   #end
-#else
-   <p>You haven't created any article yet</p>
-#end
+</div>
