@@ -5,3 +5,7 @@
 <p>by $article.getAuthor()</p>
 <img src="$article.getPicture()">
 <p>$article.getBody()</p>
+
+<form action="/articles/$article.getId()/edit" method="get">
+  <button type="submit" class="btn btn-success pull-right">Edit Article</button>
+</form>
