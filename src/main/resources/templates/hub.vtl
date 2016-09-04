@@ -1,21 +1,29 @@
 <div class="col-md-3">
 
-#if($author.getCanCreateArticle())
-    <form action="/articles/new" method="get">
+  <form action="/articles/new" method="get">
+    #if($author.getCanCreateArticle())
       <button type="submit" class="btn btn-success" id="newArticleBtn">create a new article</button>
-    </form>
-#else
-    <form action="/articles/new" method="get">
+    #else
       <button type="submit" class="btn btn-success disabled" id="newArticleBtn">create a new article</button>
-    </form>
-#end
-
-  <form action="/authors/new" method="get">
-    <button type="submit" class="btn btn-success" id="newAuthorBtn">create a new author</button>
+    #end
   </form>
 
+
+  <form action="/authors/new" method="get">
+    #if($author.getCanCreateAuthor())
+      <button type="submit" class="btn btn-success" id="newAuthorBtn">create a new author</button>
+    #else
+      <button type="submit" class="btn btn-success disabled" id="newAuthorBtn">create a new author</button>
+    #end
+  </form>
+
+
   <form action="/authors" method="get">
-    <button type="submit" class="btn btn-success" id="authorsBtn">edit the authors</button>
+    #if($author.getCanEditAuthor())
+      <button type="submit" class="btn btn-success" id="authorsBtn">edit the authors</button>
+    #else
+      <button type="submit" class="btn btn-success disabled" id="authorsBtn">edit the authors</button>
+    #end
   </form>
 
   <button type="submit" class="btn btn-success">visit the site</button>
