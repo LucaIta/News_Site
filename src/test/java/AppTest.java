@@ -59,7 +59,7 @@ public class AppTest extends FluentTest {
   @Test
   public void loginWorksCorrectly() {
     createUserAndLogin();
-    assertThat(pageSource()).contains("create a new Article");
+    assertThat(pageSource()).contains("create a new article");
   }
 
   @Test
@@ -138,7 +138,7 @@ public class AppTest extends FluentTest {
     fill("#newSubtitle").with("editedSubtitle");
     fill("#newAuthorByLine").with("editedAuthorByLine");
     submit("#editBtn");
-    assertThat(pageSource()).contains("create a new Article");
+    assertThat(pageSource()).contains("create a new article");
     assertThat(pageSource()).contains("editedTitle");
     goTo(url);
     assertThat(pageSource()).contains("editedTitle");
