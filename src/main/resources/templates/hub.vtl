@@ -1,7 +1,14 @@
 <div class="col-md-3">
-  <form action="/articles/new" method="get">
-    <button type="submit" class="btn btn-success" id="newArticleBtn">create a new article</button>
-  </form>
+
+#if($author.getCanCreateArticle())
+    <form action="/articles/new" method="get">
+      <button type="submit" class="btn btn-success" id="newArticleBtn">create a new article</button>
+    </form>
+#else
+    <form action="/articles/new" method="get">
+      <button type="submit" class="btn btn-success disabled" id="newArticleBtn">create a new article</button>
+    </form>
+#end
 
   <form action="/authors/new" method="get">
     <button type="submit" class="btn btn-success" id="newAuthorBtn">create a new author</button>

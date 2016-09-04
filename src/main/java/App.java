@@ -43,6 +43,7 @@ public class App {
       HashMap<String,Object> model = new HashMap<String,Object>();
       model.put("template", "/templates/hub.vtl");
       Author author = request.session().attribute("author");
+      model.put("author",author);
       if (author.findArticles() != null) {
         List<Article> articles = author.findArticles();
         model.put("articles",articles);
