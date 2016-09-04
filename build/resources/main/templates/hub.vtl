@@ -19,10 +19,12 @@
   <h3>Your Articles:</h3>
   #if($articles.size() != 0)
     #foreach($article in $articles)
+    <div class="article">
       <h3><a href="/articles/$article.getId()">$article.getTitle()</a></h3>
       <hr>
       <p>$article.getBodyPreview() ...</p>
       <hr>
+    </div>
     #end
   #else
      <p>You haven't created any article yet</p>

@@ -282,5 +282,20 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("You haven't created any article yet");
   }
 
+  @Test
+  public void authorByLineIsDisplayedOnlyWhenItIsInserted() {
+    createUserAndLogin();
+    Article newArticle = new Article("How to learn English","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","LucaABC","");
+    newArticle.save();
+    String articleDetailUrl = String.format("http://localhost:4567/articles/%d", newArticle.getId());
+    goTo(articleDetailUrl);
+    assertThat(pageSource()).doesNotContain("and"); // I'm using and to check because this word is displayed only when the author by line is inserted as in "By Luca and Mark" where Mark is the authorByLine
+    String articleEditUrl = String.format("http://localhost:4567/articles/%d/edit", newArticle.getId());
+    goTo(articleEditUrl);
+    fill("#newAuthorByLine").with("MarkABC");
+    submit("#editBtn");
+    goTo(articleDetailUrl);
+    assertThat(pageSource()).contains("and MarkABC");
+  }
 
 }

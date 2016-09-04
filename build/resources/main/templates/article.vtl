@@ -1,11 +1,22 @@
+<div class="row">
+  <div class="col-md-6">
+    <h1>$article.getTitle()</h1>
+  </div>
+  <div class="col-md-6">
+    <form action="/articles/$article.getId()/edit" method="get">
+      <button type="submit" class="btn btn-success pull-right">Edit Article</button>
+    </form>
+  </div>
+
+</div>
 
 <p>$article.getSubhead()</p>
-<h1>$article.getTitle()</h1>
 <h3>$article.getSubtitle()</h3>
-<p>by $article.getAuthor()</p>
+<p>by $article.getAuthor()
+  #if ($article.getAuthorByLine() != "")
+    and $article.getAuthorByLine()
+  #else
+  #end
+</p>
 <img src="$article.getPicture()">
 <p>$article.getBody()</p>
-
-<form action="/articles/$article.getId()/edit" method="get">
-  <button type="submit" class="btn btn-success pull-right">Edit Article</button>
-</form>
