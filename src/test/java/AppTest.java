@@ -298,4 +298,22 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("and MarkABC");
   }
 
+  @Test
+  public void viewArticlesButtonShowsAllArticles() {
+    createUserAndLogin();
+    Article article1 = new Article("How to learn English","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","LucaABC","");
+    article1.save();
+    Article article2 = new Article("How to learn German","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","LucaABC","");
+    article2.save();
+    Author differentAuthor = new Author("Mark M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink","LucaABC", "123456",true,true,true,true,true,true);
+    differentAuthor.save();
+    goTo("http://localhost:4567/");
+    fill("#username").with("Mark M");
+    fill("#password").with("123456");
+    submit("#loginBtn");
+    goTo("http://localhost:4567/articles");
+    assertThat(pageSource()).contains("How to learn English");
+    assertThat(pageSource()).contains("How to learn German");
+  }
+
 }

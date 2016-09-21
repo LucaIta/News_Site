@@ -1,0 +1,15 @@
+<div class="col-md-9">
+  <h3>All The Articles:</h3>
+  #if($articles.size() != 0)
+    #foreach($article in $articles)
+    <div class="article">
+      <h3><a href="/articles/$article.getId()">$article.getTitle()</a></h3>
+      <hr>
+      <p>$article.getBodyPreview() ...</p>
+      <hr>
+    </div>
+    #end
+  #else
+     <p>No article has been created yet</p>
+  #end
+</div>
