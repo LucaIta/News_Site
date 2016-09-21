@@ -36,6 +36,12 @@ public class AppTest extends FluentTest {
     return newAuthor;
   }
 
+  public Article createArticleAndSave() {
+    Article newArticle = new Article("How to learn English","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","LucaABC","");
+    newArticle.save();
+    return newArticle;
+  }
+
   //
 
   @Test
@@ -85,18 +91,17 @@ public class AppTest extends FluentTest {
 
   @Test
   public void articlesGetsDisplayed() {
-    createUserAndLogin();
-    Article newArticle = new Article("title","shortTitle","this article is about...","picture","subhead","subtitle","LucaABC","authorByLine");
-    newArticle.save();
+    Author author = createUserAndLogin();
+    Article article = createArticleAndSave();
+    author.add(article);
     goTo("http://localhost:4567/hub");
-    assertThat(pageSource()).contains("title");
+    assertThat(pageSource()).contains("div");
   }
 
   @Test
   public void articlePageIsDisplayed() {
     Author author = createUserAndLogin();
-    Article newArticle = new Article("How to learn English","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","LucaABC","authorByLine");
-    newArticle.save();
+    Article newArticle = createArticleAndSave();
     String url = String.format("http://localhost:4567/articles/%d",newArticle.getId());
     goTo(url);
     assertThat(pageSource()).contains("How to learn English");
@@ -110,8 +115,7 @@ public class AppTest extends FluentTest {
   @Test
   public void articleEditPageIsDisplayed() {
     Author author = createUserAndLogin();
-    Article newArticle = new Article("How to learn English","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","LucaABC","authorByLine");
-    newArticle.save();
+    Article newArticle = createArticleAndSave();
     author.add(newArticle);
     goTo("http://localhost:4567/hub");
     click("a", withText("How to learn English"));
@@ -125,8 +129,7 @@ public class AppTest extends FluentTest {
   @Test
   public void articleGetsEditedCorrectly() {
     Author author = createUserAndLogin();
-    Article newArticle = new Article("How to learn English","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","author","authorByLine");
-    newArticle.save();
+    Article newArticle = createArticleAndSave();
     author.add(newArticle);
     String url = String.format("http://localhost:4567/articles/%d/edit", newArticle.getId());
     goTo(url);
@@ -285,8 +288,7 @@ public class AppTest extends FluentTest {
   @Test
   public void authorByLineIsDisplayedOnlyWhenItIsInserted() {
     createUserAndLogin();
-    Article newArticle = new Article("How to learn English","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","LucaABC","");
-    newArticle.save();
+    Article newArticle = createArticleAndSave();
     String articleDetailUrl = String.format("http://localhost:4567/articles/%d", newArticle.getId());
     goTo(articleDetailUrl);
     assertThat(pageSource()).doesNotContain("and"); // I'm using and to check because this word is displayed only when the author by line is inserted as in "By Luca and Mark" where Mark is the authorByLine
