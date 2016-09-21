@@ -43,5 +43,9 @@
 </form>
 
 <form action="/articles/$article.getId()/delete" method="post">
+  #if($author.getCanDeleteArticle())
   <button type="submit" class="btn btn-success" id="deleteBtn">Delete Article</button>
+  #else
+  <button type="submit" class="btn btn-success disabled">Delete Article</button>
+  #end
 </form>

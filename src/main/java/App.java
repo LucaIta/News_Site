@@ -99,7 +99,9 @@ public class App {
     });
 
     get("/articles/:article_id/edit", (request,response) -> {
+      Author author = request.session().attribute("author");
       HashMap<String,Object> model = new HashMap<String,Object>();
+      model.put("author", author);
       model.put("template", "/templates/article-edit-form.vtl");
       model.put("article", Article.find(Integer.parseInt(request.params("article_id"))));
       return new ModelAndView(model, "/templates/layout.vtl");
