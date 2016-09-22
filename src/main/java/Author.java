@@ -126,6 +126,24 @@ public class Author {
     return this.canDeleteAuthor;
   }
 
+  public List<String> getCredentials() {
+    List<String> credentials = new List<String>();
+    if (this.canCreateAuthor) {
+      credentials.add("canCreateAuthor");
+    } if (this.canCreateArticle) {
+      credentials.add("canCreateArticle");
+    } if (this.canCreateAuthor) {
+      credentials.add("canCreateAuthor");
+    } if (this.canEditAuthor) {
+      credentials.add("canEditAuthor");
+    } if (this.canEditArticle) {
+      credentials.add("canEditArticle");
+    } if (this.canDeleteArticle) {
+      credentials.add("canDeleteArticle");
+    }
+    return credentials;
+  }
+
   public void editName(String name) {
     try (Connection con = DB.sql2o.open()) {
       String sql = "UPDATE authors SET name = :name WHERE id = :id";
