@@ -269,8 +269,7 @@ public class AppTest extends FluentTest {
 
   @Test
   public void ifUsernameIsAlreadyTakenAuthorDoesNotGetCreatedAndErrorIsDisplayed() {
-    Author author1 = new Author("Luca M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink","LucaABC","123456",true,true,true,true,true,true);
-    author1.save();
+    Author author1 = createUserAndLogin();
     goTo("http://localhost:4567/authors/new");
     fill("#username").with("LucaABC");
     submit("#createAuthorBtn");
@@ -317,5 +316,10 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("How to learn English");
     assertThat(pageSource()).contains("How to learn German");
   }
+
+  // @Test
+  // public void getToUnauthorizedPageIfDoesntHavePermitsForPage() {
+  //
+  // }
 
 }
