@@ -26,13 +26,6 @@
     #end
   </form>
 
-  <form action="/authors" method="get">
-    #if($author.getCanEditAuthor())
-      <button type="submit" class="btn btn-success" id="authorsBtn">edit the authors</button>
-    #else
-      <button type="submit" class="btn btn-success disabled" id="authorsBtn">edit the authors</button>
-    #end
-  </form>
 
   <form action="/articles" method="get">
       <button type="submit" class="btn btn-success" id="articlesBtn">view all the articles</button>
