@@ -338,8 +338,6 @@ public class AppTest extends FluentTest {
     article1.save();
     Article article2 = new Article("How to learn German","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","LucaABC","");
     article2.save();
-    Article article3 = new Article("How to learn German","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","LucaABC","");
-    article3.save();
     goTo("http://localhost:4567/home");
     assertThat(pageSource()).contains("How to learn English");
     assertThat(pageSource()).contains("How to learn German");

@@ -1,34 +1,20 @@
 <h1>HOME - PAGE</h1>
 
+
+#set( $articleIndexPosition = 0)
+
 <div class="container">
-  #if($articles.size() > 0)
-    <div class="row">
-
-      #if($articles.size() > 0)
-        <div class="col-md-4">
-          <p>$articles.get(0).getTitle()</p>
-          <p>$articles.get(0).getBodyPreview() ...</p>
-        </div>
-      #else
-      #end
-
-      #if($articles.size() > 1)
-        <div class="col-md-4">
-          <p>$articles.get(1).getTitle()</p>
-          <p>$articles.get(1).getBodyPreview() ...</p>
-        </div>
-      #else
-      #end
-
-      #if($articles.size() > 2)
-        <div class="col-md-4">
-          <p>$articles.get(2).getTitle()</p>
-          <p>$articles.get(2).getBodyPreview() ...</p>
-        </div>
-      #else
-      #end
-
-    </div>
-  #else
+    #foreach($row in [1..3])
+      <div class="row">
+        #foreach($column in [1..3])
+          #if($articles.size() > $articleIndexPosition)
+            <div class="col-md-4">
+              <p>$articles.get($articleIndexPosition).getTitle()</p>
+              <p>$articles.get($articleIndexPosition).getBodyPreview() ...</p>
+            </div>
+            #set( $articleIndexPosition = $articleIndexPosition + 1)
+          #end
+        #end
+      </div>
   #end
 </div>
