@@ -42,6 +42,13 @@ public class AppTest extends FluentTest {
     return newArticle;
   }
 
+  public void createsAndSaveMultipleArticles(int numberOfArticlesToCreate) {
+    for (int i = 0 ; i < numberOfArticlesToCreate ; i ++) {
+      Article article = new Article("How to learn English","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","LucaABC","");
+      article.save();
+    }
+  }
+
   //
 
   @Test
@@ -341,6 +348,16 @@ public class AppTest extends FluentTest {
     goTo("http://localhost:4567/home");
     assertThat(pageSource()).contains("How to learn English");
     assertThat(pageSource()).contains("How to learn German");
+  }
+
+  @Test
+  public void secondPageContainsSecondPageArticle() {
+    createsAndSaveMultipleArticles(12);
+    Article article = new Article("Second Page Article","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","LucaABC","");
+    article.save();
+    goTo("http://localhost:4567/home/2");
+    assertThat(pageSource()).contains("Second Page Article");
+    assertThat(pageSource()).doesNotContain("How to learn German");
   }
 
 }

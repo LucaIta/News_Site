@@ -9,6 +9,8 @@ public class App {
   public static void main (String[] args){
     staticFileLocation("/public");
 
+    // private int static pageNumber;
+    // pageNumber = 1;
 
     get("/", (request,response) -> {
       HashMap<String,Object> model = new HashMap<String,Object>();
@@ -22,7 +24,16 @@ public class App {
 
     get("/home", (request,response) -> {
       HashMap<String,Object> model = new HashMap<String,Object>();
+      model.put("pageNumber", 1);
       model.put("articles", Article.getPage(1));
+      model.put("template", "/templates/home-page.vtl");
+      return new ModelAndView(model, "templates/layout.vtl");
+    },new VelocityTemplateEngine());
+
+    get("/home/:pageNumber", (request,response) -> {
+      HashMap<String,Object> model = new HashMap<String,Object>();
+      int pageNumber = Integer.parseInt(request.params("pageNumber"));
+      model.put("articles", Article.getPage(pageNumber));
       model.put("template", "/templates/home-page.vtl");
       return new ModelAndView(model, "templates/layout.vtl");
     },new VelocityTemplateEngine());
