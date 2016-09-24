@@ -33,6 +33,7 @@ public class App {
     get("/home/:pageNumber", (request,response) -> {
       HashMap<String,Object> model = new HashMap<String,Object>();
       int pageNumber = Integer.parseInt(request.params("pageNumber"));
+      model.put("pageNumber", pageNumber);
       model.put("articles", Article.getPage(pageNumber));
       model.put("template", "/templates/home-page.vtl");
       return new ModelAndView(model, "templates/layout.vtl");

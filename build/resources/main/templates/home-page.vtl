@@ -18,10 +18,13 @@
   #end
 </div>
 
-<form action="/home/$pageNumber - 1" method="get">
+#set( $previousPage = $pageNumber - 1 )
+#set( $nextPage = $pageNumber + 1 )
+
+<form action="/home/$previousPage" method="get">
   <button type="submit" class="btn" id="prevousBtn">PREVIOUS PAGE</button>
 </form>
 
-<form action="/home/$pageNumber + 1" method="get">
-  <button type="submit" class="btn" id="nextBtn">NEXT</button>
+<form action="/home/$nextPage" method="get">
+  <button type="submit" class="btn" id="nextBtn">NEXT PAGE</button>
 </form>

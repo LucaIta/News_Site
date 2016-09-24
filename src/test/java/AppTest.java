@@ -360,4 +360,17 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).doesNotContain("How to learn German");
   }
 
+  @Test
+  public void clickingNextPageButtonBringsToNextPage() {
+    createsAndSaveMultipleArticles(24);
+    Article article = new Article("Second Page Article","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","LucaABC","");
+    article.save();
+    goTo("http://localhost:4567/home/2");
+    click("#nextBtn");
+    assertThat(pageSource()).contains("Second Page Article");
+    assertThat(pageSource()).doesNotContain("How to learn German");
+  }
+
+
+
 }
