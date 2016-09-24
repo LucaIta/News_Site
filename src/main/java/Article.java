@@ -1,6 +1,7 @@
 import java.util.List;
 import org.sql2o.*;
 import java.util.Date;
+import java.util.ArrayList;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
@@ -194,11 +195,19 @@ public class Article {
     }
   }
 
-  // public static List<Article> findAllByAuthor(String author) {
-  //   try (Connection con = DB.sql2o.open()) {
-  //     String sql = "SELECT * FROM articles WHERE author = :author;";
-  //     return con.createQuery(sql).addParameter("author",author).executeAndFetch(Article.class);
-  //   }
+  public static List<Article> getPage(int pageNumber) {
+    try (Connection con = DB.sql2o.open()) {
+      // List<Article> articleList = new ArrayList<Article>();
+      String sql = "SELECT * FROM articles limit 12 offset :offset";
+      return con.createQuery(sql).addParameter("offset", (pageNumber - 1) * 12).executeAndFetch(Article.class); // with the parameter offset I'm setting which line in the database I'm starting to retrieve the articles from
+    }
+  }
+
+  // public List<Article> getArticlesForPage(int pageNumber) {  ???? will this be good?
+  //   List<Article> articles = new ArrayList<Article>();
+  //   String sql = "SELECT * FROM articles limit 12 offset :offset";
+  //   // SELECT * FROM articles limit 2 offset 2; limit is the amount of lines, offset is where to start getting them
   // }
+
 
 }

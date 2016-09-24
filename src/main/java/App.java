@@ -9,6 +9,7 @@ public class App {
   public static void main (String[] args){
     staticFileLocation("/public");
 
+
     get("/", (request,response) -> {
       HashMap<String,Object> model = new HashMap<String,Object>();
       if(request.session().attribute("credentialsAreIncorrect") != null) { // when I get to this path for the first time, "usernameIsTaken" is null. So I need this check to retrieve the value of "usernameIsTaken" and put it in the model only when it is not null.
@@ -16,6 +17,13 @@ public class App {
         model.put("credentialsAreIncorrect", credentialsAreIncorrect);
       }
       model.put("template", "/templates/index.vtl");
+      return new ModelAndView(model, "templates/layout.vtl");
+    },new VelocityTemplateEngine());
+
+    get("/home", (request,response) -> {
+      HashMap<String,Object> model = new HashMap<String,Object>();
+      model.put("articles", Article.getPage(1));
+      model.put("template", "/templates/home-page.vtl");
       return new ModelAndView(model, "templates/layout.vtl");
     },new VelocityTemplateEngine());
 
@@ -100,6 +108,12 @@ public class App {
 
     get("/articles/:article_id/edit", (request,response) -> {
       Author author = request.session().attribute("author");
+      // if (author.getCanEditArticle()) {
+      //   response.redirect("/hub");
+      //   return null;
+      // }
+      // checkCredentialsAndRedirect(author,"canEditArticle");
+
       HashMap<String,Object> model = new HashMap<String,Object>();
       model.put("author", author);
       model.put("template", "/templates/article-edit-form.vtl");
@@ -211,4 +225,16 @@ public class App {
     });
 
   }
+
+  // public static boolean checkCredentialsAndRedirect(Author author,String credentialToCheck) {
+  //   if (!author.getPermits().contains(credentialToCheck)) {
+  //     response.redirect("/hub");
+  //     return null;
+  //   } else {
+  //     return true;
+  //   }
+  //
+  //
+  // }
+
 }

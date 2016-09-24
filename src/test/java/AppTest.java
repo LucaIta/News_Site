@@ -317,19 +317,32 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("How to learn German");
   }
 
+  // @Test
+  // public void getToUnauthorizedPageIfDoesntHavePermitsForPage() {
+  //   Author newAuthor = new Author("Luca M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink","LucaABC", "123456",false,false,false,false,false,false);
+  //   newAuthor.save();
+  //   goTo("http://localhost:4567/");
+  //   fill("#username").with("LucaABC");
+  //   fill("#password").with("123456");
+  //   submit("#loginBtn");
+  //   Article newArticle = new Article("How to learn English","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","LucaABC","");
+  //   newArticle.save();
+  //   String articleEditUrl = String.format("http://localhost:4567/articles/%d/edit", newArticle.getId());
+  //   goTo(articleEditUrl);
+  //   assertThat(pageSource()).contains("You tried to access a section which you don't have the permits for, please contact the administrator");
+  // }
+
   @Test
-  public void getToUnauthorizedPageIfDoesntHavePermitsForPage() {
-    Author newAuthor = new Author("Luca M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink","LucaABC", "123456",false,false,false,false,false,false);
-    newAuthor.save();
-    goTo("http://localhost:4567/");
-    fill("#username").with("LucaABC");
-    fill("#password").with("123456");
-    submit("#loginBtn");
-    Article newArticle = new Article("How to learn English","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","LucaABC","");
-    newArticle.save();
-    String articleEditUrl = String.format("http://localhost:4567/articles/%d/edit", newArticle.getId());
-    goTo(articleEditUrl);
-    assertThat(pageSource()).contains("You tried to access a section which you don't have the permits for, please contact the administrator");
+  public void homePageDisplaysArticles() {
+    Article article1 = new Article("How to learn English","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","LucaABC","");
+    article1.save();
+    Article article2 = new Article("How to learn German","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","LucaABC","");
+    article2.save();
+    Article article3 = new Article("How to learn German","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","LucaABC","");
+    article3.save();
+    goTo("http://localhost:4567/home");
+    assertThat(pageSource()).contains("How to learn English");
+    assertThat(pageSource()).contains("How to learn German");
   }
 
 }

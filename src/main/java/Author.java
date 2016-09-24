@@ -23,12 +23,6 @@ public class Author {
   private boolean canDeleteArticle;
   private boolean canDeleteAuthor;
 
-  // Creazione autori
-  // Creazione articoli (amministratore non potrebbe)
-  // Canzellazione (se ha il permesso puo cancellare tuti)
-  // Modifica articolo (se ha questo permesso puo modificare tutti)
-  // Modifica autori
-
   public Author(String name,String role,String bio,String picture,String email,String facebook,String twitter,String username,String password,   boolean canCreateAuthor, boolean canCreateArticle, boolean canEditAuthor, boolean canEditArticle,boolean canDeleteArticle,boolean canDeleteAuthor) {
     this.name = name;
     this.role = role;
@@ -126,23 +120,23 @@ public class Author {
     return this.canDeleteAuthor;
   }
 
-  public List<String> getCredentials() {
-    List<String> credentials = new List<String>();
-    if (this.canCreateAuthor) {
-      credentials.add("canCreateAuthor");
-    } if (this.canCreateArticle) {
-      credentials.add("canCreateArticle");
-    } if (this.canCreateAuthor) {
-      credentials.add("canCreateAuthor");
-    } if (this.canEditAuthor) {
-      credentials.add("canEditAuthor");
-    } if (this.canEditArticle) {
-      credentials.add("canEditArticle");
-    } if (this.canDeleteArticle) {
-      credentials.add("canDeleteArticle");
-    }
-    return credentials;
-  }
+  // public List<String> getPermits() {
+  //   List<String> credentials = new ArrayList<String>();
+  //   if (this.canCreateAuthor) {
+  //     credentials.add("canCreateAuthor");
+  //   } if (this.canCreateArticle) {
+  //     credentials.add("canCreateArticle");
+  //   } if (this.canCreateAuthor) {
+  //     credentials.add("canCreateAuthor");
+  //   } if (this.canEditAuthor) {
+  //     credentials.add("canEditAuthor");
+  //   } if (this.canEditArticle) {
+  //     credentials.add("canEditArticle");
+  //   } if (this.canDeleteArticle) {
+  //     credentials.add("canDeleteArticle");
+  //   }
+  //   return credentials;
+  // }
 
   public void editName(String name) {
     try (Connection con = DB.sql2o.open()) {
