@@ -195,7 +195,7 @@ public class Article {
     }
   }
 
-  public static List<Article> getPage(int pageNumber) {
+  public static List<Article> getArticlesForPage(int pageNumber) {
     try (Connection con = DB.sql2o.open()) {
       // List<Article> articleList = new ArrayList<Article>();
       String sql = "SELECT * FROM articles limit 12 offset :offset";

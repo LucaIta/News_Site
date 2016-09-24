@@ -42,7 +42,7 @@ public class AppTest extends FluentTest {
     return newArticle;
   }
 
-  public void createsAndSaveMultipleArticles(int numberOfArticlesToCreate) {
+  public static void createsAndSaveMultipleArticles(int numberOfArticlesToCreate) {
     for (int i = 0 ; i < numberOfArticlesToCreate ; i ++) {
       Article article = new Article("How to learn English","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","LucaABC","");
       article.save();

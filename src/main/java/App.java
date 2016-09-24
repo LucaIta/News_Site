@@ -25,7 +25,7 @@ public class App {
     get("/home", (request,response) -> {
       HashMap<String,Object> model = new HashMap<String,Object>();
       model.put("pageNumber", 1);
-      model.put("articles", Article.getPage(1));
+      model.put("articles", Article.getArticlesForPage(1));
       model.put("template", "/templates/home-page.vtl");
       return new ModelAndView(model, "templates/layout.vtl");
     },new VelocityTemplateEngine());
@@ -34,7 +34,7 @@ public class App {
       HashMap<String,Object> model = new HashMap<String,Object>();
       int pageNumber = Integer.parseInt(request.params("pageNumber"));
       model.put("pageNumber", pageNumber);
-      model.put("articles", Article.getPage(pageNumber));
+      model.put("articles", Article.getArticlesForPage(pageNumber));
       model.put("template", "/templates/home-page.vtl");
       return new ModelAndView(model, "templates/layout.vtl");
     },new VelocityTemplateEngine());

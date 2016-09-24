@@ -202,6 +202,12 @@ public class ArticleTest {
     assertTrue(Article.find(articleId).equals(editedArticle));
   }
 
+  @Test
+  public void getArticlesForPage_returnsTwelveArticles_12() {
+    AppTest.createsAndSaveMultipleArticles(30);
+    assertEquals(12, Article.getArticlesForPage(1).size());
+  }
+
 
 
 
