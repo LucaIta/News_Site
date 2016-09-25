@@ -203,6 +203,15 @@ public class Article {
     }
   }
 
+  public static boolean isLastPage(double pageNumber) {
+    double numberOfPages = (double) Article.all().size() / 12;
+    if (Double.compare(pageNumber, numberOfPages) >= 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   // public List<Article> getArticlesForPage(int pageNumber) {  ???? will this be good?
   //   List<Article> articles = new ArrayList<Article>();
   //   String sql = "SELECT * FROM articles limit 12 offset :offset";

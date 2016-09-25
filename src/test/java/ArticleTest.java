@@ -208,6 +208,14 @@ public class ArticleTest {
     assertEquals(12, Article.getArticlesForPage(1).size());
   }
 
+  @Test
+  public void isLastPage_returnsCorrectBooleans_trueFalse() {
+    AppTest.createsAndSaveMultipleArticles(2);
+    assertEquals(true, Article.isLastPage(1));
+    AppTest.createsAndSaveMultipleArticles(21);
+    assertEquals(false, Article.isLastPage(1));
+  }
+
 
 
 

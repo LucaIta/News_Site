@@ -35,6 +35,7 @@ public class App {
       int pageNumber = Integer.parseInt(request.params("pageNumber"));
       model.put("pageNumber", pageNumber);
       model.put("articles", Article.getArticlesForPage(pageNumber));
+      model.put("isLastPage", Article.isLastPage(pageNumber)); // here I put in the model a Boolean indicating wheter it is the last page (depending on if there are articles to create another page) in order to hide if necessary the next page button
       model.put("template", "/templates/home-page.vtl");
       return new ModelAndView(model, "templates/layout.vtl");
     },new VelocityTemplateEngine());
