@@ -21,9 +21,11 @@
 #set( $previousPage = $pageNumber - 1 )
 #set( $nextPage = $pageNumber + 1 )
 
-<form action="/home/$previousPage" method="get">
-  <button type="submit" class="btn" id="previousBtn">PREVIOUS PAGE</button>
-</form>
+#if ($previousPage != 0)
+  <form action="/home/$previousPage" method="get">
+    <button type="submit" class="btn" id="previousBtn">PREVIOUS PAGE</button>
+  </form>
+#end
 
 <form action="/home/$nextPage" method="get">
   <button type="submit" class="btn" id="nextBtn">NEXT PAGE</button>

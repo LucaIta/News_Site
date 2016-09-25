@@ -6,11 +6,10 @@
     #if ($author.getCanEditArticle())
     <form action="/articles/$article.getId()/edit" method="get">
       <button type="submit" class="btn btn-success pull-right">Edit Article</button>
-      #else
+    #else
       <button type="submit" class="btn btn-success pull-right disabled">Edit Article</button>
-      #end
+    #end
     </form>
-
   </div>
 
 </div>
