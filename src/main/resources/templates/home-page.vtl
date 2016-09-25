@@ -7,9 +7,13 @@
       <div class="row">
         #foreach($column in [1..4])
           #if($articles.size() > $articleIndexPosition)
+          #set ( $article = $articles.get($articleIndexPosition))
             <div class="col-md-4">
-              <p><a href="/articles/$articles.get($articleIndexPosition).getId()">$articles.get($articleIndexPosition).getTitle()</a></p>
-              <p>$articles.get($articleIndexPosition).getBodyPreview() ...</p>
+              <p><a href="/articles/$articles.get($articleIndexPosition).getId()">$article.getTitle()</a></p>
+              <p>$article.getBodyPreview() ...</p>
+              #if ($article.getPicture() != "")
+                <img src="$article.getPicture()">
+              #end
             </div>
             #set( $articleIndexPosition = $articleIndexPosition + 1)
           #end

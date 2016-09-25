@@ -396,6 +396,22 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).doesNotContain("nextBtn");
   }
 
+  @Test
+  public void articleImageIsDisplayedInHomePage() {
+    Article article = new Article("First Page Article","shortTitle","this article is about...","pictureToDisplay","subhead","An Easy Way to Learn English","LucaABC","");
+    article.save();
+    goTo("http://localhost:4567/home");
+    assertThat(pageSource()).contains("pictureToDisplay");
+  }
+
+  @Test
+  public void articleImageTagIsNotInThePageIfNoImgIsInserted() {
+    Article article = new Article("First Page Article","shortTitle","this article is about...","","subhead","An Easy Way to Learn English","LucaABC","");
+    article.save();
+    goTo("http://localhost:4567/home");
+    assertThat(pageSource()).doesNotContain("<img");
+  }
+
 
 
 }
