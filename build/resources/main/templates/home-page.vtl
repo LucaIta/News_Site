@@ -27,6 +27,8 @@
   </form>
 #end
 
-<form action="/home/$nextPage" method="get">
-  <button type="submit" class="btn" id="nextBtn">NEXT PAGE</button>
-</form>
+#if (!$isLastPage)
+  <form action="/home/$nextPage" method="get">
+    <button type="submit" class="btn" id="nextBtn">NEXT PAGE</button>
+  </form>
+#end
