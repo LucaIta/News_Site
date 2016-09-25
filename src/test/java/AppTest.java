@@ -381,6 +381,15 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("First Page Article");
   }
 
+  @Test
+  public void articleDetailPageIsReachableFromReadersHomePage() {
+    Article article = new Article("First Page Article","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","LucaABC","");
+    article.save();
+    goTo("http://localhost:4567/home");
+    click("a", withText("First Page Article"));
+    assertThat(pageSource()).contains("LucaABC");
+  }
+
 
 
 }
