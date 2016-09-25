@@ -8,7 +8,7 @@
         #foreach($column in [1..4])
           #if($articles.size() > $articleIndexPosition)
           #set ( $article = $articles.get($articleIndexPosition))
-            <div class="col-md-4">
+            <div class="col-md-4 article">
               <p><a href="/articles/$articles.get($articleIndexPosition).getId()">$article.getTitle()</a></p>
               <p>$article.getBodyPreview() ...</p>
               #if ($article.getPicture() != "")
