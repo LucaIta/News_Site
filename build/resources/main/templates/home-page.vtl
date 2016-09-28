@@ -9,9 +9,11 @@
           #if($articles.size() > $articleIndexPosition)
           #set ( $article = $articles.get($articleIndexPosition))
             <div class="col-md-4 article">
-              #if ($article.getPicture() != "")
-                <img src="$article.getPicture()">
-              #end
+              <div class="imgBox">
+                #if ($article.getPicture() != "")
+                  <img src="$article.getPicture()">
+                #end
+              </div>
               <p><a href="/articles/$articles.get($articleIndexPosition).getId()">$article.getTitle()</a></p>
               <p>$article.getBodyPreview() ...</p>
 
