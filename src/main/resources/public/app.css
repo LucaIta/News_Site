@@ -24,3 +24,15 @@ img {
   height: 40%;
   border: 2px;
 }
+
+.titleBox {
+  width: auto;
+  height: 20%;
+  border: 2px;
+}
+
+.bodyBox {
+  width: auto;
+  height: 40%;
+  border: 2px;
+}

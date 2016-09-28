@@ -14,9 +14,12 @@
                   <img src="$article.getPicture()">
                 #end
               </div>
-              <h3><a href="/articles/$articles.get($articleIndexPosition).getId()">$article.getTitle()</a></h3>
-              <p>$article.getBodyPreview() ...</p>
-
+              <div class="titleBox">
+                <h3><a href="/articles/$articles.get($articleIndexPosition).getId()">$article.getTitle()</a></h3>
+              </div>
+              <div class="bodyBox">
+                <p>$article.getBodyPreview() ...</p>
+              </div>
             </div>
             #set( $articleIndexPosition = $articleIndexPosition + 1)
           #end
