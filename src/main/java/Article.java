@@ -188,8 +188,8 @@ public class Article {
   }
 
   public String getBodyPreview() {
-    if (this.body.length() > 400) {
-      return this.body.substring(0,400);
+    if (this.body.length() > 280) {
+      return this.body.substring(0,280);
     } else {
       return this.body;
     }
