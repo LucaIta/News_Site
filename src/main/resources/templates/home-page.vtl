@@ -9,11 +9,12 @@
           #if($articles.size() > $articleIndexPosition)
           #set ( $article = $articles.get($articleIndexPosition))
             <div class="col-md-4 article">
-              <p><a href="/articles/$articles.get($articleIndexPosition).getId()">$article.getTitle()</a></p>
-              <p>$article.getBodyPreview() ...</p>
               #if ($article.getPicture() != "")
                 <img src="$article.getPicture()">
               #end
+              <p><a href="/articles/$articles.get($articleIndexPosition).getId()">$article.getTitle()</a></p>
+              <p>$article.getBodyPreview() ...</p>
+
             </div>
             #set( $articleIndexPosition = $articleIndexPosition + 1)
           #end
