@@ -5,6 +5,14 @@
 #else
 #end
 
+#if($passwordsDoesNotCorrespond)
+  <p>The inserted password do not correspond</p>
+#else
+#end
+
+#**
+*#
+
 
 <form action="/authors" method="post">
 
@@ -15,7 +23,7 @@
 
   <div class="form-group">
     <label for="name">Author Name</label>
-    <input id="name" name="name" type="text">
+    <input id="name" name="name" type="text" required>
   </div>
 
   <div class="form-group">
@@ -49,12 +57,12 @@
   </div>
 
   <div class="form-group">
-    <label for="password">Author Password</label>
+    <label for="password">Author Password</label required>
     <input id="password" name="password" type="password">
   </div>
 
   <div class="form-group">
-    <label for="repeatedPassword">Repeat Password</label>
+    <label for="repeatedPassword">Repeat Password</label required>
     <input id="repeatedPassword" name="repeatedPassword" type="password">
   </div>
 

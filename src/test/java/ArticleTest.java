@@ -75,7 +75,7 @@ public class ArticleTest {
     Article article2 = new Article("titleToBeEdited","shortTitle","body","picture","subhead","subtitle","author","authorByLine");
     String article1BodyPreview = article1.getBodyPreview();
     String article2BodyPreview = article2.getBodyPreview();
-    assertTrue(article1BodyPreview.length() == 400);
+    assertTrue(article1BodyPreview.length() == 215);
     assertTrue(article2BodyPreview.length() == 4);
   }
 

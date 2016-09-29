@@ -160,6 +160,11 @@ public class App {
         boolean usernameIsTaken = request.session().attribute("usernameIsTaken");
         model.put("usernameIsTaken", usernameIsTaken);
       }
+      if(request.session().attribute("passwordsDoesNotCorrespond") != null) {
+        boolean passwordsDoesNotCorrespond = request.session().attribute("passwordsDoesNotCorrespond");
+        model.put("passwordsDoesNotCorrespond", passwordsDoesNotCorrespond);
+      }
+      request.session().attribute("passwordsDoesNotCorrespond", false); // here I put the value to false so that next time the page is accessed, unless a not corresponding password was inserted, the value is false
       model.put("template", "/templates/author-form.vtl");
       return new ModelAndView(model, "/templates/layout.vtl");
     }, new VelocityTemplateEngine());
@@ -178,23 +183,30 @@ public class App {
         response.redirect("/authors/new");
       } else {
         request.session().attribute("usernameIsTaken", false);
-        String name = request.queryParams("name");
-        String role = request.queryParams("role");
-        String bio = request.queryParams("bio");
-        String picture = request.queryParams("picture");
-        String email = request.queryParams("email");
-        String facebook = request.queryParams("facebook");
-        String twitter = request.queryParams("twitter");
-        String password = "123456"; // currently we are using fixed password, they are not chosen by the admin
-        boolean canCreateAuthor = Boolean.parseBoolean(request.queryParams("canCreateAuthor"));
-        boolean canCreateArticle = Boolean.parseBoolean(request.queryParams("canCreateArticle"));
-        boolean canEditAuthor = Boolean.parseBoolean(request.queryParams("canEditAuthor"));
-        boolean canEditArticle = Boolean.parseBoolean(request.queryParams("canEditArticle"));
-        boolean canDeleteArticle = Boolean.parseBoolean(request.queryParams("canDeleteArticle"));
-        boolean canDeleteAuthor = Boolean.parseBoolean(request.queryParams("canDeleteAuthor"));
-        Author newAuthor = new Author(name,role,bio,picture,email,facebook,twitter,username,password,canCreateAuthor,canCreateArticle,canEditAuthor,canEditArticle,canDeleteArticle,canDeleteAuthor);
-        newAuthor.save();
-        response.redirect("/authors/new");
+        String password =  request.queryParams("password");
+        String repeatedPassword =  request.queryParams("repeatedPassword");
+        if (password.equals(repeatedPassword)) {
+          String name = request.queryParams("name");
+          String role = request.queryParams("role");
+          String bio = request.queryParams("bio");
+          String picture = request.queryParams("picture");
+          String email = request.queryParams("email");
+          String facebook = request.queryParams("facebook");
+          String twitter = request.queryParams("twitter");
+          boolean canCreateAuthor = Boolean.parseBoolean(request.queryParams("canCreateAuthor"));
+          boolean canCreateArticle = Boolean.parseBoolean(request.queryParams("canCreateArticle"));
+          boolean canEditAuthor = Boolean.parseBoolean(request.queryParams("canEditAuthor"));
+          boolean canEditArticle = Boolean.parseBoolean(request.queryParams("canEditArticle"));
+          boolean canDeleteArticle = Boolean.parseBoolean(request.queryParams("canDeleteArticle"));
+          boolean canDeleteAuthor = Boolean.parseBoolean(request.queryParams("canDeleteAuthor"));
+          Author newAuthor = new Author(name,role,bio,picture,email,facebook,twitter,username,password,canCreateAuthor,canCreateArticle,canEditAuthor,canEditArticle,canDeleteArticle,canDeleteAuthor);
+          newAuthor.save();
+          response.redirect("/authors/new");
+        } else {
+          request.session().attribute("passwordsDoesNotCorrespond", true); // if by default these values are false, I might be able to invert the logic and get rid of the if statements that I have in every path where I have to set it as true
+          response.redirect("/authors/new");
+        }
+        // String password = "123456"; // currently we are using fixed password, they are not chosen by the admin
       }
       return null;
     });

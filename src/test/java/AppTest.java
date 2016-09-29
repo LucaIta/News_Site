@@ -341,52 +341,52 @@ public class AppTest extends FluentTest {
 
   @Test
   public void homePageDisplaysArticles() {
-    Article article1 = new Article("How to learn English","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","LucaABC","");
+    Article article1 = new Article("How to learn English","How to learn English ShortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","LucaABC","");
     article1.save();
-    Article article2 = new Article("How to learn German","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","LucaABC","");
+    Article article2 = new Article("How to learn German","How to learn German ShortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","LucaABC","");
     article2.save();
     goTo("http://localhost:4567/home");
-    assertThat(pageSource()).contains("How to learn English");
-    assertThat(pageSource()).contains("How to learn German");
+    assertThat(pageSource()).contains("How to learn English ShortTitle");
+    assertThat(pageSource()).contains("How to learn German ShortTitle");
   }
 
   @Test
   public void secondPageContainsSecondPageArticle() {
     createsAndSaveMultipleArticles(12);
-    Article article = new Article("Second Page Article","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","LucaABC","");
+    Article article = new Article("Second Page Article","Second Page ShortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","LucaABC","");
     article.save();
     goTo("http://localhost:4567/home/2");
-    assertThat(pageSource()).contains("Second Page Article");
+    assertThat(pageSource()).contains("Second Page ShortTitle");
     assertThat(pageSource()).doesNotContain("How to learn German");
   }
 
   @Test
   public void clickingNextPageButtonBringsToNextPage() {
     createsAndSaveMultipleArticles(24);
-    Article article = new Article("Second Page Article","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","LucaABC","");
+    Article article = new Article("Second Page Article","Second Page ShortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","LucaABC","");
     article.save();
     goTo("http://localhost:4567/home/2");
     click("#nextBtn");
-    assertThat(pageSource()).contains("Second Page Article");
+    assertThat(pageSource()).contains("Second Page ShortTitle");
     assertThat(pageSource()).doesNotContain("How to learn German");
   }
 
   @Test
   public void clickingPreviousPageButtonBringsToPreviousPage() {
-    Article article = new Article("First Page Article","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","LucaABC","");
+    Article article = new Article("First Page Article","First Page Article ShortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","LucaABC","");
     article.save();
     createsAndSaveMultipleArticles(12);
     goTo("http://localhost:4567/home/2");
     click("#previousBtn");
-    assertThat(pageSource()).contains("First Page Article");
+    assertThat(pageSource()).contains("First Page Article ShortTitle");
   }
 
   @Test
   public void articleDetailPageIsReachableFromReadersHomePage() {
-    Article article = new Article("First Page Article","shortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","LucaABC","");
+    Article article = new Article("First Page Article","First Page Article ShortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","LucaABC","");
     article.save();
     goTo("http://localhost:4567/home");
-    click("a", withText("First Page Article"));
+    click("a", withText("First Page Article ShortTitle"));
     assertThat(pageSource()).contains("LucaABC");
   }
 
@@ -410,6 +410,18 @@ public class AppTest extends FluentTest {
     article.save();
     goTo("http://localhost:4567/home");
     assertThat(pageSource()).doesNotContain("<img");
+  }
+
+  @Test
+  public void ifWrongPAsswordIsInsertedDuringAuthorCreationErrorMessageIsDisplayed() {
+    createUserAndLogin();
+    goTo("http://localhost:4567/authors/new");
+    fill("#name").with("Name");
+    fill("#username").with("Username");
+    fill("#password").with("password");
+    fill("#repeatedPassword").with("repeatedPassword");
+    submit("#createAuthorBtn");
+    assertThat(pageSource()).contains("The inserted password do not correspond");
   }
 
 
