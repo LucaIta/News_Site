@@ -264,4 +264,10 @@ public class App {
   //
   // }
 
+
+  // public void getBooleanAttributeFromSessionAndPutInModel(String attributeKey) {
+  //   boolean attribute = request.session().attribute(attributeKey);
+  //   model.put(attributeKey, attribute);
+  // }
+
 }
