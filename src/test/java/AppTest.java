@@ -430,9 +430,9 @@ public class AppTest extends FluentTest {
     String url = String.format("http://localhost:4567/authors/%d/edit", author.getId());
     goTo(url);
     click("#changePwdBtn");
-    fill("#oldPwd").with(author.getPassword());
+    fill("#oldPwd").with("123456");
     fill("#newPwd").with("654321");
-    fill("#repeatedNewPwd").with("654321");
+    fill("#confNewPwd").with("654321");
     click("#editPwdBtn");
     assertThat(pageSource()).contains("Password changed successfully");
   }
@@ -444,13 +444,14 @@ public class AppTest extends FluentTest {
     goTo(url);
     fill("#oldPwd").with(author.getPassword());
     fill("#newPwd").with("654321");
-    fill("#repeatedNewPwd").with("wrongPwd");
+    fill("#confNewPwd").with("wrongPwd");
     click("#editPwdBtn");
-    assertThat(pageSource()).contains("Password changed successfully");
+    assertThat(pageSource()).contains("Old Password or Confirmation password were wrong, please try again");
     fill("#oldPwd").with("wrongPwd");
     fill("#newPwd").with("654321");
-    fill("#repeatedNewPwd").with("654321");
-    assertThat(pageSource()).contains("Password changed successfully");
+    fill("#confNewPwd").with("654321");
+    click("#editPwdBtn");
+    assertThat(pageSource()).contains("Old Password or Confirmation password were wrong, please try again");
   }
 
   // Old Password or Confirmation password were wrong, please try again

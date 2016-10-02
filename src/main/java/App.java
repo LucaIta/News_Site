@@ -254,18 +254,21 @@ public class App {
 
     post("/authors/:author_id/changePwd", (request,response) -> {
       HashMap<String,Object> model = new HashMap<String,Object>();
-      String oldPwd = request.queryParams("oldPwd");
-      String newPwd = request.queryParams("newPwd");
-      String confNewPwd = request.queryParams("confNewPwd");
       int authorId = Integer.parseInt(request.params("author_id"));
       Author author = Author.find(authorId);
+      String oldPwd = request.queryParams("oldPwd");
+      byte[] salt = author.getSalt();
+      String encryptedOldPassword = PasswordEncrypter.getSha1SecurePassword(oldPwd,salt);
+      String newPwd = request.queryParams("newPwd");
+      String confNewPwd = request.queryParams("confNewPwd");
       Boolean pswChangedsuccessfully;
-      if (author.getPassword() == oldPwd) {
+      if (author.getPassword().equals(encryptedOldPassword)) {
         author.editPassword(newPwd);
         pswChangedsuccessfully = true;
       } else {
         pswChangedsuccessfully = false;
       }
+      model.put("author", author);
       model.put("pswChangedsuccessfully",pswChangedsuccessfully);
       model.put("template", "/templates/change-pwd.vtl");
       return new ModelAndView(model, "/templates/layout.vtl");
