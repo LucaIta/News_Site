@@ -424,6 +424,37 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("The inserted password do not correspond");
   }
 
+  @Test
+  public void passwordCanBeChanged() {
+    Author author = createUserAndLogin();
+    String url = String.format("http://localhost:4567/authors/%d/edit", author.getId());
+    goTo(url);
+    click("#changePwdBtn");
+    fill("#oldPwd").with(author.getPassword());
+    fill("#newPwd").with("654321");
+    fill("#repeatedNewPwd").with("654321");
+    click("#editPwdBtn");
+    assertThat(pageSource()).contains("Password changed successfully");
+  }
+
+  @Test
+  public void errorMessageIsDisplayedIfPasswordInsertedIsIncorrect() {
+    Author author = createUserAndLogin();
+    String url = String.format("http://localhost:4567/authors/%d/changePwd", author.getId());
+    goTo(url);
+    fill("#oldPwd").with(author.getPassword());
+    fill("#newPwd").with("654321");
+    fill("#repeatedNewPwd").with("wrongPwd");
+    click("#editPwdBtn");
+    assertThat(pageSource()).contains("Password changed successfully");
+    fill("#oldPwd").with("wrongPwd");
+    fill("#newPwd").with("654321");
+    fill("#repeatedNewPwd").with("654321");
+    assertThat(pageSource()).contains("Password changed successfully");
+  }
+
+  // Old Password or Confirmation password were wrong, please try again
+
 
 
 }

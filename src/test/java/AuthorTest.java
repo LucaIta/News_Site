@@ -251,5 +251,17 @@ public class AuthorTest {
     assertEquals("LucaDFG", Author.getExistingUsernames().get(1));
   }
 
+  @Test
+  public void editPassword_changesPasswordCorrectly_654321() {
+    Author author = new Author("Luca","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink","LucaABC","123456",true,true,true,true,true,true);
+    author.save();
+    int authorId = author.getId();
+    String newPassword = "654321";
+    author.editPassword(newPassword);
+    byte[] salt = author.getSalt();
+    String encryptedNewPassword = PasswordEncrypter.getSha1SecurePassword(newPassword,salt);
+    assertEquals(author.getPassword(), encryptedNewPassword);
+  }
+
 
 }

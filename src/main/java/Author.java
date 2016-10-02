@@ -187,6 +187,17 @@ public class Author {
     }
   }
 
+  public void editPassword(String password) {
+    try (Connection con = DB.sql2o.open()) {
+    byte[] salt = PasswordEncrypter.getSalt();
+    String encryptedPassword = PasswordEncrypter.getSha1SecurePassword(password,salt);
+    String sql = "UPDATE authors SET password = :password, salt = :salt WHERE id = :id";
+    con.createQuery(sql).addParameter("password",encryptedPassword).addParameter("salt",salt).addParameter("id", this.id).executeUpdate();
+    this.password = encryptedPassword;
+    this.salt = salt;
+    }
+  }
+
   public void save() {
     try (Connection con = DB.sql2o.open()) {
       String sql = "INSERT into authors (name,role,bio,picture,email,facebook,twitter,username,salt,password,canCreateAuthor,canCreateArticle,canEditAuthor,canEditArticle,canDeleteArticle,canDeleteAuthor) VALUES (:name,:role,:bio,:picture,:email,:facebook,:twitter,:username,:salt,:password,:canCreateAuthor,:canCreateArticle,:canEditAuthor,:canEditArticle,:canDeleteArticle,:canDeleteAuthor);";

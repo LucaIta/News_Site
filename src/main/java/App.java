@@ -244,6 +244,33 @@ public class App {
       return new ModelAndView(model, "/templates/layout.vtl");
     }, new VelocityTemplateEngine());
 
+    get("/authors/:author_id/changePwd", (request,response) -> {
+      HashMap<String,Object> model = new HashMap<String,Object>();
+      model.put("template", "/templates/change-pwd.vtl");
+      int authorId = Integer.parseInt(request.params("author_id"));
+      model.put("author", Author.find(authorId));
+      return new ModelAndView(model, "/templates/layout.vtl");
+    }, new VelocityTemplateEngine());
+
+    post("/authors/:author_id/changePwd", (request,response) -> {
+      HashMap<String,Object> model = new HashMap<String,Object>();
+      String oldPwd = request.queryParams("oldPwd");
+      String newPwd = request.queryParams("newPwd");
+      String confNewPwd = request.queryParams("confNewPwd");
+      int authorId = Integer.parseInt(request.params("author_id"));
+      Author author = Author.find(authorId);
+      Boolean pswChangedsuccessfully;
+      if (author.getPassword() == oldPwd) {
+        author.editPassword(newPwd);
+        pswChangedsuccessfully = true;
+      } else {
+        pswChangedsuccessfully = false;
+      }
+      model.put("pswChangedsuccessfully",pswChangedsuccessfully);
+      model.put("template", "/templates/change-pwd.vtl");
+      return new ModelAndView(model, "/templates/layout.vtl");
+    }, new VelocityTemplateEngine());
+
     post("/authors/:author_id/delete", (request,response) -> {
       int authorId = Integer.parseInt(request.params("author_id"));
       Author.find(authorId).delete();
