@@ -1,10 +1,21 @@
+<h1>Authors</h1>
+
 #if($authors)
 
-#foreach($author in $authors)
-  <p><a href="/authors/$author.getId()/edit">$author.getName()</a></p>
-  <p>$author.getRole()</p>
-  <br>
-  <br>
+#foreach($authorFromList in $authors)
+<div class="author">
+  <h3>$authorFromList.getName()</h3>
+  <p>$authorFromList.getRole()</p>
+
+  <form action="/authors/$authorFromList.getId()/edit" method="get">
+    #if($author.getCanEditAuthor())
+      <button type="submit" class="btn btn-success pull-right">Edit Author</button>
+    #else
+      <button type="submit" class="btn btn-success pull-right disabled">Edit Author</button>
+    #end
+  </form>
+
+</div>
 #end
 
 #else

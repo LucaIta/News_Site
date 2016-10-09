@@ -30,7 +30,7 @@ input , textarea {
   background-color: white;
 }
 
-.article a , .hubArticle a {
+.article a , .hubArticle a, .author {
   text-decoration: none;
 }
 

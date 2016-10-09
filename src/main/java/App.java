@@ -175,7 +175,9 @@ public class App {
     }, new VelocityTemplateEngine());
 
     get("/authors", (request,response) -> {
+      Author author = request.session().attribute("author");
       HashMap<String,Object> model = new HashMap<String,Object>();
+      model.put("author", author);
       model.put("template", "/templates/authors.vtl");
       model.put("authors", Author.all());
       return new ModelAndView(model, "/templates/layout.vtl");

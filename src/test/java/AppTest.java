@@ -188,8 +188,12 @@ public class AppTest extends FluentTest {
   public void authorsGetEditedCorrectly() {
     Author newAuthor = new Author("Luca M","Reporter", "Born in may", "www.testUrl.com", "luca@gmail.com", "facebookLink", "twitterLink","LucaABC", "123456",true,true,true,true,true,true);
     newAuthor.save();
+    goTo("http://localhost:4567/");
+    fill("#username").with("LucaABC");
+    fill("#password").with("123456");
+    submit("#loginBtn");
     goTo("http://localhost:4567/authors");
-    click("a", withText("Luca M"));
+    submit(".btn");
     fill("#newName").with("editedName");
     fill("#newRole").with("editedRole");
     fill("#newBio").with("editedBio");
@@ -202,7 +206,7 @@ public class AppTest extends FluentTest {
     click("#canEditAuthor");
     click("#canDeleteAuthor");
     submit("#editBtn");
-    click("a", withText("editedName"));
+    submit(".btn");
     assertThat(pageSource()).contains("editedName");
     assertThat(pageSource()).contains("editedRole");
     assertThat(pageSource()).contains("editedBio");
@@ -245,6 +249,8 @@ public class AppTest extends FluentTest {
     fill("#facebook").with("Facebook");
     fill("#twitter").with("Twitter");
     fill("#username").with("Username");
+    fill("#password").with("123456");
+    fill("#repeatedPassword").with("123456");
     click("#canCreateAuthor");
     click("#canCreateArticle");
     click("#canEditAuthor");
@@ -252,8 +258,12 @@ public class AppTest extends FluentTest {
     click("#canDeleteAuthor");
     click("#canDeleteArticle");
     submit("#createAuthorBtn");
+    goTo("http://localhost:4567/");
+    fill("#username").with("Username");
+    fill("#password").with("123456");
+    submit("#loginBtn");
     goTo("http://localhost:4567/authors");
-    click("a", withText("Name"));
+    submit(".btn");
     assertThat(pageSource()).contains("Name");
     assertThat(pageSource()).contains("Role");
     assertThat(pageSource()).contains("Bio");
