@@ -49,6 +49,7 @@ img {
   width: 100%;
   height: auto;
   border: 2px;
+  padding-bottom: 8px;
 }
 
 .titleBox {
