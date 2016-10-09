@@ -3,6 +3,12 @@ body {
   color: white;
 }
 
+input , textarea , .article {
+  color: black;
+}
+
+
+
 #login_form {
   margin: 300px;
 }
