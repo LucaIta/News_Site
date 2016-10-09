@@ -23,13 +23,14 @@ input , textarea {
 .hubArticle {
   word-wrap: break-word;
   margin: 20px;
-  height: 450px;
-  width: 500px;
+  padding: 10px;
+  height: 100%;
+  width: 550px;
   border: 2px solid black;
   background-color: white;
 }
 
-.article a {
+.article a , .hubArticle a {
   text-decoration: none;
 }
 
@@ -41,6 +42,12 @@ img {
 .imgBox {
   width: auto;
   height: 40%;
+  border: 2px;
+}
+
+.hubImgBox {
+  width: 100%;
+  height: auto;
   border: 2px;
 }
 

@@ -125,7 +125,7 @@ public class AppTest extends FluentTest {
     Article newArticle = createArticleAndSave();
     author.add(newArticle);
     goTo("http://localhost:4567/hub");
-    click("a", withText("How to learn English"));
+    click("h3", withText("How to learn English"));
     click(".btn", withText("Edit Article"));
     // click("a", withText("How to learn English"));
     assertThat(pageSource()).contains("An Easy Way to Learn English");
