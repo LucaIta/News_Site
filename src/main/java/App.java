@@ -88,10 +88,15 @@ public class App {
     }, new VelocityTemplateEngine());
 
     get("/articles/:article_id", (request,response) -> {
-      Author currentAuthor = request.session().attribute("author"); // Here I retrieve the author so that the VTL can check wheter the user of the current session can edit the article
       HashMap<String,Object> model = new HashMap<String,Object>();
+      if (request.session().attribute("author") != null) {
+        Author currentAuthor = request.session().attribute("author"); // Here I retrieve the author so that the VTL can check wheter the user of the current session can edit the article
+        model.put("author", currentAuthor);
+      } else {
+        boolean visitorUser = true; // here it creates a boolean that keep traks of wheter who is visiting the page is a visito or an author so that I can hide or display the edit button
+        model.put("visitorUser", visitorUser);
+      }
       model.put("template", "/templates/article.vtl");
-      model.put("author", currentAuthor);
       model.put("article", Article.find(Integer.parseInt(request.params("article_id"))));
       return new ModelAndView(model, "/templates/layout.vtl");
     }, new VelocityTemplateEngine());

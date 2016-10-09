@@ -454,8 +454,12 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("Old Password or Confirmation password were wrong, please try again");
   }
 
-  // Old Password or Confirmation password were wrong, please try again
-
-
+  @Test
+  public void homePageIsDisplayedIfHomePageButtonIsClicked() {
+    Author author = createUserAndLogin();
+    goTo("http://localhost:4567/hub");
+    click("#homePageBtn");
+    assertThat(pageSource()).contains("HOME - PAGE");
+  }
 
 }
