@@ -386,7 +386,7 @@ public class AppTest extends FluentTest {
     Article article = new Article("First Page Article","First Page Article ShortTitle","this article is about...","picture","subhead","An Easy Way to Learn English","LucaABC","");
     article.save();
     goTo("http://localhost:4567/home");
-    click("a", withText("First Page Article ShortTitle"));
+    click("h3", withText("First Page Article ShortTitle"));
     assertThat(pageSource()).contains("LucaABC");
   }
 
