@@ -11,6 +11,26 @@ input , textarea {
   margin: 300px;
 }
 
+.author {
+  height: auto;
+  margin: 20px;
+  padding: 10px;
+  width: 550px;
+  border: 2px solid black;
+  color: black;
+  background-color: white;
+}
+
+
+.author img {
+  padding-bottom: 10px;
+}
+
+.highlited {
+  font-weight: bold;
+  font-size: 16px;
+}
+
 .article {
   word-wrap: break-word;
   margin: 20px;
@@ -29,6 +49,7 @@ input , textarea {
   border: 2px solid black;
   background-color: white;
 }
+
 
 .article a , .hubArticle a, .author {
   text-decoration: none;
