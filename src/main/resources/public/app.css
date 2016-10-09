@@ -3,11 +3,9 @@ body {
   color: white;
 }
 
-input , textarea , .article {
+input , textarea {
   color: black;
 }
-
-
 
 #login_form {
   margin: 300px;
@@ -21,6 +19,15 @@ input , textarea , .article {
   border: 2px solid black;
   background-color: white;
 }
+
+/*.hubArticle {
+  word-wrap: break-word;
+  margin: 20px;
+  height: 450px;
+  width: 250px;
+  border: 2px solid black;
+  background-color: white;
+}*/
 
 .article a {
   text-decoration: none;

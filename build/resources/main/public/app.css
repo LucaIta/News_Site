@@ -3,11 +3,9 @@ body {
   color: white;
 }
 
-input , textarea , .article {
+input , textarea {
   color: black;
 }
-
-
 
 #login_form {
   margin: 300px;
