@@ -187,9 +187,9 @@ public class Article {
     }
   }
 
-  public String getBodyPreview() {
-    if (this.body.length() > 215) {
-      return this.body.substring(0,215);
+  public String getBodyPreview(int previewLenght) {
+    if (this.body.length() > previewLenght) {
+      return this.body.substring(0,previewLenght);
     } else {
       return this.body;
     }
