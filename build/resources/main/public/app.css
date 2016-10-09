@@ -20,6 +20,15 @@ input , textarea {
   background-color: white;
 }
 
+.hubArticle {
+  word-wrap: break-word;
+  margin: 20px;
+  height: 450px;
+  width: 500px;
+  border: 2px solid black;
+  background-color: white;
+}
+
 .article a {
   text-decoration: none;
 }
