@@ -161,7 +161,10 @@ public class App {
     get("/authors/new", (request,response) -> {
       HashMap<String,Object> model = new HashMap<String,Object>();
 
-      // ifAvailablePutAuthorInModel();
+      if (request.session().attribute("author") != null) {
+        Author currentAuthor = request.session().attribute("author"); // Here I retrieve the author so that the VTL can check wheter the user of the current session can edit the article
+        model.put("author", currentAuthor);
+      }
 
       if(request.session().attribute("usernameIsTaken") != null) { // when I get to this path for the first time, "usernameIsTaken" is null. So I need this check to retrieve the value of "usernameIsTaken" and put it in the model only when it is not null.
         boolean usernameIsTaken = request.session().attribute("usernameIsTaken");
@@ -291,10 +294,6 @@ public class App {
     });
 
   }
-
-    public void ifAvailablePutAuthorInModel(HashMap<String,Object> model) {
-
-    }
 
 
   // public void getBooleanAttributeFromSessionAndPutInModel(String attributeKey) {
