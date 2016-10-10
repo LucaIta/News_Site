@@ -126,7 +126,7 @@ public class App {
       Article newArticle = new Article(title,shortTitle,body,picture,subhead,subtitle,author,authorByLine);
       newArticle.save();
       currentAuthor.add(newArticle); // here we associate the Author and the Article
-      response.redirect("/articles/new");
+      response.redirect("/hub");
       return null;
     });
 
