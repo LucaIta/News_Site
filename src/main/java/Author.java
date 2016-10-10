@@ -309,7 +309,7 @@ public class Author {
 
   public List<Article> findArticles() {
     try (Connection con = DB.sql2o.open()) {
-      String articleIdsQuery = "SELECT article_id FROM authors_articles WHERE author_id = :author_id";
+      String articleIdsQuery = "SELECT article_id FROM authors_articles WHERE author_id = :author_id order by id desc";
       List<Integer> articleIds = con.createQuery(articleIdsQuery).addParameter("author_id",this.id).executeAndFetch(Integer.class);
       List<Article> articles = new ArrayList<Article>();
       for (int articleId : articleIds) {
