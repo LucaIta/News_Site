@@ -1,6 +1,6 @@
 <div class="row">
 
-  #if (!$author) ## this if statement checks wheter in the model is present an author, if it is not, the one visiting the page is a visitor and the home-page button is displayed. If it is, the navBar layout is applied which contains its own navbar 
+  #if (!$author) ## this if statement checks wheter in the model is present an author, if it is not, the one visiting the page is a visitor and the home-page button is displayed. If it is, the navBar layout is applied which contains its own navbar
     <div class="col-md-2 navBar">
       <form action="/home" method="get">
         <button type="submit" class="btn btn-success pull-right">Homepage</button>
@@ -10,13 +10,23 @@
 
   <div class="col-md-8 articleDetail">
     #if ($author)
-      #if ($author.getCanEditArticle())
+
       <form action="/articles/$article.getId()/edit" method="get">
+      #if($author.getCanEditArticle())
         <button type="submit" class="btn btn-success pull-right">Edit Article</button>
       #else
         <button type="submit" class="btn btn-success pull-right disabled">Edit Article</button>
       #end
       </form>
+
+      <form action="/articles/$article.getId()/delete" method="post">
+      #if($author.getCanDeleteArticle())
+        <button type="submit" class="btn btn-success pull-right" id="deleteBtn">Delete Article</button>
+      #else
+        <button type="submit" class="btn btn-success pull-right disabled" id="deleteBtn">Delete Article</button>
+      #end
+      </form>
+
     #else
     #end
     <h1>$article.getTitle()</h1>
