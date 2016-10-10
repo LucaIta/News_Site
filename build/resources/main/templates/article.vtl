@@ -1,10 +1,9 @@
 <div class="row">
-  <div class="col-md-2">
-    #if (!$author)
+
+  <div class="col-md-2 navBar">
     <form action="/home" method="get">
       <button type="submit" class="btn btn-success pull-right">Homepage</button>
     </form>
-    #end
   </div>
 
   <div class="col-md-8 articleDetail">
@@ -12,9 +11,9 @@
       #if ($author.getCanEditArticle())
       <form action="/articles/$article.getId()/edit" method="get">
         <button type="submit" class="btn btn-success pull-right">Edit Article</button>
-        #else
+      #else
         <button type="submit" class="btn btn-success pull-right disabled">Edit Article</button>
-        #end
+      #end
       </form>
     #else
     #end
