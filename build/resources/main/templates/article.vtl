@@ -1,27 +1,33 @@
-<div class="col-md-8 articleDetail">
-  #if ($author)
+<div class="row">
+  <div class="col-md-2">
+    #if (!$author)
+    <form action="/home" method="get">
+      <button type="submit" class="btn btn-success pull-right">Homepage</button>
+    </form>
+    #end
+  </div>
+
+  <div class="col-md-8 articleDetail">
+    #if ($author)
     #if ($author.getCanEditArticle())
-      <form action="/articles/$article.getId()/edit" method="get">
-        <button type="submit" class="btn btn-success pull-right">Edit Article</button>
-        #else
-        <button type="submit" class="btn btn-success pull-right disabled">Edit Article</button>
-        #end
-      </form>
-  #else
-    ## do nothing
-  #end
-  <h1>$article.getTitle()</h1>
-  <p>$article.getSubhead()</p>
-  <h3>$article.getSubtitle()</h3>
-  <p>by $article.getAuthor()
-    #if ($article.getAuthorByLine() != "")
-      and $article.getAuthorByLine()
+    <form action="/articles/$article.getId()/edit" method="get">
+      <button type="submit" class="btn btn-success pull-right">Edit Article</button>
+      #else
+      <button type="submit" class="btn btn-success pull-right disabled">Edit Article</button>
+      #end
+    </form>
     #else
     #end
-  </p>
-  <img src="$article.getPicture()" class="hubImgBox">
-  <p class="bodyBox">$article.getBody()</p>
-</div>
-
-<div class="col-md-2">
+    <h1>$article.getTitle()</h1>
+    <p>$article.getSubhead()</p>
+    <h3>$article.getSubtitle()</h3>
+    <p>by $article.getAuthor()
+      #if ($article.getAuthorByLine() != "")
+      and $article.getAuthorByLine()
+      #else
+      #end
+    </p>
+    <img src="$article.getPicture()" class="hubImgBox">
+    <p class="bodyBox">$article.getBody()</p>
+  </div>
 </div>
