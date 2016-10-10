@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ArticleTest" tests="23" skipped="0" failures="0" errors="0" timestamp="2016-10-10T14:31:20" hostname="oems-MBP.station" time="2.844">
+<testsuite name="ArticleTest" tests="23" skipped="0" failures="0" errors="0" timestamp="2016-10-10T14:42:02" hostname="oems-MBP.station" time="1.818">
   <properties/>
-  <testcase name="getAuthorByLine_retrievesAuthorByLineCorrectly_authorByLine" classname="ArticleTest" time="0.011"/>
-  <testcase name="getTitle_retrievesTitleCorrectly_title" classname="ArticleTest" time="0.011"/>
-  <testcase name="getBody_retrievesBodyCorrectly_body" classname="ArticleTest" time="0.014"/>
-  <testcase name="editTitle_editTitleCorrectly_title2" classname="ArticleTest" time="0.076"/>
-  <testcase name="delete_deletesArticleCorrectlyFromArticleTableAndJoinTable_1" classname="ArticleTest" time="0.141"/>
-  <testcase name="editSubtitle_editSubtitleCorrectly_Subtitle2" classname="ArticleTest" time="0.061"/>
-  <testcase name="editSubhead_editSubheadCorrectly_subhead2" classname="ArticleTest" time="0.075"/>
-  <testcase name="editBody_editBodyCorrectly_body2" classname="ArticleTest" time="0.056"/>
-  <testcase name="editAuthorByLine_editAuthorByLineCorrectly_authorByLine2" classname="ArticleTest" time="0.063"/>
-  <testcase name="save_savesArticlesCorrectly_true" classname="ArticleTest" time="0.037"/>
-  <testcase name="getArticlesForPage_returnsTwelveArticles_12" classname="ArticleTest" time="0.49"/>
-  <testcase name="editPicture_editPictureCorrectly_picture2" classname="ArticleTest" time="0.092"/>
-  <testcase name="find_retrieveArticleFromDatabaseById_article" classname="ArticleTest" time="0.06"/>
-  <testcase name="edit_editArticleCorrectly_true" classname="ArticleTest" time="0.064"/>
-  <testcase name="editShortTitle_editShortTitleCorrectly_shortTitle2" classname="ArticleTest" time="0.073"/>
-  <testcase name="article_instantiatesCorrectly_true" classname="ArticleTest" time="0.024"/>
-  <testcase name="getShortTitle_retrievesShortTitleCorrectly_ShortTitle" classname="ArticleTest" time="0.033"/>
-  <testcase name="getAuthor_retrievesAuthorByLineCorrectly_author" classname="ArticleTest" time="0.065"/>
-  <testcase name="isLastPage_returnsCorrectBooleans_trueFalse" classname="ArticleTest" time="1.305"/>
-  <testcase name="getPicture_retrievesPictureCorrectly_picture" classname="ArticleTest" time="0.013"/>
-  <testcase name="getSubtitle_retrievesSubtitleCorrectly_subtitle" classname="ArticleTest" time="0.011"/>
-  <testcase name="getSubhead_retrievesSubheadCorrectly_subhead" classname="ArticleTest" time="0.029"/>
-  <testcase name="getBodyPreview_returnsShorterVersionOfTheString" classname="ArticleTest" time="0.012"/>
+  <testcase name="getAuthorByLine_retrievesAuthorByLineCorrectly_authorByLine" classname="ArticleTest" time="0.009"/>
+  <testcase name="getTitle_retrievesTitleCorrectly_title" classname="ArticleTest" time="0.009"/>
+  <testcase name="getBody_retrievesBodyCorrectly_body" classname="ArticleTest" time="0.01"/>
+  <testcase name="editTitle_editTitleCorrectly_title2" classname="ArticleTest" time="0.04"/>
+  <testcase name="delete_deletesArticleCorrectlyFromArticleTableAndJoinTable_1" classname="ArticleTest" time="0.175"/>
+  <testcase name="editSubtitle_editSubtitleCorrectly_Subtitle2" classname="ArticleTest" time="0.045"/>
+  <testcase name="editSubhead_editSubheadCorrectly_subhead2" classname="ArticleTest" time="0.04"/>
+  <testcase name="editBody_editBodyCorrectly_body2" classname="ArticleTest" time="0.038"/>
+  <testcase name="editAuthorByLine_editAuthorByLineCorrectly_authorByLine2" classname="ArticleTest" time="0.042"/>
+  <testcase name="save_savesArticlesCorrectly_true" classname="ArticleTest" time="0.03"/>
+  <testcase name="getArticlesForPage_returnsTwelveArticles_12" classname="ArticleTest" time="0.327"/>
+  <testcase name="editPicture_editPictureCorrectly_picture2" classname="ArticleTest" time="0.041"/>
+  <testcase name="find_retrieveArticleFromDatabaseById_article" classname="ArticleTest" time="0.028"/>
+  <testcase name="edit_editArticleCorrectly_true" classname="ArticleTest" time="0.052"/>
+  <testcase name="editShortTitle_editShortTitleCorrectly_shortTitle2" classname="ArticleTest" time="0.04"/>
+  <testcase name="article_instantiatesCorrectly_true" classname="ArticleTest" time="0.011"/>
+  <testcase name="getShortTitle_retrievesShortTitleCorrectly_ShortTitle" classname="ArticleTest" time="0.012"/>
+  <testcase name="getAuthor_retrievesAuthorByLineCorrectly_author" classname="ArticleTest" time="0.012"/>
+  <testcase name="isLastPage_returnsCorrectBooleans_trueFalse" classname="ArticleTest" time="0.767"/>
+  <testcase name="getPicture_retrievesPictureCorrectly_picture" classname="ArticleTest" time="0.03"/>
+  <testcase name="getSubtitle_retrievesSubtitleCorrectly_subtitle" classname="ArticleTest" time="0.012"/>
+  <testcase name="getSubhead_retrievesSubheadCorrectly_subhead" classname="ArticleTest" time="0.011"/>
+  <testcase name="getBodyPreview_returnsShorterVersionOfTheString" classname="ArticleTest" time="0.015"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
