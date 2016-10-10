@@ -97,12 +97,21 @@ public class AppTest extends FluentTest {
   }
 
   @Test
-  public void articlesGetsDisplayed() {
+  public void articlesGetsCreatedAndDisplayed() {
     Author author = createUserAndLogin();
-    Article article = createArticleAndSave();
-    author.add(article);
+    goTo("http://localhost:4567/articles/new");
+
+    fill("#title").with("this is the title");
+    fill("#shortTitle").with("this is the short title");
+    fill("#body").with("body");
+    fill("#picture").with("picture");
+    fill("#subhead").with("subhead");
+    fill("#subtitle").with("subtitle");
+    submit("#articleCreationBtn");
+
+    // author.add(article);
     goTo("http://localhost:4567/hub");
-    assertThat(pageSource()).contains("div");
+    assertThat(pageSource()).contains("this is the title");
   }
 
   @Test
