@@ -9,7 +9,7 @@
           #if($articles.size() > $articleIndexPosition)
           #set ( $article = $articles.get($articleIndexPosition))
             <div class="col-md-4 article">
-              <a href="/articles/$articles.get($articleIndexPosition).getId()">
+              <a href="/visitors/articles/$articles.get($articleIndexPosition).getId()">
                 <div class="imgBox">
                   #if ($article.getPicture() != "")
                     <img src="$article.getPicture()">
