@@ -1,10 +1,12 @@
 <div class="row">
 
-  <div class="col-md-2 navBar">
-    <form action="/home" method="get">
-      <button type="submit" class="btn btn-success pull-right">Homepage</button>
-    </form>
-  </div>
+  #if (!$author) ## this if statement checks wheter in the model is present an author, if it is not, the one visiting the page is a visitor and the home-page button is displayed. If it is, the navBar layout is applied which contains its own navbar 
+    <div class="col-md-2 navBar">
+      <form action="/home" method="get">
+        <button type="submit" class="btn btn-success pull-right">Homepage</button>
+      </form>
+    </div>
+  #end
 
   <div class="col-md-8 articleDetail">
     #if ($author)
