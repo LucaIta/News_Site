@@ -128,12 +128,6 @@ public class App {
 
     get("/articles/:article_id/edit", (request,response) -> {
       Author author = request.session().attribute("author");
-      // if (author.getCanEditArticle()) {
-      //   response.redirect("/hub");
-      //   return null;
-      // }
-      // checkCredentialsAndRedirect(author,"canEditArticle");
-
       HashMap<String,Object> model = new HashMap<String,Object>();
       model.put("author", author);
       model.put("template", "/templates/article-edit-form.vtl");
@@ -155,7 +149,7 @@ public class App {
       int articleId = Integer.parseInt(request.params(":article_id"));
       Article newArticle = new Article(title,shortTitle,body,picture,subhead,subtitle,author,authorByLine);
       newArticle.edit(articleId);
-      response.redirect("/hub");
+      response.redirect("/articles/" + articleId);
       return null;
     });
 
