@@ -1,14 +1,14 @@
 <div class="col-md-8 articleDetail">
-  #if ($visitorUser)
-  ## do nothing
+  #if ($author)
+    #if ($author.getCanEditArticle())
+      <form action="/articles/$article.getId()/edit" method="get">
+        <button type="submit" class="btn btn-success pull-right">Edit Article</button>
+        #else
+        <button type="submit" class="btn btn-success pull-right disabled">Edit Article</button>
+        #end
+      </form>
   #else
-  #if ($author.getCanEditArticle())
-  <form action="/articles/$article.getId()/edit" method="get">
-    <button type="submit" class="btn btn-success pull-right">Edit Article</button>
-    #else
-    <button type="submit" class="btn btn-success pull-right disabled">Edit Article</button>
-    #end
-  </form>
+    ## do nothing
   #end
   <h1>$article.getTitle()</h1>
   <p>$article.getSubhead()</p>

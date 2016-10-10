@@ -94,16 +94,15 @@ public class App {
 
     get("/articles/:article_id", (request,response) -> {
       HashMap<String,Object> model = new HashMap<String,Object>();
+      model.put("template", "/templates/article.vtl");
+      model.put("article", Article.find(Integer.parseInt(request.params("article_id"))));
       if (request.session().attribute("author") != null) {
         Author currentAuthor = request.session().attribute("author"); // Here I retrieve the author so that the VTL can check wheter the user of the current session can edit the article
         model.put("author", currentAuthor);
+        return new ModelAndView(model, "/templates/navBarLayout.vtl"); // here, if the session contains the "author" attribute, I put in the model the layout for the authors (which include a navBar) otherwise I put the layout without navbar 
       } else {
-        boolean visitorUser = true; // here it creates a boolean that keep traks of wheter who is visiting the page is a visito or an author so that I can hide or display the edit button
-        model.put("visitorUser", visitorUser);
+        return new ModelAndView(model, "/templates/layout.vtl");
       }
-      model.put("template", "/templates/article.vtl");
-      model.put("article", Article.find(Integer.parseInt(request.params("article_id"))));
-      return new ModelAndView(model, "/templates/navBarLayout.vtl");
     }, new VelocityTemplateEngine());
 
     post("/articles", (request,response) -> {
