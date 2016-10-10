@@ -1,46 +1,51 @@
-<h1>Authors</h1>
 
-#if($authors)
+<div class="col-md-8">
 
-#foreach($authorFromList in $authors)
-<div class="author">
-  <h3>$authorFromList.getName()</h3>
+  <h1>Authors</h1>
 
-  #if ($authorFromList.getPicture() != "")
+  #if($authors)
+
+  #foreach($authorFromList in $authors)
+  <div class="author">
+    <h3>$authorFromList.getName()</h3>
+
+    #if ($authorFromList.getPicture() != "")
     <img src="$authorFromList.getPicture()" alt="$authorFromList.getName() avatar"/>
-  #end
-
-  #if ($authorFromList.getRole() != "")
-    <p><span class="highlited">Role:</span> $authorFromList.getRole()</p>
-  #end
-
-  #if ($authorFromList.getBio() != "")
-    <p><span class="highlited">Biography:</span> $authorFromList.getBio()</p>
-  #end
-
-  #if ($authorFromList.getEmail() != "")
-   <p><span class="highlited">Email Address:</span> $authorFromList.getEmail()</p>
-  #end
-
-  #if ($authorFromList.getFacebook() != "")
-    <p><span class="highlited">Facebook:</span> $authorFromList.getFacebook()</p>
-  #end
-
-  #if ($authorFromList.getTwitter() != "")
-    <p><span class="highlited">Twitter:</span> $authorFromList.getTwitter()</p>
-  #end
-
-  <form action="/authors/$authorFromList.getId()/edit" method="get">
-    #if($author.getCanEditAuthor())
-      <button type="submit" class="btn btn-success">Edit Author</button>
-    #else
-      <button type="submit" class="btn btn-success disabled">Edit Author</button>
     #end
-  </form>
 
-</div>
-#end
+    #if ($authorFromList.getRole() != "")
+    <p><span class="highlited">Role:</span> $authorFromList.getRole()</p>
+    #end
 
-#else
+    #if ($authorFromList.getBio() != "")
+    <p><span class="highlited">Biography:</span> $authorFromList.getBio()</p>
+    #end
+
+    #if ($authorFromList.getEmail() != "")
+    <p><span class="highlited">Email Address:</span> $authorFromList.getEmail()</p>
+    #end
+
+    #if ($authorFromList.getFacebook() != "")
+    <p><span class="highlited">Facebook:</span> $authorFromList.getFacebook()</p>
+    #end
+
+    #if ($authorFromList.getTwitter() != "")
+    <p><span class="highlited">Twitter:</span> $authorFromList.getTwitter()</p>
+    #end
+
+    <form action="/authors/$authorFromList.getId()/edit" method="get">
+      #if($author.getCanEditAuthor())
+      <button type="submit" class="btn btn-success">Edit Author</button>
+      #else
+      <button type="submit" class="btn btn-success disabled">Edit Author</button>
+      #end
+    </form>
+
+  </div>
+  #end
+
+  #else
   <p>No author has been created yet</p>
-#end
+  #end
+  
+</div>

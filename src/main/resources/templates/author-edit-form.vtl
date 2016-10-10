@@ -1,100 +1,104 @@
-<h1>Edit Author</h1>
+<div class="col-md-8">
+  
+  <h1>Edit Author</h1>
 
 
-<form action="/authors/$author.getId()/edit" method="post">
+  <form action="/authors/$author.getId()/edit" method="post">
 
-  <div class="form-group">
-    <label for="newName">Author Name</label>
-    <input id="newName" name="newName" type="text" value="$author.getName()">
-  </div>
+    <div class="form-group">
+      <label for="newName">Author Name</label>
+      <input id="newName" name="newName" type="text" value="$author.getName()">
+    </div>
 
-  <div class="form-group">
-    <label for="newRole">Author Role</label>
-    <input id="newRole" name="newRole" type="text" value="$author.getRole()">
-  </div>
+    <div class="form-group">
+      <label for="newRole">Author Role</label>
+      <input id="newRole" name="newRole" type="text" value="$author.getRole()">
+    </div>
 
-  <div class="form-group">
-    <label for="newBio">Author Bio</label>
-    <input id="newBio" name="newBio" type="text" value="$author.getBio()">
-  </div>
+    <div class="form-group">
+      <label for="newBio">Author Bio</label>
+      <input id="newBio" name="newBio" type="text" value="$author.getBio()">
+    </div>
 
-  <div class="form-group">
-    <label for="newPicture">Author Picture URL</label>
-    <input id="newPicture" name="newPicture" type="text" value="$author.getPicture()">
-  </div>
+    <div class="form-group">
+      <label for="newPicture">Author Picture URL</label>
+      <input id="newPicture" name="newPicture" type="text" value="$author.getPicture()">
+    </div>
 
-  <div class="form-group">
-    <label for="newEmail">Author Email</label>
-    <input id="newEmail" name="newEmail" type="text" value="$author.getEmail()">
-  </div>
+    <div class="form-group">
+      <label for="newEmail">Author Email</label>
+      <input id="newEmail" name="newEmail" type="text" value="$author.getEmail()">
+    </div>
 
-  <div class="form-group">
-    <label for="newFacebook">Author Facebook</label>
-    <input id="newFacebook" name="newFacebook" type="text" value="$author.getFacebook()">
-  </div>
+    <div class="form-group">
+      <label for="newFacebook">Author Facebook</label>
+      <input id="newFacebook" name="newFacebook" type="text" value="$author.getFacebook()">
+    </div>
 
-  <div class="form-group">
-    <label for="newTwitter">Author Twitter</label>
-    <input id="newTwitter" name="newTwitter" type="text" value="$author.getTwitter()">
-  </div>
+    <div class="form-group">
+      <label for="newTwitter">Author Twitter</label>
+      <input id="newTwitter" name="newTwitter" type="text" value="$author.getTwitter()">
+    </div>
 
-  <div class="form-group">
-    <label for="newUsername">Author Username</label>
-    <input id="newUsername" name="newUsername" type="text" value="$author.getUsername()">
-  </div>
+    <div class="form-group">
+      <label for="newUsername">Author Username</label>
+      <input id="newUsername" name="newUsername" type="text" value="$author.getUsername()">
+    </div>
 
-  <div class="checkbox">
-    <label for="canCreateAuthor">Can Create Author
-      <input id="canCreateAuthor" name= "canCreateAuthor" type="checkbox" value="true"
+    <div class="checkbox">
+      <label for="canCreateAuthor">Can Create Author
+        <input id="canCreateAuthor" name= "canCreateAuthor" type="checkbox" value="true"
         #if($author.getCanCreateAuthor())
         checked
-      #end>
-    </label>
+        #end>
+      </label>
 
-    <label for="canCreateArticle">Can Create Article
-      <input id="canCreateArticle" name= "canCreateArticle" type="checkbox" value="true"
+      <label for="canCreateArticle">Can Create Article
+        <input id="canCreateArticle" name= "canCreateArticle" type="checkbox" value="true"
         #if($author.getCanCreateArticle())
         checked
-      #end>
-    </label>
+        #end>
+      </label>
 
-    <label for="canEditAuthor">Can Edit Author
-      <input id="canEditAuthor" name= "canEditAuthor" type="checkbox" value="true"
+      <label for="canEditAuthor">Can Edit Author
+        <input id="canEditAuthor" name= "canEditAuthor" type="checkbox" value="true"
         #if($author.getCanEditAuthor())
         checked
-      #end>
-    </label>
+        #end>
+      </label>
 
-    <label for="canEditArticle">Can Edit Article
-      <input id="canEditArticle" name= "canEditArticle" type="checkbox" value="true"
+      <label for="canEditArticle">Can Edit Article
+        <input id="canEditArticle" name= "canEditArticle" type="checkbox" value="true"
         #if($author.getCanEditArticle())
         checked
-      #end>
-    </label>
+        #end>
+      </label>
 
-    <label for="canDeleteArticle">Can Delete Article
-      <input id="canDeleteArticle" name= "canDeleteArticle" type="checkbox" value="true"
+      <label for="canDeleteArticle">Can Delete Article
+        <input id="canDeleteArticle" name= "canDeleteArticle" type="checkbox" value="true"
         #if($author.getCanDeleteArticle())
         checked
-      #end>
-    </label>
+        #end>
+      </label>
 
-    <label for="canDeleteAuthor">Can Delete Author
-      <input id="canDeleteAuthor" name= "canDeleteAuthor" type="checkbox" value="true"
+      <label for="canDeleteAuthor">Can Delete Author
+        <input id="canDeleteAuthor" name= "canDeleteAuthor" type="checkbox" value="true"
         #if($author.getCanDeleteAuthor())
         checked
-      #end>
-    </label>
-  </div>
+        #end>
+      </label>
+    </div>
 
-  <button type="submit" class="btn btn-success" id="editBtn">Edit Author</button>
+    <button type="submit" class="btn btn-success" id="editBtn">Edit Author</button>
 
-</form>
+  </form>
 
-<form action="/authors/$author.getId()/changePwd" method="get">
-  <button type="submit" class="btn btn-success" id="changePwdBtn">Change password</button>
-</form>
+  <form action="/authors/$author.getId()/changePwd" method="get">
+    <button type="submit" class="btn btn-success" id="changePwdBtn">Change password</button>
+  </form>
 
-<form action="/authors/$author.getId()/delete" method="post">
-  <button type="submit" class="btn btn-success" id="deleteBtn">Delete Author</button>
-</form>
+  <form action="/authors/$author.getId()/delete" method="post">
+    <button type="submit" class="btn btn-success" id="deleteBtn">Delete Author</button>
+  </form>
+
+</div>

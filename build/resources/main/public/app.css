@@ -11,6 +11,10 @@ input , textarea {
   margin: 300px;
 }
 
+.navBar {
+  padding-top: 30px;
+}
+
 .author {
   height: auto;
   margin: 20px;

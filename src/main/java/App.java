@@ -76,6 +76,10 @@ public class App {
 
     get("/articles", (request,response) -> {
       HashMap<String,Object> model = new HashMap<String,Object>();
+      if (request.session().attribute("author") != null) {
+        Author currentAuthor = request.session().attribute("author"); // Here I retrieve the author so that the VTL can check wheter the user of the current session can edit the article
+        model.put("author", currentAuthor);
+      }
       model.put("template", "/templates/articles.vtl");
       model.put("articles", Article.all());
       return new ModelAndView(model, "templates/layout.vtl");
@@ -83,6 +87,10 @@ public class App {
 
     get("/articles/new", (request,response) -> {
       HashMap<String,Object> model = new HashMap<String,Object>();
+      if (request.session().attribute("author") != null) {
+        Author currentAuthor = request.session().attribute("author"); // Here I retrieve the author so that the VTL can check wheter the user of the current session can edit the article
+        model.put("author", currentAuthor);
+      }
       model.put("template", "/templates/article-form.vtl");
       return new ModelAndView(model, "/templates/layout.vtl");
     }, new VelocityTemplateEngine());

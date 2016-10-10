@@ -1,51 +1,54 @@
-<h1>Edit Article</h1>
+<div class="col-md-8">
+  <h1>Edit Article</h1>
 
 
-<form action="/articles/$article.getId()/edit" method="post">
+  <form action="/articles/$article.getId()/edit" method="post">
 
-  <div class="form-group">
-    <label for="newTitle">Article Title</label>
-    <input id="newTitle" name="newTitle" type="text" value="$article.getTitle()">
-  </div>
+    <div class="form-group">
+      <label for="newTitle">Article Title</label>
+      <input id="newTitle" name="newTitle" type="text" value="$article.getTitle()">
+    </div>
 
-  <div class="form-group">
-    <label for="newShortTitle">Article Short-Title</label>
-    <input id="newShortTitle" name="newShortTitle" type="text" value="$article.getShortTitle()">
-  </div>
+    <div class="form-group">
+      <label for="newShortTitle">Article Short-Title</label>
+      <input id="newShortTitle" name="newShortTitle" type="text" value="$article.getShortTitle()">
+    </div>
 
-  <div class="form-group">
-    <label for="newBody">Article Body</label>
-    <textarea id="newBody" name="newBody" class="form-control" rows="5">$article.getBody()</textarea>
-  </div>
+    <div class="form-group">
+      <label for="newBody">Article Body</label>
+      <textarea id="newBody" name="newBody" class="form-control" rows="5">$article.getBody()</textarea>
+    </div>
 
-  <div class="form-group">
-    <label for="newPicture">Article Picture URL</label>
-    <input id="newPicture" name="newPicture" type="text" value="$article.getPicture()">
-  </div>
+    <div class="form-group">
+      <label for="newPicture">Article Picture URL</label>
+      <input id="newPicture" name="newPicture" type="text" value="$article.getPicture()">
+    </div>
 
-  <div class="form-group">
-    <label for="newSubhead">Article Subhead</label>
-    <input id="newSubhead" name="newSubhead" type="text" value="$article.getSubhead()">
-  </div>
+    <div class="form-group">
+      <label for="newSubhead">Article Subhead</label>
+      <input id="newSubhead" name="newSubhead" type="text" value="$article.getSubhead()">
+    </div>
 
-  <div class="form-group">
-    <label for="newSubtitle">Article Subtitle</label>
-    <input id="newSubtitle" name="newSubtitle" type="text" value="$article.getSubtitle()">
-  </div>
+    <div class="form-group">
+      <label for="newSubtitle">Article Subtitle</label>
+      <input id="newSubtitle" name="newSubtitle" type="text" value="$article.getSubtitle()">
+    </div>
 
-  <div class="form-group">
-    <label for="newAuthorByLine">Article Author By Line</label>
-    <input id="newAuthorByLine" name="newAuthorByLine" type="text" value="$article.getAuthorByLine()">
-  </div>
+    <div class="form-group">
+      <label for="newAuthorByLine">Article Author By Line</label>
+      <input id="newAuthorByLine" name="newAuthorByLine" type="text" value="$article.getAuthorByLine()">
+    </div>
 
-  <button type="submit" class="btn btn-success" id="editBtn">Edit Article</button>
+    <button type="submit" class="btn btn-success" id="editBtn">Edit Article</button>
 
-</form>
+  </form>
 
-<form action="/articles/$article.getId()/delete" method="post">
-  #if($author.getCanDeleteArticle())
-  <button type="submit" class="btn btn-success" id="deleteBtn">Delete Article</button>
-  #else
-  <button type="submit" class="btn btn-success disabled">Delete Article</button>
-  #end
-</form>
+  <form action="/articles/$article.getId()/delete" method="post">
+    #if($author.getCanDeleteArticle())
+    <button type="submit" class="btn btn-success" id="deleteBtn">Delete Article</button>
+    #else
+    <button type="submit" class="btn btn-success disabled">Delete Article</button>
+    #end
+  </form>
+  
+</div>
