@@ -9,9 +9,6 @@ public class App {
   public static void main (String[] args){
     staticFileLocation("/public");
 
-    // private int static pageNumber;
-    // pageNumber = 1;
-
     get("/", (request,response) -> {
       HashMap<String,Object> model = new HashMap<String,Object>();
       if(request.session().attribute("credentialsAreIncorrect") != null) { // when I get to this path for the first time, "usernameIsTaken" is null. So I need this check to retrieve the value of "usernameIsTaken" and put it in the model only when it is not null.
@@ -163,6 +160,9 @@ public class App {
 
     get("/authors/new", (request,response) -> {
       HashMap<String,Object> model = new HashMap<String,Object>();
+
+      // ifAvailablePutAuthorInModel();
+
       if(request.session().attribute("usernameIsTaken") != null) { // when I get to this path for the first time, "usernameIsTaken" is null. So I need this check to retrieve the value of "usernameIsTaken" and put it in the model only when it is not null.
         boolean usernameIsTaken = request.session().attribute("usernameIsTaken");
         model.put("usernameIsTaken", usernameIsTaken);
@@ -292,16 +292,9 @@ public class App {
 
   }
 
-  // public static boolean checkCredentialsAndRedirect(Author author,String credentialToCheck) {
-  //   if (!author.getPermits().contains(credentialToCheck)) {
-  //     response.redirect("/hub");
-  //     return null;
-  //   } else {
-  //     return true;
-  //   }
-  //
-  //
-  // }
+    public void ifAvailablePutAuthorInModel(HashMap<String,Object> model) {
+
+    }
 
 
   // public void getBooleanAttributeFromSessionAndPutInModel(String attributeKey) {
