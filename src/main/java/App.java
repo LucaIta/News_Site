@@ -36,7 +36,7 @@ public class App {
       model.put("articles", Article.getArticlesForPage(pageNumber));
       model.put("isLastPage", Article.isLastPage(pageNumber));
       model.put("template", "/templates/home-page.vtl");
-      return new ModelAndView(model, "templates/layout.vtl");
+      return new ModelAndView(model, "templates/navBarLayout.vtl");
     },new VelocityTemplateEngine());
 
     post("/login", (request,response) -> {
@@ -49,7 +49,7 @@ public class App {
         request.session().attribute("credentialsAreIncorrect", false);
         request.session().attribute("author", author); // here I store in the session the author so that I can check the permits in the other paths
 
-        // return new ModelAndView(model, "templates/layout.vtl");
+        // return new ModelAndView(model, "templates/navBarLayout.vtl");
         response.redirect("/hub");
         return null;
       } else {
@@ -68,7 +68,7 @@ public class App {
         List<Article> articles = author.findArticles();
         model.put("articles",articles);
       }
-      return new ModelAndView(model, "templates/layout.vtl");
+      return new ModelAndView(model, "templates/navBarLayout.vtl");
     },new VelocityTemplateEngine());
 
     get("/articles", (request,response) -> {
@@ -79,7 +79,7 @@ public class App {
       }
       model.put("template", "/templates/articles.vtl");
       model.put("articles", Article.all());
-      return new ModelAndView(model, "templates/layout.vtl");
+      return new ModelAndView(model, "templates/navBarLayout.vtl");
     },new VelocityTemplateEngine());
 
     get("/articles/new", (request,response) -> {
@@ -89,7 +89,7 @@ public class App {
         model.put("author", currentAuthor);
       }
       model.put("template", "/templates/article-form.vtl");
-      return new ModelAndView(model, "/templates/layout.vtl");
+      return new ModelAndView(model, "/templates/navBarLayout.vtl");
     }, new VelocityTemplateEngine());
 
     get("/articles/:article_id", (request,response) -> {
@@ -103,7 +103,7 @@ public class App {
       }
       model.put("template", "/templates/article.vtl");
       model.put("article", Article.find(Integer.parseInt(request.params("article_id"))));
-      return new ModelAndView(model, "/templates/layout.vtl");
+      return new ModelAndView(model, "/templates/navBarLayout.vtl");
     }, new VelocityTemplateEngine());
 
     post("/articles", (request,response) -> {
@@ -137,7 +137,7 @@ public class App {
       model.put("author", author);
       model.put("template", "/templates/article-edit-form.vtl");
       model.put("article", Article.find(Integer.parseInt(request.params("article_id"))));
-      return new ModelAndView(model, "/templates/layout.vtl");
+      return new ModelAndView(model, "/templates/navBarLayout.vtl");
     }, new VelocityTemplateEngine());
 
     post("/articles/:article_id/edit", (request,response) -> {
@@ -176,7 +176,7 @@ public class App {
       }
       request.session().attribute("passwordsDoesNotCorrespond", false); // here I put the value to false so that next time the page is accessed, unless a not corresponding password was inserted, the value is false
       model.put("template", "/templates/author-form.vtl");
-      return new ModelAndView(model, "/templates/layout.vtl");
+      return new ModelAndView(model, "/templates/navBarLayout.vtl");
     }, new VelocityTemplateEngine());
 
     get("/authors", (request,response) -> {
@@ -185,7 +185,7 @@ public class App {
       model.put("author", author);
       model.put("template", "/templates/authors.vtl");
       model.put("authors", Author.all());
-      return new ModelAndView(model, "/templates/layout.vtl");
+      return new ModelAndView(model, "/templates/navBarLayout.vtl");
     }, new VelocityTemplateEngine());
 
     post("/authors", (request,response) -> { // should be /new?
@@ -253,7 +253,7 @@ public class App {
       model.put("template", "/templates/author-edit-form.vtl");
       int authorId = Integer.parseInt(request.params("author_id"));
       model.put("author", Author.find(authorId));
-      return new ModelAndView(model, "/templates/layout.vtl");
+      return new ModelAndView(model, "/templates/navBarLayout.vtl");
     }, new VelocityTemplateEngine());
 
     get("/authors/:author_id/changePwd", (request,response) -> {
@@ -261,7 +261,7 @@ public class App {
       model.put("template", "/templates/change-pwd.vtl");
       int authorId = Integer.parseInt(request.params("author_id"));
       model.put("author", Author.find(authorId));
-      return new ModelAndView(model, "/templates/layout.vtl");
+      return new ModelAndView(model, "/templates/navBarLayout.vtl");
     }, new VelocityTemplateEngine());
 
     post("/authors/:author_id/changePwd", (request,response) -> {
@@ -283,7 +283,7 @@ public class App {
       model.put("author", author);
       model.put("pswChangedsuccessfully",pswChangedsuccessfully);
       model.put("template", "/templates/change-pwd.vtl");
-      return new ModelAndView(model, "/templates/layout.vtl");
+      return new ModelAndView(model, "/templates/navBarLayout.vtl");
     }, new VelocityTemplateEngine());
 
     post("/authors/:author_id/delete", (request,response) -> {

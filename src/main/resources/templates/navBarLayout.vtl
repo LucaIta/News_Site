@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='/app.css'>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/scripts.js"></script>
+  </head>
+  <body>
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-md-2 navBar">
+
+          <form action="/hub" method="get">
+            <button type="submit" class="btn btn-success" id="homepageBtn">Homepage</button>
+          </form>
+
+          <form action="/articles/new" method="get">
+            #if($author.getCanCreateArticle())
+            <button type="submit" class="btn btn-success" id="newArticleBtn">create a new article</button>
+            #else
+            <button type="submit" class="btn btn-success disabled" id="newArticleBtn">create a new article</button>
+            #end
+          </form>
+
+
+          <form action="/authors/new" method="get">
+            #if($author.getCanCreateAuthor())
+            <button type="submit" class="btn btn-success" id="newAuthorBtn">create a new author</button>
+            #else
+            <button type="submit" class="btn btn-success disabled" id="newAuthorBtn">create a new author</button>
+            #end
+          </form>
+
+
+          <form action="/authors" method="get">
+            #if($author.getCanEditAuthor())
+            <button type="submit" class="btn btn-success" id="authorsBtn">edit the authors</button>
+            #else
+            <button type="submit" class="btn btn-success disabled" id="authorsBtn">edit the authors</button>
+            #end
+          </form>
+
+          <form action="/articles" method="get">
+            <button type="submit" class="btn btn-success" id="articlesBtn">view all the articles</button>
+          </form>
+
+          <form action="/home" method="get">
+            <button type="submit" class="btn btn-success" id="homePageBtn">visit the site</button>
+          </form>
+
+        </div>
+
+        #parse( $template )
+
+      </div>
+
+
+    </div>
+  </body>
+</html>
