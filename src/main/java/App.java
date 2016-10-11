@@ -6,9 +6,20 @@ import static spark.Spark.*;
 
 public class App {
 
+
   public static void main (String[] args){
     staticFileLocation("/public");
 
+    ProcessBuilder process = new ProcessBuilder();
+    Integer port;
+    if (process.environment().get("PORT") != null) {
+      port = Integer.parseInt(process.environment().get("PORT"));
+    } else {
+      port = 4567;
+    }
+
+    setPort(port);
+    
     get("/", (request,response) -> {
       HashMap<String,Object> model = new HashMap<String,Object>();
       if(request.session().attribute("credentialsAreIncorrect") != null) { // when I get to this path for the first time, "usernameIsTaken" is null. So I need this check to retrieve the value of "usernameIsTaken" and put it in the model only when it is not null.
