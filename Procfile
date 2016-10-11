@@ -1,1 +1,1 @@
-web: ./build/install/todo/bin/News_Site
+web: ./build/install/news-site/bin/news-site

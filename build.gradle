@@ -4,7 +4,7 @@ apply plugin: 'application'
 
 archivesBaseName = ""
 version = '1.0'
-applicationName = "News_Site"
+applicationName = "news-site"
 mainClassName = "App"
 
 repositories {
