@@ -3,6 +3,8 @@ import java.util.List;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 import static spark.Spark.*;
+import org.postgresql.*; // heroku
+
 
 public class App {
 
@@ -19,7 +21,7 @@ public class App {
     }
 
     setPort(port);
-    
+
     get("/", (request,response) -> {
       HashMap<String,Object> model = new HashMap<String,Object>();
       if(request.session().attribute("credentialsAreIncorrect") != null) { // when I get to this path for the first time, "usernameIsTaken" is null. So I need this check to retrieve the value of "usernameIsTaken" and put it in the model only when it is not null.
