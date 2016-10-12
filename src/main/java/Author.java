@@ -2,7 +2,6 @@ import java.util.List;
 import java.security.NoSuchAlgorithmException;
 import org.sql2o.*;
 import java.util.ArrayList;
-import org.postgresql.*; // heroku
 
 
 public class Author {
