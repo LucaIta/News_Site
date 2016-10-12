@@ -474,7 +474,7 @@ public class AppTest extends FluentTest {
     Author author = createUserAndLogin();
     goTo("http://localhost:4567/hub");
     click("#homePageBtn");
-    assertThat(pageSource()).contains("HOME - PAGE");
+    assertThat(pageSource()).contains("International News");
   }
 
 }
