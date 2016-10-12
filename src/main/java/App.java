@@ -29,7 +29,7 @@ public class App {
         model.put("credentialsAreIncorrect", credentialsAreIncorrect);
       }
       model.put("template", "/templates/index.vtl");
-      return new ModelAndView(model, "templates/layout.vtl");
+      return new ModelAndView(model, "templates/loginLayout.vtl");
     },new VelocityTemplateEngine());
 
     get("/home", (request,response) -> {
