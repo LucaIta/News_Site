@@ -15,6 +15,14 @@ input , textarea {
   padding-top: 30px;
 }
 
+.navBar .btn {
+  width: 90%;
+}
+
+.navBar form {
+  padding-bottom: 5px;
+}
+
 .author {
   height: auto;
   margin: 20px;

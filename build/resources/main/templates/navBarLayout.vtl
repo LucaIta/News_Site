@@ -9,7 +9,7 @@
   </head>
   <body>
     <div class="container">
-      <h1>International News - Author Pubblication Portal</h1>
+      <h1>International News - Authors Pubblication Portal</h1>
 
       <div class="row">
 
@@ -21,27 +21,27 @@
 
           <form action="/articles/new" method="get">
             #if($author.getCanCreateArticle())
-            <button type="submit" class="btn btn-success" id="newArticleBtn">create a new article</button>
+              <button type="submit" class="btn btn-success" id="newArticleBtn">create a new article</button>
             #else
-            <button type="submit" class="btn btn-success disabled" id="newArticleBtn">create a new article</button>
+              <button type="submit" class="btn btn-success disabled" id="newArticleBtn">create a new article</button>
             #end
           </form>
 
 
           <form action="/authors/new" method="get">
             #if($author.getCanCreateAuthor())
-            <button type="submit" class="btn btn-success" id="newAuthorBtn">create a new author</button>
+              <button type="submit" class="btn btn-success" id="newAuthorBtn">create a new author</button>
             #else
-            <button type="submit" class="btn btn-success disabled" id="newAuthorBtn">create a new author</button>
+              <button type="submit" class="btn btn-success disabled" id="newAuthorBtn">create a new author</button>
             #end
           </form>
 
 
           <form action="/authors" method="get">
             #if($author.getCanEditAuthor())
-            <button type="submit" class="btn btn-success" id="authorsBtn">edit the authors</button>
+              <button type="submit" class="btn btn-success" id="authorsBtn">edit the authors</button>
             #else
-            <button type="submit" class="btn btn-success disabled" id="authorsBtn">edit the authors</button>
+              <button type="submit" class="btn btn-success disabled" id="authorsBtn">edit the authors</button>
             #end
           </form>
 
@@ -49,9 +49,12 @@
             <button type="submit" class="btn btn-success" id="articlesBtn">view all the articles</button>
           </form>
 
-          <form action="/home" method="get">
-            <button type="submit" class="btn btn-success" id="homePageBtn">visit the site</button>
-          </form>
+          <!-- <form action="/home" method="get">
+            <button type="submit" class="btn btn-success" id="homePageBtn" target="_blank">visit the site</button>
+          </form> -->
+
+          <a class="btn btn-success" href="/home" role="button" id="homePageBtn">visit the site</a>
+
 
         </div>
 
