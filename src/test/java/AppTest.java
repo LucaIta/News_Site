@@ -312,7 +312,7 @@ public class AppTest extends FluentTest {
     Article newArticle = createArticleAndSave();
     String articleDetailUrl = String.format("http://localhost:4567/articles/%d", newArticle.getId());
     goTo(articleDetailUrl);
-    assertThat(pageSource()).doesNotContain("and"); // I'm using and to check because this word is displayed only when the author by line is inserted as in "By Luca and Mark" where Mark is the authorByLine
+    assertThat(pageSource()).doesNotContain("Mark"); 
     String articleEditUrl = String.format("http://localhost:4567/articles/%d/edit", newArticle.getId());
     goTo(articleEditUrl);
     fill("#newAuthorByLine").with("MarkABC");

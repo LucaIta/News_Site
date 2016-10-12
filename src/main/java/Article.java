@@ -197,7 +197,6 @@ public class Article {
 
   public static List<Article> getArticlesForPage(int pageNumber) {
     try (Connection con = DB.sql2o.open()) {
-      // List<Article> articleList = new ArrayList<Article>();
       String sql = "SELECT * FROM articles limit 12 offset :offset";
       return con.createQuery(sql).addParameter("offset", (pageNumber - 1) * 12).executeAndFetch(Article.class); // with the parameter offset I'm setting which line in the database I'm starting to retrieve the articles from
     }
