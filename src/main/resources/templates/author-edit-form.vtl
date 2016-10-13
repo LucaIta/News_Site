@@ -46,47 +46,53 @@
     </div>
 
     <div class="checkbox">
-      <label for="canCreateAuthor">Can Create Author
+
+      <h3>Author permits</h3>
+
+      <label for="canCreateAuthor">
         <input id="canCreateAuthor" name= "canCreateAuthor" type="checkbox" value="true"
         #if($author.getCanCreateAuthor())
         checked
-        #end>
+        #end>Can Create Author
       </label>
 
-      <label for="canCreateArticle">Can Create Article
+      <label for="canCreateArticle">
         <input id="canCreateArticle" name= "canCreateArticle" type="checkbox" value="true"
         #if($author.getCanCreateArticle())
         checked
-        #end>
+        #end>Can Create Article
       </label>
 
-      <label for="canEditAuthor">Can Edit Author
+      <label for="canEditAuthor">
         <input id="canEditAuthor" name= "canEditAuthor" type="checkbox" value="true"
         #if($author.getCanEditAuthor())
         checked
-        #end>
+        #end>Can Edit Author
       </label>
 
-      <label for="canEditArticle">Can Edit Article
+      <br>
+
+      <label for="canEditArticle">
         <input id="canEditArticle" name= "canEditArticle" type="checkbox" value="true"
         #if($author.getCanEditArticle())
         checked
-        #end>
+        #end>Can Edit Article
       </label>
 
-      <label for="canDeleteArticle">Can Delete Article
+      <label for="canDeleteArticle">
         <input id="canDeleteArticle" name= "canDeleteArticle" type="checkbox" value="true"
         #if($author.getCanDeleteArticle())
         checked
-        #end>
+        #end>Can Delete Article
       </label>
 
-      <label for="canDeleteAuthor">Can Delete Author
+      <label for="canDeleteAuthor">
         <input id="canDeleteAuthor" name= "canDeleteAuthor" type="checkbox" value="true"
         #if($author.getCanDeleteAuthor())
         checked
-        #end>
+        #end>Can Delete Author
       </label>
+
     </div>
 
     <button type="submit" class="btn btn-success" id="editBtn">Edit Author</button>
