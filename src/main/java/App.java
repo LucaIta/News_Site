@@ -49,7 +49,7 @@ public class App {
       model.put("articles", Article.getArticlesForPage(pageNumber));
       model.put("isLastPage", Article.isLastPage(pageNumber));
       model.put("template", "/templates/home-page.vtl");
-      return new ModelAndView(model, "templates/navBarLayout.vtl");
+      return new ModelAndView(model, "templates/visitorsLayout.vtl");
     },new VelocityTemplateEngine());
 
     post("/login", (request,response) -> {
