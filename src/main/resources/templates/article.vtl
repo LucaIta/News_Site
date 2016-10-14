@@ -12,25 +12,25 @@
     #if ($author)
 
       <form action="/articles/$article.getId()/edit" method="get">
-      #if($author.getCanEditArticle())
-        <button type="submit" class="btn btn-success pull-right">Edit Article</button>
-      #else
-        <button type="submit" class="btn btn-success pull-right disabled">Edit Article</button>
-      #end
+        #if($author.getCanEditArticle())
+          <button type="submit" class="btn btn-success pull-right">Edit Article</button>
+        #else
+          <button type="submit" class="btn btn-success pull-right disabled">Edit Article</button>
+        #end
       </form>
 
       <form action="/articles/$article.getId()/delete" method="post">
-      #if($author.getCanDeleteArticle())
-        <button type="submit" class="btn btn-success pull-right" id="deleteBtn">Delete Article</button>
-      #else
-        <button type="submit" class="btn btn-success pull-right disabled" id="deleteBtn">Delete Article</button>
-      #end
+        #if($author.getCanDeleteArticle())
+          <button type="submit" class="btn btn-success pull-right" id="deleteBtn">Delete Article</button>
+        #else
+          <button type="submit" class="btn btn-success pull-right disabled" id="deleteBtn">Delete Article</button>
+        #end
       </form>
 
     #else
     #end
     <h1>$article.getTitle()</h1>
-    <p>$article.getSubhead()</p>
+    <!-- <p>$article.getSubhead()</p> -->
     <h3>$article.getSubtitle()</h3>
     <p>by $article.getAuthor()
       #if ($article.getAuthorByLine() != "")

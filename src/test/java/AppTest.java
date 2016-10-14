@@ -405,11 +405,11 @@ public class AppTest extends FluentTest {
     assertThat(pageSource()).contains("LucaABC");
   }
 
-  @Test
-  public void nextPageButtonIsNotDisplayedIfThereAreNotEnoughArticlesForANewPage() {
-    goTo("http://localhost:4567/home");
-    assertThat(pageSource()).doesNotContain("nextBtn");
-  }
+  // @Test
+  // public void nextPageButtonIsNotDisplayedIfThereAreNotEnoughArticlesForANewPage() {
+  //   goTo("http://localhost:4567/home");
+  //   assertThat(pageSource()).doesNotContain("nextBtn");
+  // }
 
   @Test
   public void articleImageIsDisplayedInHomePage() {

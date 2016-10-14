@@ -34,14 +34,18 @@
 #set( $previousPage = $pageNumber - 1 )
 #set( $nextPage = $pageNumber + 1 )
 
-#if ($previousPage != 0)
-  <form action="/home/$previousPage" method="get">
-    <button type="submit" class="btn" id="previousBtn">PREVIOUS PAGE</button>
-  </form>
-#end
+<form action="/home/$previousPage" align="center" method="get">
+  #if ($previousPage != 0)
+    <button type="submit" class="btn btn-success" id="previousBtn">PREVIOUS PAGE</button>
+  #else
+    <button type="submit" class="btn btn-success disabled" id="previousBtn">PREVIOUS PAGE</button>
+  #end
+</form>
 
-#if (!$isLastPage)
-  <form action="/home/$nextPage" method="get">
-    <button type="submit" class="btn" id="nextBtn">NEXT PAGE</button>
-  </form>
-#end
+<form action="/home/$nextPage" align="center" method="get">
+  #if (!$isLastPage)
+    <button type="submit" class="btn btn-success" id="nextBtn">NEXT PAGE</button>
+  #else
+    <button type="submit" class="btn btn-success disabled" id="nextBtn">NEXT PAGE</button>
+  #end
+</form>
