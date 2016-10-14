@@ -246,7 +246,7 @@ public class Author {
 
   public static List<Author> all() {
     try (Connection con = DB.sql2o.open()) {
-      String sql = "SELECT * FROM authors;";
+      String sql = "SELECT * FROM authors order by id desc;";
       return con.createQuery(sql).executeAndFetch(Author.class);
     }
   }

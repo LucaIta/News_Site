@@ -3,101 +3,107 @@
   <h1>Edit Author</h1>
   <p>From here, authors account can be edited. Information and permits can be changed.</p>
 
-  <form action="/authors/$author.getId()/edit" method="post">
+  <form action="/authors/$authorToEdit.getId()/edit" method="post">
+
+    <div class="form-group">
+      <label for="newUsername">Author Username</label>
+      <input id="newUsername" name="newUsername" type="text" value="$authorToEdit.getUsername()">
+    </div>
 
     <div class="form-group">
       <label for="newName">Author Name</label>
-      <input id="newName" name="newName" type="text" value="$author.getName()">
+      <input id="newName" name="newName" type="text" value="$authorToEdit.getName()">
     </div>
 
     <div class="form-group">
       <label for="newRole">Author Role</label>
-      <input id="newRole" name="newRole" type="text" value="$author.getRole()">
+      <input id="newRole" name="newRole" type="text" value="$authorToEdit.getRole()">
     </div>
 
     <div class="form-group">
       <label for="newBio">Author Bio</label>
-      <input id="newBio" name="newBio" type="text" value="$author.getBio()">
+      <input id="newBio" name="newBio" type="text" value="$authorToEdit.getBio()">
     </div>
 
     <div class="form-group">
       <label for="newPicture">Author Picture URL</label>
-      <input id="newPicture" name="newPicture" type="text" value="$author.getPicture()">
+      <input id="newPicture" name="newPicture" type="text" value="$authorToEdit.getPicture()">
     </div>
 
     <div class="form-group">
       <label for="newEmail">Author Email</label>
-      <input id="newEmail" name="newEmail" type="text" value="$author.getEmail()">
+      <input id="newEmail" name="newEmail" type="text" value="$authorToEdit.getEmail()">
     </div>
 
     <div class="form-group">
       <label for="newFacebook">Author Facebook</label>
-      <input id="newFacebook" name="newFacebook" type="text" value="$author.getFacebook()">
+      <input id="newFacebook" name="newFacebook" type="text" value="$authorToEdit.getFacebook()">
     </div>
 
     <div class="form-group">
       <label for="newTwitter">Author Twitter</label>
-      <input id="newTwitter" name="newTwitter" type="text" value="$author.getTwitter()">
-    </div>
-
-    <div class="form-group">
-      <label for="newUsername">Author Username</label>
-      <input id="newUsername" name="newUsername" type="text" value="$author.getUsername()">
+      <input id="newTwitter" name="newTwitter" type="text" value="$authorToEdit.getTwitter()">
     </div>
 
     <div class="checkbox">
-      <label for="canCreateAuthor">Can Create Author
+
+      <h3>Author permits</h3>
+
+      <label for="canCreateAuthor">
         <input id="canCreateAuthor" name= "canCreateAuthor" type="checkbox" value="true"
-        #if($author.getCanCreateAuthor())
+        #if($authorToEdit.getCanCreateAuthor())
         checked
-        #end>
+        #end>Can Create Author
       </label>
 
-      <label for="canCreateArticle">Can Create Article
+      <label for="canCreateArticle">
         <input id="canCreateArticle" name= "canCreateArticle" type="checkbox" value="true"
-        #if($author.getCanCreateArticle())
+        #if($authorToEdit.getCanCreateArticle())
         checked
-        #end>
+        #end>Can Create Article
       </label>
 
-      <label for="canEditAuthor">Can Edit Author
+      <label for="canEditAuthor">
         <input id="canEditAuthor" name= "canEditAuthor" type="checkbox" value="true"
-        #if($author.getCanEditAuthor())
+        #if($authorToEdit.getCanEditAuthor())
         checked
-        #end>
+        #end>Can Edit Author
       </label>
 
-      <label for="canEditArticle">Can Edit Article
+      <br>
+
+      <label for="canEditArticle">
         <input id="canEditArticle" name= "canEditArticle" type="checkbox" value="true"
-        #if($author.getCanEditArticle())
+        #if($authorToEdit.getCanEditArticle())
         checked
-        #end>
+        #end>Can Edit Article
       </label>
 
-      <label for="canDeleteArticle">Can Delete Article
+      <label for="canDeleteArticle">
         <input id="canDeleteArticle" name= "canDeleteArticle" type="checkbox" value="true"
-        #if($author.getCanDeleteArticle())
+        #if($authorToEdit.getCanDeleteArticle())
         checked
-        #end>
+        #end>Can Delete Article
       </label>
 
-      <label for="canDeleteAuthor">Can Delete Author
+      <label for="canDeleteAuthor">
         <input id="canDeleteAuthor" name= "canDeleteAuthor" type="checkbox" value="true"
-        #if($author.getCanDeleteAuthor())
+        #if($authorToEdit.getCanDeleteAuthor())
         checked
-        #end>
+        #end>Can Delete Author
       </label>
+
     </div>
 
     <button type="submit" class="btn btn-success" id="editBtn">Edit Author</button>
 
   </form>
 
-  <form action="/authors/$author.getId()/changePwd" method="get">
+  <form action="/authors/$authorToEdit.getId()/changePwd" method="get">
     <button type="submit" class="btn btn-success" id="changePwdBtn">Change password</button>
   </form>
 
-  <form action="/authors/$author.getId()/delete" method="post">
+  <form action="/authors/$authorToEdit.getId()/delete" method="post">
     <button type="submit" class="btn btn-success" id="deleteBtn">Delete Author</button>
   </form>
 

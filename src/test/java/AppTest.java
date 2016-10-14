@@ -105,7 +105,7 @@ public class AppTest extends FluentTest {
     fill("#shortTitle").with("this is the short title");
     fill("#body").with("body");
     fill("#picture").with("picture");
-    fill("#subhead").with("subhead");
+    // fill("#subhead").with("subhead");
     fill("#subtitle").with("subtitle");
     submit("#articleCreationBtn");
 
@@ -153,14 +153,14 @@ public class AppTest extends FluentTest {
     fill("#newShortTitle").with("editedShortTitle");
     fill("#newBody").with("editedBody");
     fill("#newPicture").with("editedPicture");
-    fill("#newSubhead").with("editedSubhead");
+    // fill("#newSubhead").with("editedSubhead");
     fill("#newSubtitle").with("editedSubtitle");
     fill("#newAuthorByLine").with("editedAuthorByLine");
     submit("#editBtn");
     assertThat(pageSource()).contains("editedTitle");
     assertThat(pageSource()).contains("editedBody");
     assertThat(pageSource()).contains("editedPicture");
-    assertThat(pageSource()).contains("editedSubhead");
+    // assertThat(pageSource()).contains("editedSubhead");
     assertThat(pageSource()).contains("editedSubtitle");
     assertThat(pageSource()).contains("editedAuthorByLine");
   }

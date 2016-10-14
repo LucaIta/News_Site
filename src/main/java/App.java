@@ -49,7 +49,7 @@ public class App {
       model.put("articles", Article.getArticlesForPage(pageNumber));
       model.put("isLastPage", Article.isLastPage(pageNumber));
       model.put("template", "/templates/home-page.vtl");
-      return new ModelAndView(model, "templates/navBarLayout.vtl");
+      return new ModelAndView(model, "templates/visitorsLayout.vtl");
     },new VelocityTemplateEngine());
 
     post("/login", (request,response) -> {
@@ -233,7 +233,7 @@ public class App {
           boolean canDeleteAuthor = Boolean.parseBoolean(request.queryParams("canDeleteAuthor"));
           Author newAuthor = new Author(name,role,bio,picture,email,facebook,twitter,username,password,canCreateAuthor,canCreateArticle,canEditAuthor,canEditArticle,canDeleteArticle,canDeleteAuthor);
           newAuthor.save();
-          response.redirect("/authors/new");
+          response.redirect("/authors");
         } else {
           request.session().attribute("passwordsDoesNotCorrespond", true); // if by default these values are false, I might be able to invert the logic and get rid of the if statements that I have in every path where I have to set it as true
           response.redirect("/authors/new");
@@ -270,17 +270,27 @@ public class App {
 
     get("/authors/:author_id/edit", (request,response) -> {
       HashMap<String,Object> model = new HashMap<String,Object>();
+
+      if (request.session().attribute("author") != null) {
+        Author currentAuthor = request.session().attribute("author");
+        model.put("author", currentAuthor);
+      }
+
       model.put("template", "/templates/author-edit-form.vtl");
       int authorId = Integer.parseInt(request.params("author_id"));
-      model.put("author", Author.find(authorId));
+      model.put("authorToEdit", Author.find(authorId));
       return new ModelAndView(model, "/templates/navBarLayout.vtl");
     }, new VelocityTemplateEngine());
 
     get("/authors/:author_id/changePwd", (request,response) -> {
       HashMap<String,Object> model = new HashMap<String,Object>();
+      if (request.session().attribute("author") != null) {
+        Author currentAuthor = request.session().attribute("author");
+        model.put("author", currentAuthor);
+      }
       model.put("template", "/templates/change-pwd.vtl");
       int authorId = Integer.parseInt(request.params("author_id"));
-      model.put("author", Author.find(authorId));
+      model.put("authorToEdit", Author.find(authorId));
       return new ModelAndView(model, "/templates/navBarLayout.vtl");
     }, new VelocityTemplateEngine());
 
@@ -300,7 +310,7 @@ public class App {
       } else {
         pswChangedsuccessfully = false;
       }
-      model.put("author", author);
+      model.put("authorToEdit", author);
       model.put("pswChangedsuccessfully",pswChangedsuccessfully);
       model.put("template", "/templates/change-pwd.vtl");
       return new ModelAndView(model, "/templates/navBarLayout.vtl");
